@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Datos - Random Forest</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>📊 Análisis de Remuneración</h1>
+                <p>Machine Learning con Random Forest</p>
+            </div>
+            <div class="nav-status">
+                <span id="status-indicator" class="status-dot"></span>
+                <span id="status-text">Conectando...</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-menu">
+                <button class="menu-btn active" data-section="dashboard">
+                    📈 Dashboard
+                </button>
+                <button class="menu-btn" data-section="eda">
+                    🔍 Análisis Exploratorio
+                </button>
+                <button class="menu-btn" data-section="model">
+                    🤖 Modelo Random Forest
+                </button>
+                <button class="menu-btn" data-section="predict">
+                    🎯 Realizar Predicción
+                </button>
+                <button class="menu-btn" data-section="graphics">
+                    📸 Gráficas
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <h2>Dashboard General</h2>
+                
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">📊</div>
+                        <div class="card-content">
+                            <h3>Total de Registros</h3>
+                            <p id="total-records" class="card-value">-</p>
+                            <small>Muestras en el dataset</small>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🏆</div>
+                        <div class="card-content">
+                            <h3>Accuracy del Modelo</h3>
+                            <p id="accuracy-value" class="card-value">-</p>
+                            <small>Precisión en conjunto de prueba</small>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🎯</div>
+                        <div class="card-content">
+                            <h3>F1-Score</h3>
+                            <p id="f1-value" class="card-value">-</p>
+                            <small>Balance entre precision y recall</small>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🌳</div>
+                        <div class="card-content">
+                            <h3>Número de Árboles</h3>
+                            <p id="trees-value" class="card-value">-</p>
+                            <small>Estimadores en Random Forest</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-box">
+                        <h3>📈 Métricas del Modelo</h3>
+                        <table id="metrics-table">
+                            <tr>
+                                <td>Accuracy</td>
+                                <td id="metric-accuracy" class="metric-value">-</td>
+                            </tr>
+                            <tr>
+                                <td>Precision</td>
+                                <td id="metric-precision" class="metric-value">-</td>
+                            </tr>
+                            <tr>
+                                <td>Recall</td>
+                                <td id="metric-recall" class="metric-value">-</td>
+                            </tr>
+                            <tr>
+                                <td>F1-Score</td>
+                                <td id="metric-f1" class="metric-value">-</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>📊 Datos del Dataset</h3>
+                        <table id="dataset-table">
+                            <tr>
+                                <td>Total de Filas</td>
+                                <td id="data-rows" class="metric-value">-</td>
+                            </tr>
+                            <tr>
+                                <td>Total de Columnas</td>
+                                <td id="data-cols" class="metric-value">-</td>
+                            </tr>
+                            <tr>
+                                <td>Conjunto Entrenamiento</td>
+                                <td id="data-train" class="metric-value">-</td>
+                            </tr>
+                            <tr>
+                                <td>Conjunto Prueba</td>
+                                <td id="data-test" class="metric-value">-</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>💼 Distribución de Seniority</h3>
+                        <div id="seniority-dist"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EDA Section -->
+            <section id="eda" class="content-section">
+                <h2>Análisis Exploratorio de Datos (EDA)</h2>
+                
+                <div class="eda-container">
+                    <div class="eda-card">
+                        <h3>📊 Distribuciones</h3>
+                        <img id="eda-distributions" src="" alt="Distribuciones" class="eda-image">
+                        <p class="image-description">Distribuciones de variables clave: Seniority, Género, Dedicación y Edad</p>
+                    </div>
+
+                    <div class="eda-card">
+                        <h3>🔗 Matriz de Correlación</h3>
+                        <img id="eda-correlation" src="" alt="Correlación" class="eda-image">
+                        <p class="image-description">Correlación entre todas las variables numéricas del dataset</p>
+                    </div>
+
+                    <div class="eda-card">
+                        <h3>⚠️ Valores Faltantes</h3>
+                        <img id="eda-missing" src="" alt="Valores Faltantes" class="eda-image">
+                        <p class="image-description">Porcentaje de valores faltantes por columna</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Model Section -->
+            <section id="model" class="content-section">
+                <h2>Información del Modelo Random Forest</h2>
+                
+                <div class="model-container">
+                    <div class="model-info">
+                        <h3>⚙️ Configuración del Modelo</h3>
+                        <table id="model-config">
+                            <tr>
+                                <td>Tipo</td>
+                                <td id="model-type" class="config-value">-</td>
+                            </tr>
+                            <tr>
+                                <td>Número de Árboles</td>
+                                <td id="model-trees" class="config-value">-</td>
+                            </tr>
+                            <tr>
+                                <td>Profundidad Máxima</td>
+                                <td id="model-depth" class="config-value">-</td>
+                            </tr>
+                            <tr>
+                                <td>Número de Features</td>
+                                <td id="model-features" class="config-value">-</td>
+                            </tr>
+                            <tr>
+                                <td>Número de Clases</td>
+                                <td id="model-classes" class="config-value">-</td>
+                            </tr>
+                            <tr>
+                                <td>Clases Disponibles</td>
+                                <td id="model-class-names" class="config-value">-</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="model-graphics">
+                        <h3>📊 Resultados del Modelo</h3>
+                        
+                        <div class="graphic-container">
+                            <h4>Feature Importance</h4>
+                            <img id="graphic-importance" src="" alt="Feature Importance" class="model-image">
+                        </div>
+
+                        <div class="graphic-container">
+                            <h4>Matriz de Confusión</h4>
+                            <img id="graphic-confusion" src="" alt="Matriz de Confusión" class="model-image">
+                        </div>
+
+                        <div class="graphic-container">
+                            <h4>Métricas de Evaluación</h4>
+                            <img id="graphic-metrics" src="" alt="Métricas" class="model-image">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Prediction Section -->
+            <section id="predict" class="content-section">
+                <h2>🎯 Realizar Predicción</h2>
+                
+                <div class="predict-container">
+                    <div class="predict-form">
+                        <h3>Ingresa los datos del trabajador</h3>
+                        
+                        <div class="form-group">
+                            <label for="pred-edad">Edad</label>
+                            <input type="number" id="pred-edad" class="form-input" placeholder="Ej: 30" min="18" max="80" value="30">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pred-exp">Años de Experiencia</label>
+                            <input type="number" id="pred-exp" class="form-input" placeholder="Ej: 5" min="0" max="60" value="5">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pred-antig">Antigüedad en Empresa Actual (años)</label>
+                            <input type="number" id="pred-antig" class="form-input" placeholder="Ej: 2" min="0" max="60" value="2">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pred-puesto">Años en Puesto Actual</label>
+                            <input type="number" id="pred-puesto" class="form-input" placeholder="Ej: 2" min="0" max="60" value="2">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pred-cargo">Personas a Cargo</label>
+                            <input type="number" id="pred-cargo" class="form-input" placeholder="Ej: 0" min="0" max="1000" value="0">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pred-bruto">Salario Bruto (pesos)</label>
+                            <input type="number" id="pred-bruto" class="form-input" placeholder="Ej: 1000000" min="0" value="1000000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pred-neto">Salario Neto (pesos)</label>
+                            <input type="number" id="pred-neto" class="form-input" placeholder="Ej: 850000" min="0" value="850000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pred-bruto-usd">Salario Bruto (dólares)</label>
+                            <input type="number" id="pred-bruto-usd" class="form-input" placeholder="Ej: 1000" min="0" step="0.01" value="1000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pred-neto-usd">Salario Neto (dólares)</label>
+                            <input type="number" id="pred-neto-usd" class="form-input" placeholder="Ej: 850" min="0" step="0.01" value="850">
+                        </div>
+
+                        <button id="predict-btn" class="btn-primary">
+                            🔮 Realizar Predicción
+                        </button>
+                    </div>
+
+                    <div class="predict-result" id="predict-result" style="display: none;">
+                        <h3>Resultado de la Predicción</h3>
+                        
+                        <div class="result-box">
+                            <h4>Seniority Predicho</h4>
+                            <p id="result-seniority" class="result-value">-</p>
+                        </div>
+
+                        <div class="result-box">
+                            <h4>Confianza</h4>
+                            <p id="result-confidence" class="result-value">-</p>
+                            <div class="confidence-bar">
+                                <div id="result-confidence-bar" class="confidence-fill"></div>
+                            </div>
+                        </div>
+
+                        <div class="result-box">
+                            <h4>Probabilidades por Clase</h4>
+                            <div id="result-probabilities" class="probabilities"></div>
+                        </div>
+
+                        <button id="clear-prediction-btn" class="btn-secondary">
+                            🔄 Nueva Predicción
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Graphics Section -->
+            <section id="graphics" class="content-section">
+                <h2>📸 Galería de Gráficas</h2>
+                
+                <div class="graphics-gallery" id="graphics-gallery">
+                    <p>Cargando gráficas...</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 Análisis de Datos con Random Forest | Ingeniería en Ciencia de Datos</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="api.js"></script>
+    <script src="ui.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

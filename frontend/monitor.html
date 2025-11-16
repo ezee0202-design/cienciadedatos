@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor de Sistema</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .status-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 5px;
+        }
+        
+        .status-icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+            min-width: 30px;
+        }
+        
+        .status-text {
+            flex: 1;
+        }
+        
+        .status-value {
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .ok { color: #4caf50; }
+        .error { color: #f44336; }
+        
+        .graphics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .graphic-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .graphic-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .graphic-preview {
+            width: 100%;
+            height: 200px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            color: #ddd;
+        }
+        
+        .graphic-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .graphic-info {
+            padding: 15px;
+        }
+        
+        .graphic-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .graphic-status {
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        
+        button {
+            padding: 12px 30px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5568d3;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+        }
+        
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+        
+        .loading {
+            display: inline-block;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .info-banner {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            color: #1565c0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Monitor de Sistema</h1>
+        
+        <div class="info-banner">
+            <strong>ℹ️ Estado de la Aplicación en Tiempo Real</strong>
+            <br>
+            Verifica que todos los servicios estén funcionando correctamente
+        </div>
+        
+        <div class="status-grid">
+            <!-- Backend -->
+            <div class="card">
+                <h2>🖥️ Backend</h2>
+                <div id="backend-status" class="status-item">
+                    <div class="status-icon loading">⏳</div>
+                    <div class="status-text">
+                        <div>Verificando...</div>
+                        <div class="status-value">http://localhost:5000</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Frontend -->
+            <div class="card">
+                <h2>🌐 Frontend</h2>
+                <div id="frontend-status" class="status-item">
+                    <div class="status-icon loading">⏳</div>
+                    <div class="status-text">
+                        <div>Verificando...</div>
+                        <div class="status-value">http://localhost:8000</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- API -->
+            <div class="card">
+                <h2>📡 API Endpoints</h2>
+                <div id="api-status">
+                    <div class="status-item">
+                        <div class="status-icon loading">⏳</div>
+                        <div>Verificando endpoints...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Gráficas -->
+        <div class="card" style="margin-top: 30px;">
+            <h2>📊 Gráficas Cargadas</h2>
+            <div class="graphics-grid" id="graphics-container">
+                <div style="grid-column: 1/-1; text-align: center; color: #999;">
+                    <div class="loading" style="display: inline-block; font-size: 2em;">⏳</div>
+                    <div>Cargando gráficas...</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Botones de acción -->
+        <div class="btn-group">
+            <button class="btn-primary" onclick="location.href='/index.html'">
+                ➡️ Ir a la Aplicación
+            </button>
+            <button class="btn-secondary" onclick="checkStatus()">
+                🔄 Actualizar Estado
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        const BACKEND_URL = 'http://localhost:5000';
+        const GRAPHICS = [
+            'distributions.png',
+            'correlation_matrix.png',
+            'missing_values.png',
+            'confusion_matrix.png',
+            'feature_importance.png',
+            'model_metrics.png'
+        ];
+        
+        async function checkStatus() {
+            // Backend
+            try {
+                const res = await fetch(`${BACKEND_URL}/api/dashboard`);
+                const statusEl = document.getElementById('backend-status');
+                if (res.ok) {
+                    statusEl.innerHTML = `
+                        <div class="status-icon ok">✓</div>
+                        <div class="status-text">
+                            <div>Backend Activo</div>
+                            <div class="status-value">http://localhost:5000</div>
+                        </div>
+                    `;
+                } else {
+                    throw new Error('No OK');
+                }
+            } catch (e) {
+                document.getElementById('backend-status').innerHTML = `
+                    <div class="status-icon error">✗</div>
+                    <div class="status-text">
+                        <div>Backend No Disponible</div>
+                        <div class="status-value">Ejecutar: python backend/app.py</div>
+                    </div>
+                `;
+            }
+            
+            // Frontend
+            try {
+                const res = await fetch('/');
+                const statusEl = document.getElementById('frontend-status');
+                if (res.ok) {
+                    statusEl.innerHTML = `
+                        <div class="status-icon ok">✓</div>
+                        <div class="status-text">
+                            <div>Frontend Activo</div>
+                            <div class="status-value">http://localhost:8000</div>
+                        </div>
+                    `;
+                }
+            } catch (e) {
+                document.getElementById('frontend-status').innerHTML = `
+                    <div class="status-icon error">✗</div>
+                    <div class="status-text">
+                        <div>Frontend No Disponible</div>
+                    </div>
+                `;
+            }
+            
+            // API Endpoints
+            checkEndpoints();
+            
+            // Gráficas
+            checkGraphics();
+        }
+        
+        async function checkEndpoints() {
+            const endpoints = [
+                '/api/dashboard',
+                '/api/analysis',
+                '/api/model-info',
+                '/api/features'
+            ];
+            
+            let html = '';
+            for (const endpoint of endpoints) {
+                try {
+                    const res = await fetch(`${BACKEND_URL}${endpoint}`);
+                    const icon = res.ok ? '✓' : '✗';
+                    const className = res.ok ? 'ok' : 'error';
+                    html += `
+                        <div class="status-item">
+                            <div class="status-icon ${className}">${icon}</div>
+                            <div class="status-text">${endpoint}</div>
+                        </div>
+                    `;
+                } catch (e) {
+                    html += `
+                        <div class="status-item">
+                            <div class="status-icon error">✗</div>
+                            <div class="status-text">${endpoint} (error)</div>
+                        </div>
+                    `;
+                }
+            }
+            document.getElementById('api-status').innerHTML = html;
+        }
+        
+        async function checkGraphics() {
+            let html = '';
+            for (const graphic of GRAPHICS) {
+                // Try base64 first
+                let loaded = false;
+                try {
+                    const res = await fetch(`${BACKEND_URL}/api/graphics-base64/${graphic}`);
+                    if (res.ok) {
+                        const data = await res.json();
+                        html += `
+                            <div class="graphic-card">
+                                <div class="graphic-preview">
+                                    <img src="${data.data_url}" alt="${graphic}">
+                                </div>
+                                <div class="graphic-info">
+                                    <div class="graphic-name">✓ ${graphic}</div>
+                                    <div class="graphic-status">Base64 codificada</div>
+                                </div>
+                            </div>
+                        `;
+                        loaded = true;
+                    }
+                } catch (e) {}
+                
+                // Try direct if base64 failed
+                if (!loaded) {
+                    try {
+                        const res = await fetch(`${BACKEND_URL}/api/graphics/${graphic}`);
+                        if (res.ok) {
+                            const blob = await res.blob();
+                            const url = URL.createObjectURL(blob);
+                            html += `
+                                <div class="graphic-card">
+                                    <div class="graphic-preview">
+                                        <img src="${url}" alt="${graphic}">
+                                    </div>
+                                    <div class="graphic-info">
+                                        <div class="graphic-name">✓ ${graphic}</div>
+                                        <div class="graphic-status">Directa</div>
+                                    </div>
+                                </div>
+                            `;
+                            loaded = true;
+                        }
+                    } catch (e) {}
+                }
+                
+                if (!loaded) {
+                    html += `
+                        <div class="graphic-card">
+                            <div class="graphic-preview" style="background: #ffebee;">
+                                📁
+                            </div>
+                            <div class="graphic-info">
+                                <div class="graphic-name">✗ ${graphic}</div>
+                                <div class="graphic-status" style="color: #c62828;">No cargada</div>
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+            document.getElementById('graphics-container').innerHTML = html;
+        }
+        
+        // Ejecutar al cargar
+        window.addEventListener('load', checkStatus);
+        
+        // Auto-refrescar cada 5 segundos
+        setInterval(checkStatus, 5000);
+    </script>
+</body>
+</html>

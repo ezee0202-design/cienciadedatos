@@ -1,0 +1,42 @@
+# Archivos generados por el notebook de análisis
+backend/random_forest_model.pkl
+backend/features.json
+backend/analysis_results.json
+frontend/*.png
+
+# Archivos de entorno de Python
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Carpetas de caché y compilados de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Archivos de configuración de IDE
+.vscode/
+.idea/
+
+# Archivos de distribución de Python
+build/
+dist/
+*.egg-info/
+
+# El dataset principal.
+# Descomenta la siguiente línea si el archivo es muy grande (>100MB)
+# y prefieres no subirlo a GitHub.
+# database.csv
