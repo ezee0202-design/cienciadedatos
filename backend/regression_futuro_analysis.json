@@ -1,0 +1,97 @@
+{
+  "model_comparison": {
+    "Ridge": {
+      "r2_train": 0.3436338209998189,
+      "r2_test": 0.32637979775770354,
+      "rmse": 1219453.5320215872,
+      "mae": 850076.5480810872,
+      "mape": 50.97509612768685
+    }
+  },
+  "coefficients": [
+    {
+      "feature": "ratio_exp_edad",
+      "coefficient": 1010107.3968142845
+    },
+    {
+      "feature": "anos_de_experiencia",
+      "coefficient": -637877.72696307
+    },
+    {
+      "feature": "tengo_edad",
+      "coefficient": 484369.39235911553
+    },
+    {
+      "feature": "edad_squared",
+      "coefficient": -429899.9092108656
+    },
+    {
+      "feature": "ratio_antiguedad_exp",
+      "coefficient": -392804.3613343134
+    },
+    {
+      "feature": "antiguedad_en_la_empresa_actual",
+      "coefficient": 289330.8260712272
+    },
+    {
+      "feature": "year",
+      "coefficient": 255687.55834386477
+    },
+    {
+      "feature": "es_senior",
+      "coefficient": -226877.77517520465
+    },
+    {
+      "feature": "modalidad_de_trabajo",
+      "coefficient": -221664.40988717956
+    },
+    {
+      "feature": "recibis_algun_tipo_de_bono",
+      "coefficient": 189716.46160200867
+    },
+    {
+      "feature": "es_junior",
+      "coefficient": -160599.2671695108
+    },
+    {
+      "feature": "cuantas_personas_tenes_a_cargo",
+      "coefficient": 160486.65650906425
+    },
+    {
+      "feature": "dedicacion",
+      "coefficient": -124141.79807416152
+    },
+    {
+      "feature": "es_developer",
+      "coefficient": 122975.60995515171
+    },
+    {
+      "feature": "que_tanto_estas_usando_copilotchatgpt_u_otras_herramientas_de_ia_para_tu_trabajo",
+      "coefficient": 119733.79507825448
+    },
+    {
+      "feature": "estudios_estado",
+      "coefficient": -118473.58128073883
+    },
+    {
+      "feature": "donde_estas_trabajando",
+      "coefficient": -82730.47372978985
+    },
+    {
+      "feature": "genero",
+      "coefficient": -64904.2752901341
+    },
+    {
+      "feature": "ratio_puesto_exp",
+      "coefficient": -37885.77738639641
+    },
+    {
+      "feature": "cantidad_de_personas_en_tu_organizacion",
+      "coefficient": 30750.055488232596
+    }
+  ],
+  "target": "ultimo_salario_mensual_o_retiro_neto_en_pesos_argentinos",
+  "n_features": 25,
+  "n_samples_train": 9913,
+  "n_samples_test": 2479
+}

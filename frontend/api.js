@@ -32,12 +32,19 @@ async function apiPost(endpoint, data) {
             },
             body: JSON.stringify(data)
         });
+        
+        const responseData = await response.json();
+        
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            // Si el servidor devuelve un mensaje de error, usarlo
+            const errorMessage = responseData.message || `HTTP error! status: ${response.status}`;
+            throw new Error(errorMessage);
         }
-        return await response.json();
+        
+        return responseData;
     } catch (error) {
         console.error(`Error en POST ${endpoint}:`, error);
+        console.error('Datos enviados:', data);
         throw error;
     }
 }
@@ -57,43 +64,57 @@ async function checkBackendConnection() {
 /**
  * Obtener información del análisis
  */
-async function getAnalysisInfo() {
-    return await apiGet('/analysis-info');
+async function getAnalysisInfo(modelType = 'satisfaction') {
+    return await apiGet(`/analysis-info?model=${modelType}`);
 }
 
 /**
  * Obtener métricas del modelo
  */
-async function getModelMetrics() {
-    return await apiGet('/model-metrics');
+async function getModelMetrics(modelType = 'satisfaction') {
+    return await apiGet(`/model-metrics?model=${modelType}`);
 }
 
 /**
  * Obtener importancia de features
  */
-async function getFeatureImportance() {
-    return await apiGet('/feature-importance');
+async function getFeatureImportance(modelType = 'satisfaction') {
+    return await apiGet(`/feature-importance?model=${modelType}`);
 }
 
 /**
  * Obtener información del dataset
  */
-async function getDatasetInfo() {
-    return await apiGet('/dataset-info');
+async function getDatasetInfo(modelType = 'satisfaction') {
+    return await apiGet(`/dataset-info?model=${modelType}`);
 }
 
 /**
  * Obtener información del modelo
  */
-async function getModelInfo() {
-    return await apiGet('/model-info');
+async function getModelInfo(modelType = 'satisfaction') {
+    return await apiGet(`/model-info?model=${modelType}`);
 }
 
 /**
  * Realizar predicción
  */
-async function makePrediction(data) {
-    return await apiPost('/predict', data);
+async function makePrediction(data, modelType = 'satisfaction') {
+    // Para regresión de sueldo futuro (ARS), usar endpoint especial
+    if (modelType === 'regression-futuro') {
+        return await apiPost('/predict-salary-futuro', data);
+    }
+    
+    // Para regresión de sueldo actual (USD), usar endpoint especial
+    if (modelType === 'regression') {
+        return await apiPost('/predict-salary', data);
+    }
+    
+    // Para clasificación, usar endpoint estándar
+    return await apiPost('/predict', { 
+        ...data, 
+        model_type: modelType 
+    });
 }
 
 /**

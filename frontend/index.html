@@ -7,19 +7,127 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <h1>📊 Análisis de Remuneración</h1>
-                <p>Machine Learning con Random Forest</p>
+    <!-- Model Selection Screen (shown first) -->
+    <div id="model-selection-screen" class="model-selection-screen">
+        <div class="model-selection-container">
+            <div class="selection-header">
+                <h1>🎯 Selecciona el Modelo de Predicción</h1>
+                <p>Elige qué tipo de análisis deseas realizar</p>
             </div>
-            <div class="nav-status">
-                <span id="status-indicator" class="status-dot"></span>
-                <span id="status-text">Conectando...</span>
+
+            <div class="model-cards">
+                <div class="model-card" data-model="satisfaction">
+                    <div class="model-card-icon">😊</div>
+                    <h2>Satisfacción Salarial</h2>
+                    <p class="model-card-description">
+                        Predice si un trabajador está <strong>conforme con sus ingresos</strong> basado en sus características laborales.
+                    </p>
+                    <ul class="model-features">
+                        <li>✓ Target: Satisfacción (1-2 vs 3-4)</li>
+                        <li>✓ Accuracy: 69.5%</li>
+                        <li>✓ Features: 10 variables</li>
+                        <li>✓ Top predictor: Sueldo bruto USD</li>
+                    </ul>
+                    <button class="select-model-btn" data-model="satisfaction">
+                        Usar este modelo →
+                    </button>
+                </div>
+
+                <div class="model-card" data-model="seniority">
+                    <div class="model-card-icon">💰</div>
+                    <h2>Bien Pagado vs Promedio</h2>
+                    <p class="model-card-description">
+                        Predice si un trabajador gana <strong>más que el promedio</strong> de su grupo (rol + seniority).
+                    </p>
+                    <ul class="model-features">
+                        <li>✓ Target: Bien pagado (vs promedio grupo)</li>
+                        <li>✓ Accuracy: 68.4%</li>
+                        <li>✓ Features: 16 variables</li>
+                        <li>✓ Top predictor: Edad</li>
+                    </ul>
+                    <button class="select-model-btn" data-model="seniority">
+                        Usar este modelo →
+                    </button>
+                </div>
+
+                <div class="model-card" data-model="xgboost">
+                    <div class="model-card-icon">🔍</div>
+                    <h2>Búsqueda de Trabajo</h2>
+                    <p class="model-card-description">
+                        Predice si un trabajador está <strong>buscando activamente</strong> un nuevo empleo.
+                    </p>
+                    <ul class="model-features">
+                        <li>✓ Target: Búsqueda activa (Sí vs No)</li>
+                        <li>✓ Recall "Sí": 54% (optimizado para detectar)</li>
+                        <li>✓ Features: 11 variables</li>
+                        <li>✓ Top predictor: Sueldo bruto USD</li>
+                    </ul>
+                    <button class="select-model-btn" data-model="xgboost">
+                        Usar este modelo →
+                    </button>
+                </div>
+
+                <div class="model-card" data-model="regression">
+                    <div class="model-card-icon">💵</div>
+                    <h2>Predicción de Sueldo</h2>
+                    <p class="model-card-description">
+                        Estima el <strong>sueldo en USD</strong> que debería ganar un trabajador según su perfil.
+                    </p>
+                    <ul class="model-features">
+                        <li>✓ Target: Sueldo Neto (USD)</li>
+                        <li>✓ R² Score: 29.5%</li>
+                        <li>✓ Error promedio: $831 USD</li>
+                        <li>✓ Top predictor: Ratio Experiencia/Edad</li>
+                    </ul>
+                    <button class="select-model-btn" data-model="regression">
+                        Usar este modelo →
+                    </button>
+                </div>
+
+                <div class="model-card" data-model="regression-futuro">
+                    <div class="model-card-icon">📈</div>
+                    <h2>Sueldo Futuro (ARS)</h2>
+                    <p class="model-card-description">
+                        Proyecta el <strong>sueldo en Pesos (ARS)</strong> considerando la tendencia temporal del mercado.
+                    </p>
+                    <ul class="model-features">
+                        <li>✓ Target: Sueldo Futuro (ARS)</li>
+                        <li>✓ R² Score: 32.6%</li>
+                        <li>✓ Error promedio: $850K ARS</li>
+                        <li>✓ Incluye variable temporal (año)</li>
+                    </ul>
+                    <button class="select-model-btn" data-model="regression-futuro">
+                        Usar este modelo →
+                    </button>
+                </div>
+            </div>
+
+            <div class="selection-footer">
+                <p>💡 <strong>Tip:</strong> Puedes cambiar de modelo en cualquier momento desde el menú principal</p>
             </div>
         </div>
-    </nav>
+    </div>
+
+    <!-- Main Application (hidden initially) -->
+    <div id="main-app" class="main-app" style="display: none;">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h1 id="app-title">📊 Análisis de Remuneración</h1>
+                    <p id="model-subtitle">Machine Learning con Random Forest</p>
+                </div>
+                <div class="nav-actions">
+                    <button id="change-model-btn" class="change-model-btn">
+                        🔄 Cambiar Modelo
+                    </button>
+                    <div class="nav-status">
+                        <span id="status-indicator" class="status-dot"></span>
+                        <span id="status-text">Conectando...</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
 
     <!-- Main Container -->
     <div class="container">
@@ -37,6 +145,9 @@
                 </button>
                 <button class="menu-btn" data-section="predict">
                     🎯 Realizar Predicción
+                </button>
+                <button class="menu-btn" data-section="clustering">
+                    🎨 Clustering Interactivo
                 </button>
                 <button class="menu-btn" data-section="graphics">
                     📸 Gráficas
@@ -225,10 +336,28 @@
             <section id="predict" class="content-section">
                 <h2>🎯 Realizar Predicción</h2>
                 
-                <div class="predict-container">
+                <!-- Contenedor para modelos de clasificación -->
+                <div id="classification-container" class="predict-container">
                     <div class="predict-form">
+                        <div class="model-selector-box">
+                            <h3>🎯 Selecciona el Modelo a Usar</h3>
+                            <div class="form-group">
+                                <label for="model-select">Tipo de Predicción</label>
+                                <select id="model-select" class="form-input model-select">
+                                    <option value="satisfaction">Satisfacción Salarial (¿Estás conforme con tu sueldo?)</option>
+                                    <option value="seniority">Bien Pagado (¿Ganas más que el promedio de tu grupo?)</option>
+                                    <option value="xgboost">Búsqueda de Trabajo (¿Estás buscando empleo activamente?)</option>
+                                    <option value="regression">Predicción de Sueldo (¿Cuánto deberías ganar?)</option>
+                                </select>
+                            </div>
+                            <div class="model-description" id="model-description">
+                                <p><strong>Modelo de Satisfacción:</strong> Predice si estás conforme con tus ingresos laborales basado en tus características.</p>
+                            </div>
+                        </div>
+
                         <h3>Ingresa los datos del trabajador</h3>
                         
+                        <!-- Campos comunes a todos los modelos -->
                         <div class="form-group">
                             <label for="pred-edad">Edad</label>
                             <input type="number" id="pred-edad" class="form-input" placeholder="Ej: 30" min="18" max="80" value="30">
@@ -237,11 +366,6 @@
                         <div class="form-group">
                             <label for="pred-exp">Años de Experiencia</label>
                             <input type="number" id="pred-exp" class="form-input" placeholder="Ej: 5" min="0" max="60" value="5">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="pred-antig">Antigüedad en Empresa Actual (años)</label>
-                            <input type="number" id="pred-antig" class="form-input" placeholder="Ej: 2" min="0" max="60" value="2">
                         </div>
 
                         <div class="form-group">
@@ -255,23 +379,150 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="pred-bruto">Salario Bruto (pesos)</label>
-                            <input type="number" id="pred-bruto" class="form-input" placeholder="Ej: 1000000" min="0" value="1000000">
+                            <label for="pred-org">Cantidad de Personas en tu Organización</label>
+                            <select id="pred-org" class="form-input">
+                                <option value="1-10">1-10</option>
+                                <option value="11-50" selected>11-50</option>
+                                <option value="51-100">51-100</option>
+                                <option value="101-200">101-200</option>
+                                <option value="201-500">201-500</option>
+                                <option value="501-1000">501-1000</option>
+                                <option value="1001-5000">1001-5000</option>
+                                <option value="5001+">5001+</option>
+                            </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="pred-neto">Salario Neto (pesos)</label>
-                            <input type="number" id="pred-neto" class="form-input" placeholder="Ej: 850000" min="0" value="850000">
+                            <label for="pred-trabajo">Trabajo de</label>
+                            <select id="pred-trabajo" class="form-input">
+                                <option value="Developer">Developer</option>
+                                <option value="QA / Tester">QA / Tester</option>
+                                <option value="DevOps">DevOps</option>
+                                <option value="Analista">Analista</option>
+                                <option value="Tech Lead">Tech Lead</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Arquitecto">Arquitecto</option>
+                                <option value="Otro">Otro</option>
+                            </select>
                         </div>
 
                         <div class="form-group">
+                            <label for="pred-dedicacion">Dedicación</label>
+                            <select id="pred-dedicacion" class="form-input">
+                                <option value="Full-Time" selected>Full-Time</option>
+                                <option value="Part-Time">Part-Time</option>
+                                <option value="Freelance">Freelance</option>
+                            </select>
+                        </div>
+
+                        <!-- Campos solo para modelo XGBoost -->
+                        <div class="form-group model-field" data-models="xgboost" style="display: none;">
+                            <label for="pred-estudios">Estado de Estudios</label>
+                            <select id="pred-estudios" class="form-input">
+                                <option value="Terciario en curso">Terciario en curso</option>
+                                <option value="Terciario completo">Terciario completo</option>
+                                <option value="Universitario en curso">Universitario en curso</option>
+                                <option value="Universitario completo" selected>Universitario completo</option>
+                                <option value="Posgrado en curso">Posgrado en curso</option>
+                                <option value="Posgrado completo">Posgrado completo</option>
+                                <option value="Secundario">Secundario</option>
+                            </select>
+                        </div>
+
+                        <!-- Campos adicionales para modelo Seniority -->
+                        <div class="form-group model-field" data-models="seniority" style="display: none;">
+                            <label for="pred-year">Año</label>
+                            <input type="number" id="pred-year" class="form-input" placeholder="Ej: 2024" min="2020" max="2025" value="2024">
+                        </div>
+
+                        <div class="form-group model-field" data-models="seniority" style="display: none;">
+                            <label for="pred-genero">Género</label>
+                            <select id="pred-genero" class="form-input">
+                                <option value="Hombre">Hombre</option>
+                                <option value="Mujer">Mujer</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group model-field" data-models="seniority" style="display: none;">
+                            <label for="pred-donde-trabajando">¿Dónde estás trabajando?</label>
+                            <select id="pred-donde-trabajando" class="form-input">
+                                <option value="Argentina">Argentina</option>
+                                <option value="Uruguay">Uruguay</option>
+                                <option value="Chile">Chile</option>
+                                <option value="México">México</option>
+                                <option value="Colombia">Colombia</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group model-field" data-models="seniority" style="display: none;">
+                            <label for="pred-antiguedad-empresa">Antigüedad en la Empresa Actual (años)</label>
+                            <input type="number" id="pred-antiguedad-empresa" class="form-input" placeholder="Ej: 3" min="0" max="60" value="3">
+                        </div>
+
+                        <div class="form-group model-field" data-models="seniority" style="display: none;">
+                            <label for="pred-bono">¿Recibís algún tipo de bono?</label>
+                            <select id="pred-bono" class="form-input">
+                                <option value="Si">Sí</option>
+                                <option value="No" selected>No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group model-field" data-models="seniority" style="display: none;">
+                            <label for="pred-modalidad">Modalidad de Trabajo</label>
+                            <select id="pred-modalidad" class="form-input">
+                                <option value="Remoto">Remoto</option>
+                                <option value="Presencial">Presencial</option>
+                                <option value="Híbrido" selected>Híbrido</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group model-field" data-models="seniority" style="display: none;">
+                            <label for="pred-dias-oficina">¿Cuántos días a la semana vas a la oficina?</label>
+                            <input type="number" id="pred-dias-oficina" class="form-input" placeholder="Ej: 2" min="0" max="7" value="2">
+                        </div>
+
+                        <div class="form-group model-field" data-models="seniority" style="display: none;">
+                            <label for="pred-ia">¿Qué tanto estás usando Copilot/ChatGPT u otras herramientas de IA?</label>
+                            <select id="pred-ia" class="form-input">
+                                <option value="0">0 - Nada</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3" selected>3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 - Mucho</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group model-field" data-models="seniority" style="display: none;">
+                            <label for="pred-seniority">Seniority</label>
+                            <select id="pred-seniority" class="form-input">
+                                <option value="Junior">Junior</option>
+                                <option value="Semi-Senior">Semi-Senior</option>
+                                <option value="Senior" selected>Senior</option>
+                                <option value="Lead">Lead</option>
+                                <option value="Principal">Principal</option>
+                            </select>
+                        </div>
+
+                        <!-- Campos comunes para satisfaction y xgboost (no para seniority) -->
+                        <div class="form-group model-field" data-models="satisfaction,xgboost">
                             <label for="pred-bruto-usd">Salario Bruto (dólares)</label>
                             <input type="number" id="pred-bruto-usd" class="form-input" placeholder="Ej: 1000" min="0" step="0.01" value="1000">
                         </div>
 
-                        <div class="form-group">
-                            <label for="pred-neto-usd">Salario Neto (dólares)</label>
-                            <input type="number" id="pred-neto-usd" class="form-input" placeholder="Ej: 850" min="0" step="0.01" value="850">
+                        <div class="form-group model-field" data-models="satisfaction,xgboost">
+                            <label for="pred-ajuste">¿Recibió actualización de ingresos?</label>
+                            <select id="pred-ajuste" class="form-input">
+                                <option value="Si" selected>Sí</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group model-field" data-models="satisfaction,xgboost">
+                            <label for="pred-ajuste-porcentaje">¿De qué fue el ajuste total acumulado? (%)</label>
+                            <input type="number" id="pred-ajuste-porcentaje" class="form-input" placeholder="Ej: 15" min="0" max="200" step="0.1" value="15">
                         </div>
 
                         <button id="predict-btn" class="btn-primary">
@@ -283,7 +534,7 @@
                         <h3>Resultado de la Predicción</h3>
                         
                         <div class="result-box">
-                            <h4>Seniority Predicho</h4>
+                            <h4>Satisfacción con Ingresos</h4>
                             <p id="result-seniority" class="result-value">-</p>
                         </div>
 
@@ -305,6 +556,351 @@
                         </button>
                     </div>
                 </div>
+
+                <!-- Contenedor específico para regresión -->
+                <div id="regression-container" class="regression-container" style="display: none;">
+                    <div class="regression-header">
+                        <h3>💵 Modelo de Regresión Lineal - Predicción de Sueldo</h3>
+                        <p>Estima el sueldo que deberías ganar según tu perfil profesional</p>
+                        
+                        <!-- Selector de tipo de regresión -->
+                        <div class="regression-type-selector">
+                            <label for="regression-type-select">Selecciona el tipo de predicción:</label>
+                            <select id="regression-type-select" class="form-input">
+                                <option value="actual">Sueldo Actual (USD) - Sin tendencia temporal</option>
+                                <option value="futuro">Sueldo Futuro (ARS) - Con tendencia temporal</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="regression-grid">
+                        <!-- Formulario de entrada -->
+                        <div class="regression-form-card">
+                            <h4>📝 Datos de Entrada</h4>
+                            
+                            <!-- Campo Year (solo visible para futuro) -->
+                            <div class="form-group" id="reg-year-group" style="display: none;">
+                                <label for="reg-year">Año de Proyección ⭐</label>
+                                <input type="number" id="reg-year" class="form-input" value="2025" min="2020" max="2030">
+                                <small>Variable temporal para capturar tendencia del mercado</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="reg-exp">Años de Experiencia</label>
+                                <input type="number" id="reg-exp" class="form-input" value="5" min="0" max="50">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reg-antiguedad">Antigüedad en Empresa Actual (años)</label>
+                                <input type="number" id="reg-antiguedad" class="form-input" value="2" min="0" max="50" step="0.5">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reg-puesto">Años en Puesto Actual</label>
+                                <input type="number" id="reg-puesto" class="form-input" value="1.5" min="0" max="50" step="0.5">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reg-cargo">Personas a Cargo</label>
+                                <input type="number" id="reg-cargo" class="form-input" value="0" min="0" max="100">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reg-edad">Edad</label>
+                                <input type="number" id="reg-edad" class="form-input" value="28" min="18" max="80">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reg-trabajo">Trabajo de</label>
+                                <select id="reg-trabajo" class="form-input">
+                                    <option value="Developer">Developer</option>
+                                    <option value="QA / Tester">QA / Tester</option>
+                                    <option value="DevOps">DevOps</option>
+                                    <option value="Analista">Analista</option>
+                                    <option value="Tech Lead">Tech Lead</option>
+                                    <option value="Manager">Manager</option>
+                                    <option value="Data Scientist">Data Scientist</option>
+                                    <option value="Arquitecto">Arquitecto</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reg-seniority">Seniority</label>
+                                <select id="reg-seniority" class="form-input">
+                                    <option value="Junior">Junior</option>
+                                    <option value="Semi-Senior" selected>Semi-Senior</option>
+                                    <option value="Senior">Senior</option>
+                                    <option value="Lead">Lead</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reg-dedicacion">Dedicación</label>
+                                <select id="reg-dedicacion" class="form-input">
+                                    <option value="Full-Time" selected>Full-Time</option>
+                                    <option value="Part-Time">Part-Time</option>
+                                    <option value="Freelance">Freelance</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reg-pais">Dónde estás trabajando</label>
+                                <select id="reg-pais" class="form-input">
+                                    <option value="Argentina" selected>Argentina</option>
+                                    <option value="Uruguay">Uruguay</option>
+                                    <option value="Chile">Chile</option>
+                                    <option value="Colombia">Colombia</option>
+                                    <option value="México">México</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reg-modalidad">Modalidad de Trabajo</label>
+                                <select id="reg-modalidad" class="form-input">
+                                    <option value="Remoto" selected>100% Remoto</option>
+                                    <option value="Híbrido">Híbrido</option>
+                                    <option value="Presencial">Presencial</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reg-org">Tamaño de Organización</label>
+                                <select id="reg-org" class="form-input">
+                                    <option value="1-10">1-10</option>
+                                    <option value="11-50" selected>11-50</option>
+                                    <option value="51-100">51-100</option>
+                                    <option value="101-200">101-200</option>
+                                    <option value="201-500">201-500</option>
+                                    <option value="501-1000">501-1000</option>
+                                    <option value="1001+">1001+</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reg-estudios">Nivel de Estudios</label>
+                                <select id="reg-estudios" class="form-input">
+                                    <option value="Secundario">Secundario</option>
+                                    <option value="Terciario en curso">Terciario en curso</option>
+                                    <option value="Terciario completo">Terciario completo</option>
+                                    <option value="Universitario en curso" selected>Universitario en curso</option>
+                                    <option value="Universitario completo">Universitario completo</option>
+                                    <option value="Posgrado">Posgrado</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reg-genero">Género</label>
+                                <select id="reg-genero" class="form-input">
+                                    <option value="Masculino" selected>Masculino</option>
+                                    <option value="Femenino">Femenino</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reg-bono">¿Recibís bonos?</label>
+                                <select id="reg-bono" class="form-input">
+                                    <option value="No" selected>No</option>
+                                    <option value="Sí">Sí</option>
+                                </select>
+                            </div>
+
+                            <button id="regression-predict-btn" class="btn-primary" style="width: 100%; margin-top: 20px;">
+                                💰 Calcular Sueldo Estimado
+                            </button>
+                        </div>
+
+                        <!-- Resultados de la predicción -->
+                        <div class="regression-results-card">
+                            <div id="regression-results" style="display: none;">
+                                <h4>📊 Resultados de la Predicción</h4>
+                                
+                                <div class="salary-prediction-box">
+                                    <div class="salary-main">
+                                        <span class="salary-label">Sueldo Estimado</span>
+                                        <span class="salary-value" id="reg-salary-value">$0</span>
+                                        <span class="salary-currency">USD/mes (neto)</span>
+                                    </div>
+                                    
+                                    <div class="salary-range">
+                                        <span class="range-label">Rango estimado (±RMSE)</span>
+                                        <div class="range-bar">
+                                            <div class="range-fill" id="reg-range-bar"></div>
+                                        </div>
+                                        <div class="range-values">
+                                            <span id="reg-min-value">$0</span>
+                                            <span id="reg-max-value">$0</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="model-metrics-box">
+                                    <h5>🎯 Métricas del Modelo Ridge</h5>
+                                    <div class="metrics-grid">
+                                        <div class="metric-item">
+                                            <span class="metric-label">R² Score</span>
+                                            <span class="metric-value" id="reg-r2">0.00</span>
+                                            <span class="metric-desc">Varianza explicada</span>
+                                        </div>
+                                        <div class="metric-item">
+                                            <span class="metric-label">MAE</span>
+                                            <span class="metric-value" id="reg-mae">$0</span>
+                                            <span class="metric-desc">Error promedio</span>
+                                        </div>
+                                        <div class="metric-item">
+                                            <span class="metric-label">RMSE</span>
+                                            <span class="metric-value" id="reg-rmse">$0</span>
+                                            <span class="metric-desc">Error cuadrático</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="features-impact-box">
+                                    <h5>🔍 Features Más Influyentes</h5>
+                                    <p class="info-text">Coeficientes del modelo lineal (impacto en USD):</p>
+                                    <div id="reg-coefficients" class="coefficients-list">
+                                        <!-- Se llenará dinámicamente -->
+                                    </div>
+                                </div>
+
+                                <button id="regression-clear-btn" class="btn-secondary" style="width: 100%; margin-top: 20px;">
+                                    🔄 Nueva Predicción
+                                </button>
+                            </div>
+
+                            <div id="regression-placeholder" class="regression-placeholder">
+                                <div class="placeholder-icon">💡</div>
+                                <p>Completa los datos del formulario y presiona <strong>"Calcular Sueldo Estimado"</strong> para ver tu predicción personalizada.</p>
+                                <ul class="placeholder-features">
+                                    <li>✓ Predicción basada en Regresión Lineal (Ridge)</li>
+                                    <li>✓ 24 features con ingeniería de características</li>
+                                    <li>✓ Intervalo de confianza calculado</li>
+                                    <li>✓ Análisis de coeficientes del modelo</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="regression-back-btn" class="btn-secondary" style="margin-top: 20px;">
+                        ← Volver a Clasificación
+                    </button>
+                </div>
+            </section>
+
+            <!-- Clustering Interactive Section -->
+            <section id="clustering" class="content-section">
+                <h2>🎨 Clustering Interactivo con KMeans + PCA</h2>
+                <p class="section-description">
+                    Selecciona las variables del dataset que deseas usar para agrupar los datos. 
+                    El algoritmo KMeans identificará automáticamente patrones y grupos similares.
+                </p>
+
+                <div class="clustering-container">
+                    <!-- Panel de configuración -->
+                    <div class="clustering-config-panel">
+                        <h3>⚙️ Configuración</h3>
+                        
+                        <!-- Selector de columnas -->
+                        <div class="form-group">
+                            <label>
+                                <strong>Selecciona Variables</strong>
+                                <span class="tooltip-icon" title="Elige las columnas del dataset que quieres usar para clustering">ℹ️</span>
+                            </label>
+                            <div class="column-selector-container" id="column-selector">
+                                <p class="loading-text">Cargando columnas disponibles...</p>
+                            </div>
+                            <p class="help-text">
+                                <span id="selected-count">0</span> variables seleccionadas
+                                | <a href="#" id="select-all-cols">Seleccionar todas</a>
+                                | <a href="#" id="deselect-all-cols">Deseleccionar todas</a>
+                            </p>
+                        </div>
+
+                        <!-- Número de clusters -->
+                        <div class="form-group">
+                            <label for="num-clusters">
+                                <strong>Número de Clusters (k)</strong>
+                            </label>
+                            <select id="num-clusters" class="form-input">
+                                <option value="auto">Automático (mejor k por silhouette)</option>
+                                <option value="2">2 clusters</option>
+                                <option value="3">3 clusters</option>
+                                <option value="4">4 clusters</option>
+                                <option value="5">5 clusters</option>
+                                <option value="6">6 clusters</option>
+                                <option value="7">7 clusters</option>
+                                <option value="8">8 clusters</option>
+                                <option value="9">9 clusters</option>
+                                <option value="10">10 clusters</option>
+                            </select>
+                            <p class="help-text">Deja en "Automático" para encontrar el k óptimo</p>
+                        </div>
+
+                        <!-- Botones de acción -->
+                        <div class="clustering-actions">
+                            <button id="run-clustering-btn" class="btn-primary" disabled>
+                                🚀 Ejecutar Clustering
+                            </button>
+                            <button id="reset-clustering-btn" class="btn-secondary">
+                                🔄 Reiniciar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Panel de resultados -->
+                    <div class="clustering-results-panel" id="clustering-results" style="display: none;">
+                        <h3>📊 Resultados del Clustering</h3>
+                        
+                        <!-- Métricas principales -->
+                        <div class="clustering-metrics">
+                            <div class="metric-card">
+                                <div class="metric-label">Clusters Encontrados</div>
+                                <div class="metric-value" id="clusters-found">-</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-label">Silhouette Score</div>
+                                <div class="metric-value" id="silhouette-score">-</div>
+                                <div class="metric-help">Mayor es mejor (máx. 1.0)</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-label">Varianza Explicada (PCA)</div>
+                                <div class="metric-value" id="variance-explained">-</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-label">Muestras Analizadas</div>
+                                <div class="metric-value" id="samples-analyzed">-</div>
+                            </div>
+                        </div>
+
+                        <!-- Visualización -->
+                        <div class="clustering-visualization">
+                            <h4>📈 Proyección PCA (2D)</h4>
+                            <canvas id="clustering-chart" width="800" height="500"></canvas>
+                        </div>
+
+                        <!-- Tabla de estadísticas por cluster -->
+                        <div class="clustering-stats">
+                            <h4>📋 Estadísticas por Cluster</h4>
+                            <div class="table-responsive" id="cluster-stats-table">
+                                <!-- Tabla generada dinámicamente -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder cuando no hay resultados -->
+                    <div class="clustering-placeholder" id="clustering-placeholder">
+                        <div class="placeholder-icon">🎨</div>
+                        <h3>¡Comienza tu análisis de clustering!</h3>
+                        <p>Selecciona las variables que deseas analizar y haz clic en "Ejecutar Clustering"</p>
+                        <ul class="placeholder-tips">
+                            <li>💡 Puedes combinar variables numéricas y categóricas</li>
+                            <li>💡 El algoritmo aplicará One-Hot Encoding automáticamente</li>
+                            <li>💡 PCA reducirá la dimensionalidad para visualización</li>
+                            <li>💡 KMeans encontrará grupos naturales en los datos</li>
+                        </ul>
+                    </div>
+                </div>
             </section>
 
             <!-- Graphics Section -->
@@ -317,6 +913,7 @@
             </section>
         </main>
     </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -324,8 +921,10 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="api.js"></script>
     <script src="ui.js"></script>
+    <script src="clustering.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

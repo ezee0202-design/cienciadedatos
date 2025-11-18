@@ -25,40 +25,189 @@ BACKEND_DIR = Path(__file__).parent
 MODEL_PATH = BACKEND_DIR / 'random_forest_model.pkl'
 FEATURES_PATH = BACKEND_DIR / 'features.json'
 RESULTS_PATH = BACKEND_DIR / 'analysis_results.json'
+
+# Paths para modelo de seniority
+SENIORITY_MODEL_PATH = BACKEND_DIR / 'seniority_model.pkl'
+SENIORITY_FEATURES_PATH = BACKEND_DIR / 'seniority_features.json'
+SENIORITY_RESULTS_PATH = BACKEND_DIR / 'seniority_analysis.json'
+
+# Paths para modelo XGBoost
+XGBOOST_MODEL_PATH = BACKEND_DIR / 'xgboost_model.pkl'
+XGBOOST_FEATURES_PATH = BACKEND_DIR / 'xgboost_features.json'
+XGBOOST_RESULTS_PATH = BACKEND_DIR / 'xgboost_analysis.json'
+
+# Paths para modelo de regresión de sueldo
+REGRESSION_MODEL_PATH = BACKEND_DIR / 'regression_salary_model.pkl'
+REGRESSION_SCALER_PATH = BACKEND_DIR / 'regression_salary_scaler.pkl'
+REGRESSION_FEATURES_PATH = BACKEND_DIR / 'regression_salary_features.json'
+REGRESSION_RESULTS_PATH = BACKEND_DIR / 'regression_salary_analysis.json'
+
+# Paths para modelo de regresión de sueldo futuro (ARS)
+REGRESSION_FUTURO_MODEL_PATH = BACKEND_DIR / 'regression_futuro_model.pkl'
+REGRESSION_FUTURO_SCALER_PATH = BACKEND_DIR / 'regression_futuro_scaler.pkl'
+REGRESSION_FUTURO_FEATURES_PATH = BACKEND_DIR / 'regression_futuro_features.json'
+REGRESSION_FUTURO_RESULTS_PATH = BACKEND_DIR / 'regression_futuro_analysis.json'
+
 FRONTEND_DIR = BACKEND_DIR.parent / 'frontend'
 
-# Variables globales para almacenar modelo y datos
+# Variables globales para almacenar modelos y datos
 model = None
 features = None
 analysis_results = None
 
+seniority_model = None
+seniority_features = None
+seniority_analysis_results = None
+
+xgboost_model = None
+xgboost_features = None
+xgboost_analysis_results = None
+
+regression_model = None
+regression_scaler = None
+regression_features = None
+regression_analysis_results = None
+
+regression_futuro_model = None
+regression_futuro_scaler = None
+regression_futuro_features = None
+regression_futuro_analysis_results = None
+
 def load_model():
-    """Cargar el modelo entrenado"""
+    """Cargar los modelos entrenados"""
     global model, features, analysis_results
+    global seniority_model, seniority_features, seniority_analysis_results
+    global xgboost_model, xgboost_features, xgboost_analysis_results
+    global regression_model, regression_scaler, regression_features, regression_analysis_results
+    global regression_futuro_model, regression_futuro_scaler, regression_futuro_features, regression_futuro_analysis_results
     
+    # Cargar modelo de satisfacción
     try:
         with open(MODEL_PATH, 'rb') as f:
             model = pickle.load(f)
-        print("✓ Modelo cargado correctamente")
+        print("✓ Modelo de satisfacción cargado correctamente")
     except Exception as e:
-        print(f"❌ Error al cargar modelo: {e}")
+        print(f"❌ Error al cargar modelo de satisfacción: {e}")
         return False
     
     try:
         with open(FEATURES_PATH, 'r') as f:
             features = json.load(f)['features']
-        print("✓ Features cargadas correctamente")
+        print("✓ Features de satisfacción cargadas correctamente")
     except Exception as e:
-        print(f"❌ Error al cargar features: {e}")
+        print(f"❌ Error al cargar features de satisfacción: {e}")
         return False
     
     try:
         with open(RESULTS_PATH, 'r', encoding='utf-8') as f:
             analysis_results = json.load(f)
-        print("✓ Resultados del análisis cargados correctamente")
+        print("✓ Resultados del análisis de satisfacción cargados correctamente")
     except Exception as e:
-        print(f"❌ Error al cargar resultados: {e}")
+        print(f"❌ Error al cargar resultados de satisfacción: {e}")
         return False
+    
+    # Cargar modelo de seniority/bien_pagado
+    try:
+        with open(SENIORITY_MODEL_PATH, 'rb') as f:
+            seniority_model = pickle.load(f)
+        print("✓ Modelo de seniority cargado correctamente")
+    except Exception as e:
+        print(f"❌ Error al cargar modelo de seniority: {e}")
+        # No es crítico si falta este modelo
+    
+    try:
+        with open(SENIORITY_FEATURES_PATH, 'r') as f:
+            seniority_features = json.load(f)['features']
+        print("✓ Features de seniority cargadas correctamente")
+    except Exception as e:
+        print(f"❌ Error al cargar features de seniority: {e}")
+    
+    try:
+        with open(SENIORITY_RESULTS_PATH, 'r', encoding='utf-8') as f:
+            seniority_analysis_results = json.load(f)
+        print("✓ Resultados del análisis de seniority cargados correctamente")
+    except Exception as e:
+        print(f"❌ Error al cargar resultados de seniority: {e}")
+    
+    # Cargar modelo XGBoost
+    try:
+        with open(XGBOOST_MODEL_PATH, 'rb') as f:
+            xgboost_model = pickle.load(f)
+        print("✓ Modelo XGBoost cargado correctamente")
+    except Exception as e:
+        print(f"❌ Error al cargar modelo XGBoost: {e}")
+    
+    try:
+        with open(XGBOOST_FEATURES_PATH, 'r') as f:
+            xgboost_features = json.load(f)['features']
+        print("✓ Features de XGBoost cargadas correctamente")
+    except Exception as e:
+        print(f"❌ Error al cargar features de XGBoost: {e}")
+    
+    try:
+        with open(XGBOOST_RESULTS_PATH, 'r', encoding='utf-8') as f:
+            xgboost_analysis_results = json.load(f)
+        print("✓ Resultados del análisis de XGBoost cargados correctamente")
+    except Exception as e:
+        print(f"❌ Error al cargar resultados de XGBoost: {e}")
+    
+    # Cargar modelo de regresión de sueldo
+    try:
+        with open(REGRESSION_MODEL_PATH, 'rb') as f:
+            regression_model = pickle.load(f)
+        print("✓ Modelo de regresión de sueldo cargado correctamente")
+    except Exception as e:
+        print(f"❌ Error al cargar modelo de regresión: {e}")
+    
+    try:
+        with open(REGRESSION_SCALER_PATH, 'rb') as f:
+            regression_scaler = pickle.load(f)
+        print("✓ Scaler de regresión cargado correctamente")
+    except Exception as e:
+        print(f"❌ Error al cargar scaler de regresión: {e}")
+    
+    try:
+        with open(REGRESSION_FEATURES_PATH, 'r') as f:
+            regression_features = json.load(f)['features']
+        print("✓ Features de regresión cargadas correctamente")
+    except Exception as e:
+        print(f"❌ Error al cargar features de regresión: {e}")
+    
+    try:
+        with open(REGRESSION_RESULTS_PATH, 'r', encoding='utf-8') as f:
+            regression_analysis_results = json.load(f)
+        print("✓ Resultados del análisis de regresión cargados correctamente")
+    except Exception as e:
+        print(f"❌ Error al cargar resultados de regresión: {e}")
+    
+    # Cargar modelo de regresión de sueldo futuro (ARS)
+    try:
+        with open(REGRESSION_FUTURO_MODEL_PATH, 'rb') as f:
+            regression_futuro_model = pickle.load(f)
+        print("✓ Modelo de regresión de sueldo futuro cargado correctamente")
+    except Exception as e:
+        print(f"❌ Error al cargar modelo de regresión futuro: {e}")
+    
+    try:
+        with open(REGRESSION_FUTURO_SCALER_PATH, 'rb') as f:
+            regression_futuro_scaler = pickle.load(f)
+        print("✓ Scaler de regresión futuro cargado correctamente")
+    except Exception as e:
+        print(f"❌ Error al cargar scaler de regresión futuro: {e}")
+    
+    try:
+        with open(REGRESSION_FUTURO_FEATURES_PATH, 'r') as f:
+            regression_futuro_features = json.load(f)['features']
+        print("✓ Features de regresión futuro cargadas correctamente")
+    except Exception as e:
+        print(f"❌ Error al cargar features de regresión futuro: {e}")
+    
+    try:
+        with open(REGRESSION_FUTURO_RESULTS_PATH, 'r', encoding='utf-8') as f:
+            regression_futuro_analysis_results = json.load(f)
+        print("✓ Resultados del análisis de regresión futuro cargados correctamente")
+    except Exception as e:
+        print(f"❌ Error al cargar resultados de regresión futuro: {e}")
     
     return True
 
@@ -76,22 +225,49 @@ def health():
 
 @app.route('/api/analysis-info', methods=['GET'])
 def get_analysis_info():
-    """Obtener información general del análisis"""
-    if analysis_results is None:
-        return jsonify({'error': 'Datos de análisis no disponibles'}), 500
+    """Obtener información general del análisis según el modelo"""
+    model_type = request.args.get('model', 'satisfaction')
     
-    return jsonify({
-        'status': 'success',
-        'data': analysis_results
-    }), 200
+    if model_type == 'seniority':
+        if seniority_analysis_results is None:
+            return jsonify({'error': 'Datos de análisis seniority no disponibles'}), 500
+        return jsonify({
+            'status': 'success',
+            'data': seniority_analysis_results
+        }), 200
+    elif model_type == 'xgboost':
+        if xgboost_analysis_results is None:
+            return jsonify({'error': 'Datos de análisis XGBoost no disponibles'}), 500
+        return jsonify({
+            'status': 'success',
+            'data': xgboost_analysis_results
+        }), 200
+    else:
+        if analysis_results is None:
+            return jsonify({'error': 'Datos de análisis no disponibles'}), 500
+        return jsonify({
+            'status': 'success',
+            'data': analysis_results
+        }), 200
 
 @app.route('/api/model-metrics', methods=['GET'])
 def get_model_metrics():
-    """Obtener métricas del modelo"""
-    if analysis_results is None:
-        return jsonify({'error': 'Datos no disponibles'}), 500
+    """Obtener métricas del modelo según tipo"""
+    model_type = request.args.get('model', 'satisfaction')
     
-    metrics = analysis_results.get('model_metrics', {})
+    if model_type == 'seniority':
+        if seniority_analysis_results is None:
+            return jsonify({'error': 'Datos no disponibles'}), 500
+        metrics = seniority_analysis_results.get('model_metrics', {})
+    elif model_type == 'xgboost':
+        if xgboost_analysis_results is None:
+            return jsonify({'error': 'Datos no disponibles'}), 500
+        metrics = xgboost_analysis_results.get('model_metrics', {})
+    else:
+        if analysis_results is None:
+            return jsonify({'error': 'Datos no disponibles'}), 500
+        metrics = analysis_results.get('model_metrics', {})
+    
     return jsonify({
         'status': 'success',
         'metrics': metrics
@@ -128,53 +304,100 @@ def get_dataset_info():
 def predict():
     """
     Realizar predicción con el modelo Random Forest
+    Soporta tres tipos de modelos: 'satisfaction', 'seniority' o 'xgboost'
     
     Esperado JSON:
     {
+        "model_type": "satisfaction" | "seniority" | "xgboost",  // opcional, default "satisfaction"
         "tengo_edad": 30,
-        "Años de experiencia": 5,
-        "antiguedad_en_la_empresa_actual": 2,
-        "Años en el puesto actual": 2,
-        "cuantas_personas_tenes_a_cargo": 0,
-        "ultimo_salario_mensual_o_retiro_bruto_en_pesos_argentinos": 1000000,
-        "ultimo_salario_mensual_o_retiro_neto_en_pesos_argentinos": 850000,
-        "sueldo_bruto_en_dolares": 1000,
-        "sueldo_neto_en_dolares": 850
+        "anos_de_experiencia": 5,
+        ... otros campos
     }
     """
-    if model is None or features is None:
-        return jsonify({
-            'status': 'error',
-            'message': 'Modelo no cargado'
-        }), 500
-    
     try:
         data = request.json
         
+        # Determinar qué modelo usar
+        model_type = data.get('model_type', 'satisfaction')
+        
+        # Seleccionar modelo y features correspondientes
+        if model_type == 'seniority':
+            if seniority_model is None or seniority_features is None:
+                return jsonify({
+                    'status': 'error',
+                    'message': 'Modelo de seniority no disponible'
+                }), 500
+            selected_model = seniority_model
+            selected_features = seniority_features
+            
+        elif model_type == 'xgboost':
+            if xgboost_model is None or xgboost_features is None:
+                return jsonify({
+                    'status': 'error',
+                    'message': 'Modelo XGBoost no disponible'
+                }), 500
+            selected_model = xgboost_model
+            selected_features = xgboost_features
+            
+        else:
+            if model is None or features is None:
+                return jsonify({
+                    'status': 'error',
+                    'message': 'Modelo de satisfacción no cargado'
+                }), 500
+            selected_model = model
+            selected_features = features
+        
         # Validar que todos los features están presentes
-        missing_features = [f for f in features if f not in data]
+        missing_features = [f for f in selected_features if f not in data]
         if missing_features:
             return jsonify({
                 'status': 'error',
                 'message': f'Faltan features: {missing_features}'
             }), 400
         
-        # Preparar datos para predicción
-        input_data = np.array([[data[f] for f in features]])
+        # Preparar datos como DataFrame
+        input_df = pd.DataFrame([data], columns=selected_features)
+        
+        # Para modelos que no usan Pipeline (seniority y xgboost): encodear categóricas
+        if model_type == 'seniority':
+            # Cargar info de features categóricas
+            with open(SENIORITY_FEATURES_PATH, 'r') as f:
+                seniority_features_info = json.load(f)
+            
+            categorical_cols = seniority_features_info.get('categorical_features', [])
+            
+            # Factorizar cada columna categórica
+            for col in categorical_cols:
+                if col in input_df.columns:
+                    input_df[col] = pd.factorize(input_df[col].astype(str))[0]
+        
+        elif model_type == 'xgboost':
+            # Cargar info de features categóricas
+            with open(XGBOOST_FEATURES_PATH, 'r') as f:
+                xgb_features_info = json.load(f)
+            
+            categorical_cols = xgb_features_info.get('categorical_features', [])
+            
+            # Factorizar cada columna categórica
+            for col in categorical_cols:
+                if col in input_df.columns:
+                    input_df[col] = pd.factorize(input_df[col].astype(str))[0]
         
         # Realizar predicción
-        prediction = model.predict(input_data)[0]
-        probabilities = model.predict_proba(input_data)[0]
+        prediction = selected_model.predict(input_df)[0]
+        probabilities = selected_model.predict_proba(input_df)[0]
         
-        # Crear respuesta
-        prob_dict = {class_label: float(prob) 
-                    for class_label, prob in zip(model.classes_, probabilities)}
+        # Crear respuesta con conversión explícita a tipos Python nativos
+        prob_dict = {str(class_label): float(prob) 
+                    for class_label, prob in zip(selected_model.classes_, probabilities)}
         
         return jsonify({
             'status': 'success',
             'prediction': str(prediction),
             'probabilities': prob_dict,
-            'confidence': float(max(probabilities))
+            'confidence': float(max(probabilities)),
+            'model_type': model_type
         }), 200
     
     except Exception as e:
@@ -283,15 +506,21 @@ def get_model_info():
             'message': 'Modelo no disponible'
         }), 500
     
+    # Si es un Pipeline, obtener el RandomForest del pipeline
+    if hasattr(model, 'named_steps'):
+        rf_model = model.named_steps.get('rf', model)
+    else:
+        rf_model = model
+    
     return jsonify({
         'status': 'success',
         'model_info': {
-            'type': 'Random Forest Classifier',
-            'n_estimators': model.n_estimators,
-            'max_depth': model.max_depth,
-            'n_features': model.n_features_in_,
-            'n_classes': len(model.classes_),
-            'classes': list(model.classes_)
+            'type': 'Random Forest Classifier (Pipeline)',
+            'n_estimators': int(rf_model.n_estimators),
+            'max_depth': int(rf_model.max_depth) if rf_model.max_depth else None,
+            'n_features': int(rf_model.n_features_in_),
+            'n_classes': int(len(rf_model.classes_)),
+            'classes': [str(c) for c in rf_model.classes_]
         }
     }), 200
 
@@ -317,6 +546,481 @@ def get_features():
     if features is None:
         return jsonify({'status': 'error', 'message': 'Features no disponibles'}), 500
     return jsonify({'status': 'success', 'features': features}), 200
+
+# ============================================================================
+# ENDPOINT DE REGRESIÓN DE SUELDO
+# ============================================================================
+
+@app.route('/api/predict-salary', methods=['POST'])
+def predict_salary():
+    """Predecir sueldo usando el modelo de regresión lineal"""
+    try:
+        # Validar que el modelo esté cargado
+        if regression_model is None or regression_scaler is None:
+            return jsonify({
+                'status': 'error',
+                'message': 'Modelo de regresión no disponible'
+            }), 500
+        
+        # Obtener datos del request
+        data = request.get_json()
+        
+        if not data:
+            return jsonify({
+                'status': 'error',
+                'message': 'No se recibieron datos'
+            }), 400
+        
+        # Crear DataFrame con los datos base (15 features originales del modelo)
+        base_features = {
+            'anos_de_experiencia': float(data.get('anos_experiencia', 5)),
+            'antiguedad_en_la_empresa_actual': float(data.get('antiguedad_empresa', 2)),
+            'anos_en_el_puesto_actual': float(data.get('anos_puesto', 1.5)),
+            'cuantas_personas_tenes_a_cargo': float(data.get('personas_cargo', 0)),
+            'tengo_edad': float(data.get('edad', 28)),
+        }
+        
+        # Factorizar categorías
+        categorical_features = {
+            'trabajo_de': data.get('trabajo_de', 'Developer'),
+            'seniority': data.get('seniority', 'Semi-Senior'),
+            'dedicacion': data.get('dedicacion', 'Full-Time'),
+            'donde_estas_trabajando': data.get('donde_trabajando', 'Argentina'),
+            'modalidad_de_trabajo': data.get('modalidad', 'Remoto'),
+            'cantidad_de_personas_en_tu_organizacion': data.get('tamano_org', '11-50'),
+            'estudios_estado': data.get('estudios', 'Universitario en curso'),
+            'genero': data.get('genero', 'Masculino'),
+            'que_tanto_estas_usando_copilotchatgpt_u_otras_herramientas_de_ia_para_tu_trabajo': data.get('uso_ia', '3')
+        }
+        
+        # Factorizar las categóricas
+        for key, value in categorical_features.items():
+            base_features[key] = float(pd.factorize([str(value)])[0][0])
+        
+        # Bono (binario)
+        base_features['recibis_algun_tipo_de_bono'] = 1.0 if data.get('recibe_bono', 'No') == 'Sí' else 0.0
+        
+        # Crear DataFrame
+        input_df = pd.DataFrame([base_features])
+        
+        # Feature Engineering (igual que en generate_regression_model.py)
+        # Ratios
+        input_df['ratio_exp_edad'] = input_df['anos_de_experiencia'] / (input_df['tengo_edad'] + 1)
+        input_df['ratio_puesto_exp'] = input_df['anos_en_el_puesto_actual'] / (input_df['anos_de_experiencia'] + 1)
+        input_df['ratio_antiguedad_exp'] = input_df['antiguedad_en_la_empresa_actual'] / (input_df['tengo_edad'] + 1)
+        
+        # Indicadores booleanos de seniority
+        seniority_val = str(data.get('seniority', 'Semi-Senior')).lower()
+        input_df['es_senior'] = 1.0 if 'senior' in seniority_val and 'semi' not in seniority_val else 0.0
+        input_df['es_junior'] = 1.0 if 'junior' in seniority_val else 0.0
+        
+        trabajo_val = str(data.get('trabajo_de', 'Developer')).lower()
+        input_df['es_manager'] = 1.0 if 'manager' in trabajo_val or 'lead' in trabajo_val else 0.0
+        input_df['es_developer'] = 1.0 if 'developer' in trabajo_val or 'dev' in trabajo_val else 0.0
+        
+        # Polinomios
+        input_df['exp_squared'] = input_df['anos_de_experiencia'] ** 2
+        input_df['edad_squared'] = input_df['tengo_edad'] ** 2
+        
+        # Asegurar que las columnas estén en el mismo orden que el modelo
+        input_df = input_df[regression_features]
+        
+        # Escalar
+        input_scaled = regression_scaler.transform(input_df)
+        
+        # Predecir
+        prediction = regression_model.predict(input_scaled)[0]
+        
+        # Calcular intervalo de confianza (basado en RMSE del modelo)
+        rmse = regression_analysis_results.get('model_comparison', {}).get('Ridge', {}).get('rmse', 1217)
+        confidence_interval = {
+            'lower': max(0, prediction - rmse),
+            'upper': prediction + rmse
+        }
+        
+        # Obtener coeficientes del modelo para mostrar en frontend
+        coefficients_data = []
+        try:
+            coef_values = regression_model.coef_
+            feature_names = regression_features
+            
+            # Crear lista de coeficientes con nombres
+            for i, (fname, coef_val) in enumerate(zip(feature_names, coef_values)):
+                coefficients_data.append({
+                    'feature': fname,
+                    'value': float(coef_val)
+                })
+            
+            # Ordenar por valor absoluto (más influyentes primero)
+            coefficients_data.sort(key=lambda x: abs(x['value']), reverse=True)
+        except Exception as e:
+            print(f"⚠️ No se pudieron obtener coeficientes: {e}")
+        
+        return jsonify({
+            'status': 'success',
+            'prediction': {
+                'salary_usd': round(prediction, 2),
+                'confidence_interval': confidence_interval,
+                'model_info': {
+                    'type': 'Ridge Regression',
+                    'r2_score': regression_analysis_results.get('model_comparison', {}).get('Ridge', {}).get('r2_test', 0.29),
+                    'mae': regression_analysis_results.get('model_comparison', {}).get('Ridge', {}).get('mae', 831)
+                }
+            },
+            'coefficients': coefficients_data[:15]  # Top 15 coeficientes
+        }), 200
+        
+    except Exception as e:
+        print(f"❌ Error en predict_salary: {e}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({
+            'status': 'error',
+            'message': f'Error al predecir: {str(e)}'
+        }), 500
+
+@app.route('/api/predict-salary-futuro', methods=['POST'])
+def predict_salary_futuro():
+    """Predecir sueldo futuro (ARS) usando el modelo de regresión lineal con variable temporal"""
+    try:
+        # Validar que el modelo esté cargado
+        if regression_futuro_model is None or regression_futuro_scaler is None:
+            return jsonify({
+                'status': 'error',
+                'message': 'Modelo de regresión futuro no disponible'
+            }), 500
+        
+        # Obtener datos del request
+        data = request.get_json()
+        
+        if not data:
+            return jsonify({
+                'status': 'error',
+                'message': 'No se recibieron datos'
+            }), 400
+        
+        # Crear DataFrame con los datos base
+        base_features = {
+            'year': float(data.get('year', 2025)),  # ⭐ Variable temporal
+            'anos_de_experiencia': float(data.get('anos_experiencia', 5)),
+            'antiguedad_en_la_empresa_actual': float(data.get('antiguedad_empresa', 2)),
+            'anos_en_el_puesto_actual': float(data.get('anos_puesto', 1.5)),
+            'cuantas_personas_tenes_a_cargo': float(data.get('personas_cargo', 0)),
+            'tengo_edad': float(data.get('edad', 28)),
+        }
+        
+        # Factorizar categorías
+        categorical_features = {
+            'trabajo_de': data.get('trabajo_de', 'Developer'),
+            'seniority': data.get('seniority', 'Semi-Senior'),
+            'dedicacion': data.get('dedicacion', 'Full-Time'),
+            'donde_estas_trabajando': data.get('donde_trabajando', 'Argentina'),
+            'modalidad_de_trabajo': data.get('modalidad', 'Remoto'),
+            'cantidad_de_personas_en_tu_organizacion': data.get('tamano_org', '11-50'),
+            'estudios_estado': data.get('estudios', 'Universitario en curso'),
+            'genero': data.get('genero', 'Masculino'),
+            'que_tanto_estas_usando_copilotchatgpt_u_otras_herramientas_de_ia_para_tu_trabajo': data.get('uso_ia', '3')
+        }
+        
+        # Factorizar las categóricas
+        for key, value in categorical_features.items():
+            base_features[key] = float(pd.factorize([str(value)])[0][0])
+        
+        # Bono (binario)
+        base_features['recibis_algun_tipo_de_bono'] = 1.0 if data.get('recibe_bono', 'No') == 'Sí' else 0.0
+        
+        # Crear DataFrame
+        input_df = pd.DataFrame([base_features])
+        
+        # Feature Engineering (igual que en generate_regression_futuro.py)
+        # Ratios
+        input_df['ratio_exp_edad'] = input_df['anos_de_experiencia'] / (input_df['tengo_edad'] + 1)
+        input_df['ratio_puesto_exp'] = input_df['anos_en_el_puesto_actual'] / (input_df['anos_de_experiencia'] + 1)
+        input_df['ratio_antiguedad_exp'] = input_df['antiguedad_en_la_empresa_actual'] / (input_df['tengo_edad'] + 1)
+        
+        # Indicadores booleanos de seniority
+        seniority_val = str(data.get('seniority', 'Semi-Senior')).lower()
+        input_df['es_senior'] = 1.0 if 'senior' in seniority_val and 'semi' not in seniority_val else 0.0
+        input_df['es_junior'] = 1.0 if 'junior' in seniority_val else 0.0
+        
+        trabajo_val = str(data.get('trabajo_de', 'Developer')).lower()
+        input_df['es_manager'] = 1.0 if 'manager' in trabajo_val or 'lead' in trabajo_val else 0.0
+        input_df['es_developer'] = 1.0 if 'developer' in trabajo_val or 'dev' in trabajo_val else 0.0
+        
+        # Polinomios
+        input_df['exp_squared'] = input_df['anos_de_experiencia'] ** 2
+        input_df['edad_squared'] = input_df['tengo_edad'] ** 2
+        
+        # Asegurar que las columnas estén en el mismo orden que el modelo
+        input_df = input_df[regression_futuro_features]
+        
+        # Escalar
+        input_scaled = regression_futuro_scaler.transform(input_df)
+        
+        # Predecir
+        prediction = regression_futuro_model.predict(input_scaled)[0]
+        
+        # Calcular intervalo de confianza (basado en RMSE del modelo)
+        rmse = regression_futuro_analysis_results.get('model_comparison', {}).get('Ridge', {}).get('rmse', 1219453)
+        confidence_interval = {
+            'lower': max(0, prediction - rmse),
+            'upper': prediction + rmse
+        }
+        
+        # Obtener coeficientes del modelo para mostrar en frontend
+        coefficients_data = []
+        try:
+            coef_values = regression_futuro_model.coef_
+            feature_names = regression_futuro_features
+            
+            # Crear lista de coeficientes con nombres
+            for i, (fname, coef_val) in enumerate(zip(feature_names, coef_values)):
+                coefficients_data.append({
+                    'feature': fname,
+                    'value': float(coef_val)
+                })
+            
+            # Ordenar por valor absoluto (más influyentes primero)
+            coefficients_data.sort(key=lambda x: abs(x['value']), reverse=True)
+        except Exception as e:
+            print(f"⚠️ No se pudieron obtener coeficientes: {e}")
+        
+        return jsonify({
+            'status': 'success',
+            'prediction': {
+                'salary_ars': round(prediction, 2),
+                'confidence_interval': confidence_interval,
+                'model_info': {
+                    'type': 'Ridge Regression',
+                    'r2_score': regression_futuro_analysis_results.get('model_comparison', {}).get('Ridge', {}).get('r2_test', 0.33),
+                    'mae': regression_futuro_analysis_results.get('model_comparison', {}).get('Ridge', {}).get('mae', 850076),
+                    'includes_year': True  # Indicador de que incluye tendencia temporal
+                }
+            },
+            'coefficients': coefficients_data[:15]  # Top 15 coeficientes
+        }), 200
+        
+    except Exception as e:
+        print(f"❌ Error en predict_salary_futuro: {e}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({
+            'status': 'error',
+            'message': f'Error al predecir: {str(e)}'
+        }), 500
+
+@app.route('/api/clustering/available-columns', methods=['GET'])
+def get_available_columns():
+    """Obtener columnas disponibles para clustering"""
+    try:
+        # Leer database.csv para obtener columnas
+        data_path = BACKEND_DIR.parent / 'database.csv'
+        
+        if not data_path.exists():
+            return jsonify({
+                'status': 'error',
+                'message': 'No se encontró database.csv'
+            }), 404
+        
+        # Leer solo las primeras filas para obtener columnas
+        df_sample = pd.read_csv(data_path, nrows=100)
+        
+        # Obtener info de columnas
+        columns_info = []
+        for col in df_sample.columns:
+            # Detectar tipo de columna
+            sample_data = df_sample[col].dropna()
+            if len(sample_data) == 0:
+                continue
+                
+            # Intentar detectar si es numérica
+            try:
+                numeric_conversion = pd.to_numeric(
+                    sample_data.astype(str).str.replace(r'[$€£\s,]', '', regex=True),
+                    errors='coerce'
+                )
+                is_numeric = numeric_conversion.notna().sum() / len(sample_data) > 0.3
+            except:
+                is_numeric = False
+            
+            columns_info.append({
+                'name': col,
+                'type': 'numeric' if is_numeric else 'categorical',
+                'sample_values': sample_data.head(3).tolist()
+            })
+        
+        return jsonify({
+            'status': 'success',
+            'columns': columns_info,
+            'total_columns': len(columns_info)
+        }), 200
+        
+    except Exception as e:
+        print(f"❌ Error en get_available_columns: {e}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({
+            'status': 'error',
+            'message': f'Error: {str(e)}'
+        }), 500
+
+@app.route('/api/clustering/perform', methods=['POST'])
+def perform_clustering():
+    """Realizar clustering con columnas seleccionadas"""
+    try:
+        from sklearn.preprocessing import StandardScaler, OneHotEncoder
+        from sklearn.decomposition import PCA
+        from sklearn.cluster import KMeans
+        from sklearn.metrics import silhouette_score
+        
+        # Obtener parámetros
+        data = request.get_json()
+        
+        if not data:
+            return jsonify({
+                'status': 'error',
+                'message': 'No se recibieron datos'
+            }), 400
+        
+        selected_columns = data.get('columns', [])
+        k_clusters = data.get('k_clusters', None)  # None = auto-detect
+        
+        if not selected_columns:
+            return jsonify({
+                'status': 'error',
+                'message': 'Debes seleccionar al menos una columna'
+            }), 400
+        
+        # Leer datos
+        data_path = BACKEND_DIR.parent / 'database.csv'
+        df = pd.read_csv(data_path, dtype=object)
+        
+        # Filtrar columnas seleccionadas
+        df_selected = df[selected_columns].copy()
+        
+        # Detectar columnas numéricas y categóricas
+        numeric_cols = []
+        cat_cols = []
+        
+        for col in selected_columns:
+            sample = df_selected[col].astype(str).str.replace(r'[$€£\s,]', '', regex=True)
+            numeric_conversion = pd.to_numeric(sample, errors='coerce')
+            
+            if numeric_conversion.notna().sum() / len(df_selected) > 0.3:
+                numeric_cols.append(col)
+            else:
+                cat_cols.append(col)
+        
+        # Procesar numéricas
+        X_num = pd.DataFrame(index=df_selected.index)
+        for col in numeric_cols:
+            s = df_selected[col].astype(str).str.replace(r'[$€£\s,]', '', regex=True)
+            X_num[col] = pd.to_numeric(s, errors='coerce')
+        X_num = X_num.fillna(X_num.median())
+        
+        # Procesar categóricas con One-Hot
+        if cat_cols:
+            encoder = OneHotEncoder(sparse_output=False, handle_unknown='ignore')
+            X_cat = encoder.fit_transform(df_selected[cat_cols].astype(str))
+            X_cat = pd.DataFrame(
+                X_cat, 
+                columns=encoder.get_feature_names_out(cat_cols),
+                index=df_selected.index
+            )
+            X_full = pd.concat([X_num, X_cat], axis=1)
+        else:
+            X_full = X_num.copy()
+        
+        X_full.columns = X_full.columns.astype(str)
+        
+        # Estandarizar
+        scaler = StandardScaler()
+        X_scaled = scaler.fit_transform(X_full)
+        
+        # PCA para reducción
+        n_components = min(10, X_scaled.shape[1])
+        pca = PCA(n_components=n_components)
+        X_pca = pca.fit_transform(X_scaled)
+        
+        if X_pca.shape[1] == 1:
+            X_pca = np.hstack([X_pca, np.zeros((X_pca.shape[0], 1))])
+        
+        # KMeans
+        if k_clusters:
+            # K especificado por usuario
+            km = KMeans(n_clusters=int(k_clusters), random_state=42, n_init=10)
+            labels = km.fit_predict(X_pca)
+            silhouette = silhouette_score(X_pca, labels)
+            best_k = int(k_clusters)
+            best_score = silhouette
+        else:
+            # Buscar mejor K
+            best_k, best_score, labels = None, -1.0, None
+            scores = {}
+            
+            for k in range(2, min(11, X_pca.shape[0]//2)):
+                km = KMeans(n_clusters=k, random_state=42, n_init=10)
+                temp_labels = km.fit_predict(X_pca)
+                try:
+                    score = silhouette_score(X_pca, temp_labels)
+                    scores[k] = score
+                    if score > best_score:
+                        best_score, best_k, labels = score, k, temp_labels
+                except:
+                    pass
+        
+        # Calcular estadísticas por cluster
+        cluster_stats = []
+        for cluster_id in range(best_k):
+            mask = labels == cluster_id
+            cluster_data = X_num[mask]
+            
+            stats = {
+                'cluster_id': int(cluster_id + 1),
+                'size': int(mask.sum()),
+                'percentage': float(mask.sum() / len(labels) * 100)
+            }
+            
+            # Estadísticas por variable numérica
+            for col in numeric_cols:
+                if col in cluster_data.columns:
+                    stats[f'{col}_mean'] = float(cluster_data[col].mean())
+                    stats[f'{col}_median'] = float(cluster_data[col].median())
+            
+            cluster_stats.append(stats)
+        
+        # Preparar datos para visualización (primeras 1000 muestras)
+        sample_size = min(1000, len(X_pca))
+        sample_indices = np.random.choice(len(X_pca), sample_size, replace=False)
+        
+        visualization_data = {
+            'x': X_pca[sample_indices, 0].tolist(),
+            'y': X_pca[sample_indices, 1].tolist(),
+            'labels': labels[sample_indices].tolist()
+        }
+        
+        return jsonify({
+            'status': 'success',
+            'clustering': {
+                'n_clusters': best_k,
+                'silhouette_score': float(best_score),
+                'pca_variance_explained': float(pca.explained_variance_ratio_.sum()),
+                'n_samples': len(labels),
+                'cluster_stats': cluster_stats,
+                'visualization_data': visualization_data,
+                'numeric_columns': numeric_cols,
+                'categorical_columns': cat_cols
+            }
+        }), 200
+        
+    except Exception as e:
+        print(f"❌ Error en perform_clustering: {e}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({
+            'status': 'error',
+            'message': f'Error al realizar clustering: {str(e)}'
+        }), 500
 
 # ============================================================================
 # MANEJO DE ERRORES

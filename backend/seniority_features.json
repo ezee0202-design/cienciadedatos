@@ -1,0 +1,40 @@
+{
+  "features": [
+    "year",
+    "genero",
+    "tengo_edad",
+    "donde_estas_trabajando",
+    "anos_de_experiencia",
+    "antiguedad_en_la_empresa_actual",
+    "anos_en_el_puesto_actual",
+    "cuantas_personas_tenes_a_cargo",
+    "trabajo_de",
+    "dedicacion",
+    "recibis_algun_tipo_de_bono",
+    "cantidad_de_personas_en_tu_organizacion",
+    "modalidad_de_trabajo",
+    "dias_a_la_semana_vas_a_la_oficina",
+    "uso_de_ia_para_trabajo",
+    "seniority"
+  ],
+  "numeric_features": [
+    "year",
+    "tengo_edad",
+    "anos_de_experiencia",
+    "antiguedad_en_la_empresa_actual",
+    "anos_en_el_puesto_actual",
+    "cuantas_personas_tenes_a_cargo",
+    "dias_a_la_semana_vas_a_la_oficina",
+    "uso_de_ia_para_trabajo"
+  ],
+  "categorical_features": [
+    "genero",
+    "donde_estas_trabajando",
+    "trabajo_de",
+    "dedicacion",
+    "recibis_algun_tipo_de_bono",
+    "cantidad_de_personas_en_tu_organizacion",
+    "modalidad_de_trabajo",
+    "seniority"
+  ]
+}

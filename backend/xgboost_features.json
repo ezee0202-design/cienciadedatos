@@ -1,0 +1,30 @@
+{
+  "features": [
+    "tengo_edad",
+    "anos_de_experiencia",
+    "anos_en_el_puesto_actual",
+    "cuantas_personas_tenes_a_cargo",
+    "cantidad_de_personas_en_tu_organizacion",
+    "trabajo_de",
+    "sueldo_bruto_en_dolares",
+    "estudios_estado",
+    "dedicacion",
+    "recibio_actualizacion_de_ingresos",
+    "de_que_fue_el_ajuste_total_acumulado"
+  ],
+  "numeric_features": [
+    "tengo_edad",
+    "anos_de_experiencia",
+    "anos_en_el_puesto_actual",
+    "cuantas_personas_tenes_a_cargo",
+    "sueldo_bruto_en_dolares",
+    "de_que_fue_el_ajuste_total_acumulado"
+  ],
+  "categorical_features": [
+    "cantidad_de_personas_en_tu_organizacion",
+    "trabajo_de",
+    "estudios_estado",
+    "dedicacion",
+    "recibio_actualizacion_de_ingresos"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "model_metrics": {
+    "accuracy": 0.6844014510278114,
+    "precision": 0.6782240136576863,
+    "recall": 0.6844014510278114,
+    "f1_score": 0.6737283527335388
+  },
+  "feature_importance": [
+    {
+      "feature": "tengo_edad",
+      "importance": 0.14399913913969842
+    },
+    {
+      "feature": "anos_de_experiencia",
+      "importance": 0.11205926508073913
+    },
+    {
+      "feature": "cantidad_de_personas_en_tu_organizacion",
+      "importance": 0.09880093559587035
+    },
+    {
+      "feature": "anos_en_el_puesto_actual",
+      "importance": 0.08380626813381636
+    },
+    {
+      "feature": "antiguedad_en_la_empresa_actual",
+      "importance": 0.08357449561900807
+    },
+    {
+      "feature": "uso_de_ia_para_trabajo",
+      "importance": 0.06876370419686931
+    },
+    {
+      "feature": "trabajo_de",
+      "importance": 0.06772791849879038
+    },
+    {
+      "feature": "recibis_algun_tipo_de_bono",
+      "importance": 0.0676278747378337
+    },
+    {
+      "feature": "cuantas_personas_tenes_a_cargo",
+      "importance": 0.05707989088022731
+    },
+    {
+      "feature": "donde_estas_trabajando",
+      "importance": 0.05667789308506621
+    }
+  ],
+  "dataset_info": {
+    "total_records": 12401,
+    "total_rows": 12401,
+    "total_columns": 36,
+    "train_size": 9920,
+    "test_size": 2481
+  },
+  "target_distribution": {
+    "bien_pagado": 4965,
+    "mal_pagado": 7436
+  }
+}

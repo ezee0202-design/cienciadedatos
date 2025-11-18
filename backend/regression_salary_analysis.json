@@ -1,0 +1,109 @@
+{
+  "model_metrics": {
+    "r2_score": 0.29468575218468884,
+    "rmse": 1216.8808121933882,
+    "mae": 831.3086403338257,
+    "mape": 53.60469189881725
+  },
+  "model_comparison": {
+    "Ridge": {
+      "r2_test": 0.29468575218468884,
+      "rmse": 1216.8808121933882,
+      "mae": 831.3086403338257
+    }
+  },
+  "dataset_info": {
+    "total_records": 12418,
+    "train_size": 9934,
+    "test_size": 2484,
+    "salary_range": {
+      "min": 100.0,
+      "max": 13158.0,
+      "mean": 2099.5259301014657,
+      "median": 1768.0
+    }
+  },
+  "best_model": "Ridge",
+  "coefficients": [
+    {
+      "feature": "ratio_exp_edad",
+      "coefficient": 878.5142786058559
+    },
+    {
+      "feature": "anos_de_experiencia",
+      "coefficient": -633.9402690862246
+    },
+    {
+      "feature": "tengo_edad",
+      "coefficient": 516.3825804516318
+    },
+    {
+      "feature": "edad_squared",
+      "coefficient": -427.23938754183433
+    },
+    {
+      "feature": "modalidad_de_trabajo",
+      "coefficient": -219.161144388288
+    },
+    {
+      "feature": "seniority",
+      "coefficient": 204.63884377840424
+    },
+    {
+      "feature": "es_senior",
+      "coefficient": 164.88510948361642
+    },
+    {
+      "feature": "es_junior",
+      "coefficient": -164.88510948331918
+    },
+    {
+      "feature": "recibis_algun_tipo_de_bono",
+      "coefficient": 164.42124920091564
+    },
+    {
+      "feature": "cuantas_personas_tenes_a_cargo",
+      "coefficient": 159.94300696275195
+    },
+    {
+      "feature": "que_tanto_estas_usando_copilotchatgpt_u_otras_herramientas_de_ia_para_tu_trabajo",
+      "coefficient": 126.46556718981013
+    },
+    {
+      "feature": "dedicacion",
+      "coefficient": -123.17203351990754
+    },
+    {
+      "feature": "estudios_estado",
+      "coefficient": -122.4419045245192
+    },
+    {
+      "feature": "donde_estas_trabajando",
+      "coefficient": -80.28847681183589
+    },
+    {
+      "feature": "genero",
+      "coefficient": -71.41262757548263
+    },
+    {
+      "feature": "antiguedad_en_la_empresa_actual",
+      "coefficient": -59.05874264647533
+    },
+    {
+      "feature": "ratio_antiguedad_exp",
+      "coefficient": -57.42606457143811
+    },
+    {
+      "feature": "ratio_puesto_exp",
+      "coefficient": -47.66079154540706
+    },
+    {
+      "feature": "exp_squared",
+      "coefficient": 42.11096651857595
+    },
+    {
+      "feature": "trabajo_de",
+      "coefficient": -35.50531768986435
+    }
+  ]
+}

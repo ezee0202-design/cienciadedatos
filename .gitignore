@@ -39,4 +39,5 @@ dist/
 # El dataset principal.
 # Descomenta la siguiente línea si el archivo es muy grande (>100MB)
 # y prefieres no subirlo a GitHub.
-# database.csv
+# database.csv*.pkl
+*.pkl

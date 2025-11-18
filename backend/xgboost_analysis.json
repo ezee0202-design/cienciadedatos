@@ -1,0 +1,69 @@
+{
+  "model_metrics": {
+    "accuracy": 0.7069243156199678,
+    "precision": 0.7752637500474896,
+    "recall": 0.7069243156199678,
+    "f1_score": 0.7315440652642428
+  },
+  "feature_importance": [
+    {
+      "feature": "sueldo_bruto_en_dolares",
+      "importance": 0.12052839249372482
+    },
+    {
+      "feature": "dedicacion",
+      "importance": 0.10500404983758926
+    },
+    {
+      "feature": "de_que_fue_el_ajuste_total_acumulado",
+      "importance": 0.09317341446876526
+    },
+    {
+      "feature": "anos_de_experiencia",
+      "importance": 0.08999211341142654
+    },
+    {
+      "feature": "trabajo_de",
+      "importance": 0.08799255639314651
+    },
+    {
+      "feature": "estudios_estado",
+      "importance": 0.0877176821231842
+    },
+    {
+      "feature": "tengo_edad",
+      "importance": 0.08706042915582657
+    },
+    {
+      "feature": "anos_en_el_puesto_actual",
+      "importance": 0.08339831233024597
+    },
+    {
+      "feature": "recibio_actualizacion_de_ingresos",
+      "importance": 0.08337986469268799
+    },
+    {
+      "feature": "cuantas_personas_tenes_a_cargo",
+      "importance": 0.0822753831744194
+    }
+  ],
+  "dataset_info": {
+    "total_records": 12418,
+    "total_rows": 12418,
+    "total_columns": 34,
+    "train_size": 9934,
+    "test_size": 2484
+  },
+  "target_distribution": {
+    "buscando_trabajo": 2305,
+    "no_buscando": 10113
+  },
+  "best_params": {
+    "colsample_bytree": 0.9,
+    "learning_rate": 0.1,
+    "max_depth": 6,
+    "n_estimators": 300,
+    "subsample": 0.9
+  },
+  "balancing_technique": "scale_pos_weight=6.58"
+}
