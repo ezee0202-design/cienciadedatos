@@ -5,7 +5,7 @@
 TU APLICACIÓN ESTÁ COMPLETAMENTE FUNCIONAL
 
 ✓ Backend Flask: CORRIENDO EN http://localhost:5000
-✓ Frontend HTTP: CORRIENDO EN http://localhost:8000
+✓ Frontend HTTP: CORRIENDO EN http://localhost:8080
 ✓ Todas las 6 gráficas: PRESENTES Y ACCESIBLES
 ✓ Modelo Random Forest: ENTRENADO (100% accuracy)
 ✓ API: 9 endpoints funcionando
@@ -14,7 +14,7 @@ TU APLICACIÓN ESTÁ COMPLETAMENTE FUNCIONAL
                           🚀 CÓMO USAR AHORA
 ════════════════════════════════════════════════════════════════════════════════
 
-PASO 1: Ve a http://localhost:8000 en tu navegador
+PASO 1: Ve a http://localhost:8080 en tu navegador
 
 PASO 2: Verás 5 secciones:
   • Dashboard - Métricas (Accuracy: 100%)
@@ -115,10 +115,10 @@ Proyecto:
 ════════════════════════════════════════════════════════════════════════════════
 
 APLICACIÓN:
-  http://localhost:8000                    Main
-  http://localhost:8000/monitor.html       Monitor en vivo
-  http://localhost:8000/resumen.html       Resumen del proyecto
-  http://localhost:8000/instrucciones.html Instrucciones
+  http://localhost:8080                    Main
+  http://localhost:8080/monitor.html       Monitor en vivo
+  http://localhost:8080/resumen.html       Resumen del proyecto
+  http://localhost:8080/instrucciones.html Instrucciones
 
 API:
   http://localhost:5000/api/dashboard      Dashboard
@@ -132,7 +132,7 @@ API:
 ════════════════════════════════════════════════════════════════════════════════
 
 ✓ Backend está corriendo en http://localhost:5000
-✓ Frontend está corriendo en http://localhost:8000
+✓ Frontend está corriendo en http://localhost:8080
 ✓ Todas las gráficas se cargan correctamente
 ✓ Modelo responde con predicciones
 ✓ Interfaz es responsive
@@ -148,6 +148,7 @@ Versión: 1.0
 Ambiente: Producción
 Fecha: 2024
 
-Ahora visita: http://localhost:8000
+Ahora visita: http://localhost:8080
 
 ¡Tu aplicación está lista para usar! 🚀
+

@@ -1,50 +1,50 @@
 {
   "model_metrics": {
-    "accuracy": 0.7069243156199678,
-    "precision": 0.7752637500474896,
-    "recall": 0.7069243156199678,
-    "f1_score": 0.7315440652642428
+    "accuracy": 0.7000805152979066,
+    "precision": 0.7671860045947501,
+    "recall": 0.7000805152979066,
+    "f1_score": 0.7248364804728736
   },
   "feature_importance": [
     {
       "feature": "sueldo_bruto_en_dolares",
-      "importance": 0.12052839249372482
+      "importance": 0.12148557603359222
     },
     {
       "feature": "dedicacion",
-      "importance": 0.10500404983758926
+      "importance": 0.10460571199655533
     },
     {
       "feature": "de_que_fue_el_ajuste_total_acumulado",
-      "importance": 0.09317341446876526
+      "importance": 0.09315940737724304
     },
     {
       "feature": "anos_de_experiencia",
-      "importance": 0.08999211341142654
+      "importance": 0.08953193575143814
     },
     {
       "feature": "trabajo_de",
-      "importance": 0.08799255639314651
+      "importance": 0.08838821947574615
     },
     {
       "feature": "estudios_estado",
-      "importance": 0.0877176821231842
-    },
-    {
-      "feature": "tengo_edad",
-      "importance": 0.08706042915582657
-    },
-    {
-      "feature": "anos_en_el_puesto_actual",
-      "importance": 0.08339831233024597
-    },
-    {
-      "feature": "recibio_actualizacion_de_ingresos",
-      "importance": 0.08337986469268799
+      "importance": 0.0872529000043869
     },
     {
       "feature": "cuantas_personas_tenes_a_cargo",
-      "importance": 0.0822753831744194
+      "importance": 0.08721724897623062
+    },
+    {
+      "feature": "recibio_actualizacion_de_ingresos",
+      "importance": 0.08518379181623459
+    },
+    {
+      "feature": "tengo_edad",
+      "importance": 0.08252380788326263
+    },
+    {
+      "feature": "anos_en_el_puesto_actual",
+      "importance": 0.08191226422786713
     }
   ],
   "dataset_info": {

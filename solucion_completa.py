@@ -146,8 +146,8 @@ def check_and_fix():
             print(f"    Solución: cd backend && python app.py")
         
         try:
-            resp = requests.get('http://localhost:8000/', timeout=2)
-            print(f"  {GREEN}✓{RESET} Frontend: ACTIVO (puerto 8000)")
+            resp = requests.get('http://localhost:8080/', timeout=2)
+            print(f"  {GREEN}✓{RESET} Frontend: ACTIVO (puerto 8080)")
         except:
             print(f"  {RED}✗{RESET} Frontend: INACTIVO")
             print(f"    Solución: cd frontend && python server.py")
@@ -165,9 +165,10 @@ def check_and_fix():
     print(f"\n{YELLOW}Próximas acciones:{RESET}")
     print(f"  1. Terminal 1: cd backend && python app.py")
     print(f"  2. Terminal 2: cd frontend && python server.py")
-    print(f"  3. Navegador: http://localhost:8000")
+    print(f"  3. Navegador: http://localhost:8080")
     
     print(f"\n{GREEN}✓ Diagnóstico completado{RESET}")
 
 if __name__ == '__main__':
     check_and_fix()
+

@@ -49,7 +49,7 @@ if not missing_models:
     print("\nPuedes iniciar la aplicación con:")
     print("  1. python backend/app.py")
     print("  2. python frontend/server.py")
-    print("  3. Abrir http://localhost:8000")
+    print("  3. Abrir http://localhost:8080")
     sys.exit(0)
 
 print(f"\n⚠️  Faltan {len(missing_models)} modelos por entrenar")
@@ -163,10 +163,11 @@ if not still_missing:
     print("\nPasos siguientes:")
     print("  1. Abre una terminal y ejecuta: python backend/app.py")
     print("  2. Abre otra terminal y ejecuta: python frontend/server.py")
-    print("  3. Abre tu navegador en: http://localhost:8000")
+    print("  3. Abre tu navegador en: http://localhost:8080")
     print("\n💡 Tip: Puedes usar run.bat para iniciar todo automáticamente")
 else:
     print("\n⚠️  Algunos modelos no se pudieron generar")
     print("Revisa los errores anteriores y asegúrate de tener todos los scripts")
 
 print("\n" + "="*80)
+

@@ -96,11 +96,11 @@ Espera a ver: `Running on http://localhost:5000`
 ```bash
 python frontend/server.py
 ```
-Espera a ver: `Serving HTTP on 0.0.0.0 port 8000`
+Espera a ver: `Serving HTTP on 0.0.0.0 port 8080`
 
 **Abre tu navegador:**
 ```
-http://localhost:8000
+http://localhost:8080
 ```
 
 ---
@@ -216,7 +216,7 @@ run.bat  # Windows
 # Terminal 2: python frontend/server.py
 
 # 4. Abrir navegador
-http://localhost:8000
+http://localhost:8080
 ```
 
 ---
@@ -241,3 +241,5 @@ Si tienes problemas:
 ---
 
 **¡Listo! 🎉** Con estos pasos, cualquier persona puede descargar tu proyecto y tenerlo funcionando en minutos.
+
+

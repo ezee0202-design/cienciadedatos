@@ -24,7 +24,7 @@ FRONTEND (HTML/CSS/JS)
 ├─ ✅ app.js controlador principal
 ├─ ✅ api.js cliente HTTP
 ├─ ✅ ui.js actualizador DOM
-├─ ✅ server.py sirviendo en puerto 8000
+├─ ✅ server.py sirviendo en puerto 8080
 ├─ ✅ 5 secciones activas (Dashboard, EDA, Modelo, Predictor, Galería)
 └─ ✅ Todas las interacciones funcionando
 
@@ -105,17 +105,17 @@ GENERADOS POR EL PROYECTO
 ════════════════════════════════════════════════════════════════════════════════
 
 APLICACIÓN PRINCIPAL
-└─ http://localhost:8000
+└─ http://localhost:8080
 
 SECCIONES INTERNAS
-├─ Dashboard: http://localhost:8000 (sección 1)
-├─ EDA: http://localhost:8000 (sección 2)
-├─ Modelo: http://localhost:8000 (sección 3)
-├─ Predictor: http://localhost:8000 (sección 4)
-└─ Galería: http://localhost:8000 (sección 5)
+├─ Dashboard: http://localhost:8080 (sección 1)
+├─ EDA: http://localhost:8080 (sección 2)
+├─ Modelo: http://localhost:8080 (sección 3)
+├─ Predictor: http://localhost:8080 (sección 4)
+└─ Galería: http://localhost:8080 (sección 5)
 
 MONITOREO
-└─ http://localhost:8000/monitor.html
+└─ http://localhost:8080/monitor.html
 
 API BACKEND
 ├─ GET /api/dashboard → Métricas principales
@@ -149,7 +149,7 @@ OPCIÓN 2: MANUAL (Recomendado para desarrollo)
 │   python server.py                                             │
 │                                                                │
 │ NAVEGADOR:                                                     │
-│   http://localhost:8000                                        │
+│   http://localhost:8080                                        │
 └────────────────────────────────────────────────────────────────┘
 
 OPCIÓN 3: VERIFICACIÓN
@@ -231,7 +231,7 @@ FRONTEND
 
 1. PUERTOS
    • Backend usa puerto 5000 (Flask)
-   • Frontend usa puerto 8000 (HTTP Server)
+   • Frontend usa puerto 8080 (HTTP Server)
    • Ambos deben estar disponibles
 
 2. PERMISOS
@@ -304,7 +304,9 @@ Versión: 1.0
 Status: ✅ PRODUCCIÓN
 Mantenimiento: -
 
-Acceso: http://localhost:8000
-Monitor: http://localhost:8000/monitor.html
+Acceso: http://localhost:8080
+Monitor: http://localhost:8080/monitor.html
 
 ════════════════════════════════════════════════════════════════════════════════
+
+

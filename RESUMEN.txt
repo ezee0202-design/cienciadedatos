@@ -77,7 +77,7 @@
 
         USER (Navegador)
              ↓
-      http://localhost:8000
+      http://localhost:8080
              ↓
     ┌─────────────────────┐
     │ FRONTEND WEB        │
@@ -123,7 +123,7 @@ PASO 4: Iniciar Frontend + Abrir
 ─────────────────────────────────
   cd frontend
   python server.py
-  # Luego abrir: http://localhost:8000
+  # Luego abrir: http://localhost:8080
 
 
 📁 ARCHIVOS CREADOS
@@ -331,7 +331,7 @@ PROJECT_SUMMARY.md
 3️⃣  Corre: Jupyter Notebook (todas las celdas)
 4️⃣  Inicia: Backend (python app.py)
 5️⃣  Inicia: Frontend (python server.py)
-6️⃣  Abre: http://localhost:8000
+6️⃣  Abre: http://localhost:8080
 7️⃣  ¡Explora y disfruta!
 
 
@@ -388,3 +388,4 @@ O lee README.md → Sección "Solución de Problemas"
 ║              Creado con ❤️ | Ingeniería en Ciencia de Datos | 2024            ║
 ║                                                                                ║
 ╚════════════════════════════════════════════════════════════════════════════════╝
+

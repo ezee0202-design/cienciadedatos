@@ -93,6 +93,7 @@ print("""
 3. Si todo OK:
    → Backend: python backend/app.py
    → Frontend: python frontend/server.py
-   → Navegador: http://localhost:8000
+   → Navegador: http://localhost:8080
 
 """)
+

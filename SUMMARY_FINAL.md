@@ -223,7 +223,7 @@ cd frontend
 python server.py
 
 # Navegador
-http://localhost:8000
+http://localhost:8080
 ```
 
 ---
@@ -235,7 +235,7 @@ http://localhost:8000
 python diagnostico_graficas.py
 
 # Monitor en vivo
-http://localhost:8000/monitor.html
+http://localhost:8080/monitor.html
 ```
 
 ---
@@ -369,4 +369,5 @@ Para más información o soporte, consulta:
 
 **Fecha**: 2024
 **Versión**: 1.0
-**Acceso**: http://localhost:8000
+**Acceso**: http://localhost:8080
+

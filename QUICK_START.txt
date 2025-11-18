@@ -48,12 +48,12 @@ python app.py
 ```powershell
 cd frontend
 python server.py
-# Esperar: "Servidor iniciado en: http://localhost:8000"
+# Esperar: "Servidor iniciado en: http://localhost:8080"
 ```
 
 **Abrir navegador:**
 ```
-http://localhost:8000
+http://localhost:8080
 ```
 
 ---
@@ -185,7 +185,7 @@ APP 2/
 | "Backend no disponible" | Ejecutar `python app.py` en backend |
 | "No se ve el frontend" | Ejecutar `python server.py` en frontend |
 | "No hay gráficas" | Ejecutar notebook completo |
-| "Puerto 5000/8000 en uso" | Cambiar puerto en app.py o server.py |
+| "Puerto 5000/8080 en uso" | Cambiar puerto en app.py o server.py |
 | "ModuleNotFoundError" | Ejecutar `python setup.py` para instalar dependencias |
 
 ---
@@ -267,8 +267,8 @@ APP 2/
 - [ ] Ejecutado setup.py
 - [ ] Ejecutado notebook data_analysis.ipynb
 - [ ] Backend corriendo en puerto 5000
-- [ ] Frontend corriendo en puerto 8000
-- [ ] http://localhost:8000 abierto en navegador
+- [ ] Frontend corriendo en puerto 8080
+- [ ] http://localhost:8080 abierto en navegador
 - [ ] ¡Disfrutando la aplicación! 🎉
 
 ---
@@ -276,3 +276,5 @@ APP 2/
 **¡Listo para empezar!** 🚀
 
 Para más información, consulta **README.md**
+
+

@@ -30,7 +30,7 @@ python frontend/server.py
 
 ### 4️⃣ Abrir en el navegador
 ```
-http://localhost:8000
+http://localhost:8080
 ```
 
 ---
@@ -106,3 +106,4 @@ python diagnostico_graficas.py
 ---
 
 **¡Listo!** 🎉 En menos de 5 minutos tendrás la aplicación funcionando.
+

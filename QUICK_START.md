@@ -18,7 +18,7 @@ python server.py
 
 Abre tu navegador y ve a:
 ```
-http://localhost:8000
+http://localhost:8080
 ```
 
 ## Paso 3: ¡Disfruta!
@@ -36,8 +36,8 @@ Ya puedes:
 
 | Página | URL |
 |--------|-----|
-| **Aplicación** | http://localhost:8000 |
-| **Monitor de Estado** | http://localhost:8000/monitor.html |
+| **Aplicación** | http://localhost:8080 |
+| **Monitor de Estado** | http://localhost:8080/monitor.html |
 | **API Backend** | http://localhost:5000/api/dashboard |
 
 ---
@@ -64,9 +64,9 @@ netstat -ano | Select-String "5000"
 taskkill /PID <PID> /F
 ```
 
-### Puerto 8000 en uso
+### Puerto 8080 en uso
 ```powershell
-netstat -ano | Select-String "8000"
+netstat -ano | Select-String "8080"
 taskkill /PID <PID> /F
 ```
 
@@ -88,3 +88,5 @@ Para más información, lee:
 - `README.md`
 - `GUIA_USO.md`
 - `SUMMARY_FINAL.md`
+
+

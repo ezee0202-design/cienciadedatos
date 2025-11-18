@@ -568,5 +568,6 @@ print("\n✅ Ahora puedes iniciar el backend:")
 print("   cd backend && python app.py")
 print("\n✅ Y el frontend:")
 print("   cd frontend && python server.py")
-print("\n🌐 Accede a: http://localhost:8000")
+print("\n🌐 Accede a: http://localhost:8080")
 print("="*80)
+

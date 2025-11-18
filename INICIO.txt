@@ -79,12 +79,12 @@ python app.py
 ```powershell
 cd frontend
 python server.py
-# Debe mostrar: "Servidor iniciado en: http://localhost:8000"
+# Debe mostrar: "Servidor iniciado en: http://localhost:8080"
 ```
 
 ### 5. Abrir Navegador
 ```
-http://localhost:8000
+http://localhost:8080
 ```
 
 **¡Listo! La aplicación está funcionando** ✅
@@ -424,7 +424,7 @@ Tu aplicación está completa y lista para usar. Solo necesitas:
 2. ✅ Ejecutar notebook: todas las celdas
 3. ✅ Iniciar backend: `python app.py`
 4. ✅ Iniciar frontend: `python server.py`
-5. ✅ Abrir navegador: `http://localhost:8000`
+5. ✅ Abrir navegador: `http://localhost:8080`
 
 ---
 
@@ -448,3 +448,4 @@ Tu aplicación está completa y lista para usar. Solo necesitas:
 
 *Creado con ❤️ para Ingeniería en Ciencia de Datos*  
 *2024 - Análisis de Remuneración Salarial Argentina*
+

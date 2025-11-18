@@ -80,7 +80,7 @@ FRONTEND
 ├─ 1 servidor HTTP
 ├─ 6 gráficas PNG (300 DPI)
 ├─ 1 dashboard de monitoreo
-└─ ✅ Operativo en puerto 8000
+└─ ✅ Operativo en puerto 8080
 
 DATOS
 ├─ 1 dataset CSV (12,420 filas × 45 columnas)
@@ -123,7 +123,7 @@ OPCIÓN 1 (Automático):
 OPCIÓN 2 (Manual):
     Terminal 1: cd backend && python app.py
     Terminal 2: cd frontend && python server.py
-    Navegador: http://localhost:8000
+    Navegador: http://localhost:8080
 
 ════════════════════════════════════════════════════════════════════════════════
 
@@ -162,13 +162,13 @@ Verificar estado:
     python diagnostico_graficas.py
 
 Ver monitor en vivo:
-    http://localhost:8000/monitor.html
+    http://localhost:8080/monitor.html
 
 Ver gráficas de EDA:
-    http://localhost:8000 → Sección "Análisis Exploratorio"
+    http://localhost:8080 → Sección "Análisis Exploratorio"
 
 Hacer predicción:
-    http://localhost:8000 → Sección "Predictor"
+    http://localhost:8080 → Sección "Predictor"
 
 ════════════════════════════════════════════════════════════════════════════════
 
@@ -234,3 +234,5 @@ Para comenzar: Lee QUICK_START.md (3 pasos)
 Para más info: Lee README.md o GUIA_USO.md
 
 ════════════════════════════════════════════════════════════════════════════════
+
+

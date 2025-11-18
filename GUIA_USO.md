@@ -17,7 +17,7 @@ python server.py
 ```
 
 ### Paso 2: Abrir navegador
-- URL: `http://localhost:8000`
+- URL: `http://localhost:8080`
 
 ---
 
@@ -139,9 +139,9 @@ netstat -ano | Select-String "5000"
 taskkill /PID <PID> /F
 ```
 
-### Puerto 8000 en uso
+### Puerto 8080 en uso
 ```powershell
-netstat -ano | Select-String "8000"
+netstat -ano | Select-String "8080"
 taskkill /PID <PID> /F
 ```
 
@@ -200,3 +200,5 @@ Si necesitas ayuda:
 
 **Última actualización**: 2024
 **Estado**: ✅ Producción
+
+

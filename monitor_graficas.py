@@ -16,7 +16,7 @@ from datetime import datetime
 
 # URLs de los servidores
 BACKEND_URL = "http://localhost:5000"
-FRONTEND_URL = "http://localhost:8000"
+FRONTEND_URL = "http://localhost:8080"
 
 # Lista de gráficas esperadas
 GRAPHICS = [
@@ -112,7 +112,7 @@ def print_report(report):
     backend = report.get('backend_health', False)
     frontend = report.get('frontend', False)
     print(f"  {'✓' if backend else '❌'} Backend (http://localhost:5000)")
-    print(f"  {'✓' if frontend else '❌'} Frontend (http://localhost:8000)")
+    print(f"  {'✓' if frontend else '❌'} Frontend (http://localhost:8080)")
     
     if not backend or not frontend:
         print("\n⚠️  Los servidores no están disponibles. Asegúrate de ejecutar:")
@@ -151,7 +151,7 @@ def print_report(report):
     print("\n" + "="*80)
     if all_ok and backend and frontend:
         print("✅ TODO ESTÁ FUNCIONANDO CORRECTAMENTE")
-        print("   Abre: http://localhost:8000")
+        print("   Abre: http://localhost:8080")
     else:
         print("❌ Hay problemas a resolver")
     print("="*80 + "\n")
@@ -190,3 +190,4 @@ if __name__ == '__main__':
             'graphics': test_graphics_endpoint()
         }
         print_report(report)
+

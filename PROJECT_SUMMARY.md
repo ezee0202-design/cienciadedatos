@@ -111,7 +111,7 @@ python server.py
 
 ### Paso 4: Abrir en Navegador
 ```
-http://localhost:8000
+http://localhost:8080
 ```
 
 ---
@@ -329,7 +329,7 @@ Base para estudios de mercado laboral
 2. **Correr el notebook**: Todas las celdas en `data_analysis.ipynb`
 3. **Iniciar backend**: `python backend/app.py`
 4. **Iniciar frontend**: `python frontend/server.py`
-5. **Abrir navegador**: `http://localhost:8000`
+5. **Abrir navegador**: `http://localhost:8080`
 6. **Explorar**: Navega por todas las secciones
 7. **Hacer predicciones**: Prueba el formulario
 8. **Revisar gráficas**: Analiza las visualizaciones
@@ -346,7 +346,7 @@ Base para estudios de mercado laboral
 
 ### Puerto
 - Backend: 5000 (http://localhost:5000)
-- Frontend: 8000 (http://localhost:8000)
+- Frontend: 8080 (http://localhost:8080)
 
 ### Orden de Ejecución
 1. Instalar dependencias
@@ -373,3 +373,5 @@ Has creado una **aplicación web completa y profesional** que demuestra:
 
 **Creado con ❤️ por un Ingeniero de Ciencia de Datos**
 **2024 - Análisis de Remuneración Salarial Argentina**
+
+

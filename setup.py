@@ -70,10 +70,10 @@ def show_next_steps():
         cd frontend
         python server.py
         
-        Deberías ver: "Servidor iniciado en: http://localhost:8000"
+        Deberías ver: "Servidor iniciado en: http://localhost:8080"
     
     4️⃣  ABRIR NAVEGADOR:
-        http://localhost:8000
+        http://localhost:8080
     
     ℹ️  NOTA IMPORTANTE:
         - Ejecuta primero el notebook para generar el modelo y gráficas
@@ -108,3 +108,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

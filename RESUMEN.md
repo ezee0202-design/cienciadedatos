@@ -82,7 +82,7 @@ python backend/app.py
 python frontend/server.py
 
 # 4. Usar
-http://localhost:8000
+http://localhost:8080
 ```
 
 ---
@@ -132,7 +132,7 @@ Modelos listos ✅
 Usuario inicia: run.bat
     |
     v
-App funcionando en http://localhost:8000 🎉
+App funcionando en http://localhost:8080 🎉
 ```
 
 ---
@@ -253,3 +253,4 @@ Con estos archivos, tu proyecto es:
 **¿Preguntas?** Lee INSTALL.md para más detalles técnicos.
 
 **¡Éxito con tu proyecto!** 🚀
+

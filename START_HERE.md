@@ -4,8 +4,8 @@
 
 ### Servidores Activos
 ✅ Backend Flask: http://localhost:5000
-✅ Frontend HTTP: http://localhost:8000
-✅ Monitor: http://localhost:8000/monitor.html
+✅ Frontend HTTP: http://localhost:8080
+✅ Monitor: http://localhost:8080/monitor.html
 
 ### Gráficas Cargadas
 ✅ distributions.png
@@ -38,17 +38,17 @@
 
 **Aplicación Principal:**
 ```
-http://localhost:8000
+http://localhost:8080
 ```
 
 **Monitor de Estado:**
 ```
-http://localhost:8000/monitor.html
+http://localhost:8080/monitor.html
 ```
 
 **Resumen del Proyecto:**
 ```
-http://localhost:8000/resumen.html
+http://localhost:8080/resumen.html
 ```
 
 ---
@@ -69,7 +69,7 @@ python server.py
 
 ### Paso 3: Navegador
 ```
-http://localhost:8000
+http://localhost:8080
 ```
 
 **¡Listo! Ya puedes usar la aplicación.**
@@ -130,7 +130,7 @@ python diagnostico_graficas.py
 
 1. Lee: **QUICK_START.md**
 2. Ejecuta: Backend + Frontend
-3. Abre: http://localhost:8000
+3. Abre: http://localhost:8080
 4. ¡Disfruta!
 
 ---
@@ -139,3 +139,4 @@ python diagnostico_graficas.py
 
 Versión: 1.0
 Fecha: 2024
+

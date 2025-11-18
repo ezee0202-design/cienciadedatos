@@ -61,7 +61,7 @@ Doble-click en: run.bat
 ```
 Terminal 1: cd backend && python app.py
 Terminal 2: cd frontend && python server.py
-Navegador: http://localhost:8000
+Navegador: http://localhost:8080
 ```
 
 ---
@@ -70,9 +70,9 @@ Navegador: http://localhost:8000
 
 | Página | URL |
 |--------|-----|
-| **Aplicación Principal** | http://localhost:8000 |
-| **Monitor en Vivo** | http://localhost:8000/monitor.html |
-| **Resumen del Proyecto** | http://localhost:8000/resumen.html |
+| **Aplicación Principal** | http://localhost:8080 |
+| **Monitor en Vivo** | http://localhost:8080/monitor.html |
+| **Resumen del Proyecto** | http://localhost:8080/resumen.html |
 | **API Dashboard** | http://localhost:5000/api/dashboard |
 
 ---
@@ -97,7 +97,7 @@ python diagnostico_graficas.py
 
 O accede a:
 ```
-http://localhost:8000/monitor.html
+http://localhost:8080/monitor.html
 ```
 
 ---
@@ -205,3 +205,4 @@ Fecha: 2024
 Status: ✅ PRODUCCIÓN
 
 Para comenzar, lee: `START_HERE.md`
+

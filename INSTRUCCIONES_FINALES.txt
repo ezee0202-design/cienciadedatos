@@ -41,12 +41,12 @@ PASO 5: En TERMINAL 2, ejecuta el Frontend
 │ python server.py                                               │
 │                                                                │
 │ Espera a ver:                                                  │
-│ "Servidor iniciado en: http://localhost:8000"                │
+│ "Servidor iniciado en: http://localhost:8080"                │
 └────────────────────────────────────────────────────────────────┘
 
 PASO 6: Abre tu navegador (Chrome, Edge, Firefox)
 ┌────────────────────────────────────────────────────────────────┐
-│ Dirección: http://localhost:8000                              │
+│ Dirección: http://localhost:8080                              │
 │ Presiona: Enter                                                │
 │                                                                │
 │ ¡LISTO! Ya está funcionando                                   │
@@ -75,13 +75,13 @@ Verás información sobre:
 ════════════════════════════════════════════════════════════════════════════════
 
 APLICACIÓN PRINCIPAL:
-  http://localhost:8000
+  http://localhost:8080
 
 PÁGINA DE MONITOR (Estado en tiempo real):
-  http://localhost:8000/monitor.html
+  http://localhost:8080/monitor.html
 
 RESUMEN DEL PROYECTO:
-  http://localhost:8000/resumen.html
+  http://localhost:8080/resumen.html
 
 
 ════════════════════════════════════════════════════════════════════════════════
@@ -98,7 +98,7 @@ RESUMEN DEL PROYECTO:
 
 ════════════════════════════════════════════════════════════════════════════════
 
-🎯 SECIONES DE LA APLICACIÓN (en http://localhost:8000)
+🎯 SECIONES DE LA APLICACIÓN (en http://localhost:8080)
 ════════════════════════════════════════════════════════════════════════════════
 
 1. 📊 DASHBOARD
@@ -169,7 +169,7 @@ SOLUCIÓN:
 • Si cierras una terminal, cierra ambas y vuelve a iniciar
 • Para detener los servidores: Presiona Ctrl+C en cada terminal
 • Para refrescar la aplicación: F5 en el navegador
-• Monitor en vivo: http://localhost:8000/monitor.html (auto-refresca)
+• Monitor en vivo: http://localhost:8080/monitor.html (auto-refresca)
 • Si modificas código, reinicia los servidores
 
 
@@ -220,7 +220,7 @@ Backend:
 Frontend:
   • HTML5 + CSS3 + JavaScript
   • 5 secciones interactivas
-  • Puerto 8000
+  • Puerto 8080
 
 
 ════════════════════════════════════════════════════════════════════════════════
@@ -243,7 +243,7 @@ AHORA PROCEDE ASÍ:
 1. Abre 2 PowerShell
 2. Terminal 1: cd backend && python app.py
 3. Terminal 2: cd frontend && python server.py
-4. Navegador: http://localhost:8000
+4. Navegador: http://localhost:8080
 5. ¡Disfruta!
 
 ════════════════════════════════════════════════════════════════════════════════
@@ -251,7 +251,7 @@ AHORA PROCEDE ASÍ:
 ¿Preguntas o problemas?
 • Lee: START_HERE.md
 • O ejecuta: python diagnostico_graficas.py
-• O visita: http://localhost:8000/monitor.html
+• O visita: http://localhost:8080/monitor.html
 
 ════════════════════════════════════════════════════════════════════════════════
 
@@ -260,3 +260,5 @@ Versión: 1.0 | Fecha: 2024 | Status: ✅ PRODUCCIÓN
 ¡Gracias por usar esta aplicación! 🎉
 
 ════════════════════════════════════════════════════════════════════════════════
+
+

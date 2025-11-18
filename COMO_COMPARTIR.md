@@ -98,7 +98,7 @@ Ver archivo INSTALL.md para instrucciones completas.
 ## Inicio rápido:
 1. `python setup_complete.py`
 2. `run.bat` (Windows) o `python backend/app.py` + `python frontend/server.py`
-3. Abrir http://localhost:8000
+3. Abrir http://localhost:8080
 ```
 
 ---
@@ -180,7 +180,7 @@ Cuando compartas el proyecto, incluye este mensaje:
 1. Descarga/clona el repositorio
 2. Ejecuta: python setup_complete.py
 3. Inicia: run.bat (Windows) o sigue INSTALL.md
-4. Abre: http://localhost:8000
+4. Abre: http://localhost:8080
 
 ⏱️ TIEMPO: 5 minutos
 📋 REQUISITOS: Python 3.8+, 500 MB espacio
@@ -221,7 +221,7 @@ python backend/app.py
 python frontend/server.py
 
 # 6. Probar en navegador
-# http://localhost:8000
+# http://localhost:8080
 ```
 
 Si todo funciona → **¡Listo para compartir!** 🎉
@@ -268,3 +268,4 @@ Si tienes problemas:
 ---
 
 **¡Éxito!** 🎊 Con estas instrucciones, cualquiera podrá usar tu proyecto sin problemas.
+

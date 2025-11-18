@@ -164,10 +164,10 @@ Mostrar métricas, KPIs, gráficos
 
 4. INICIO DEL FRONTEND
    └─→ python frontend/server.py
-       └─→ Inicia servidor HTTP en puerto 8000
+       └─→ Inicia servidor HTTP en puerto 8080
 
 5. INTERACCIÓN CON USUARIO
-   ├─→ Abre navegador: http://localhost:8000
+   ├─→ Abre navegador: http://localhost:8080
    ├─→ Frontend carga index.html
    ├─→ JavaScript ejecuta app.js
    ├─→ Conecta con Backend API (http://localhost:5000)
@@ -280,7 +280,7 @@ Frontend renderiza resultado
 
 ### CORS
 - ✓ Flask-CORS habilitado
-- ✓ Acepta solicitudes de localhost:8000
+- ✓ Acepta solicitudes de localhost:8080
 
 ### Error Handling
 - ✓ Try-catch en JavaScript
@@ -429,3 +429,5 @@ NIVEL 4 (Experto)
 ---
 
 **Arquitectura diseñada para ser escalable, mantenible y educativa** 🏗️
+
+

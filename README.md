@@ -81,7 +81,7 @@ INICIANDO SERVIDOR BACKEND
 ✓ Iniciando servidor Flask...
 
 📍 Servidor disponible en: http://localhost:5000
-📍 Frontend disponible en: http://localhost:8000
+📍 Frontend disponible en: http://localhost:8080
 ```
 
 ### Paso 4: Iniciar Frontend (Nueva Terminal)
@@ -97,13 +97,13 @@ Deberías ver:
 SERVIDOR HTTP DEL FRONTEND
 ================================================================================
 
-✓ Servidor iniciado en: http://localhost:8000
+✓ Servidor iniciado en: http://localhost:8080
 ✓ Sirviendo archivos desde: ...
 ```
 
 ### Paso 5: Acceder a la Aplicación
 
-Abre tu navegador y ve a: **http://localhost:8000**
+Abre tu navegador y ve a: **http://localhost:8080**
 
 ## 📊 Secciones de la Aplicación
 
@@ -282,9 +282,9 @@ El notebook `data_analysis.ipynb` contiene:
 
 ### "Error CORS"
 - Verifica que Flask-CORS esté instalado
-- El backend debe permitir solicitudes desde localhost:8000
+- El backend debe permitir solicitudes desde localhost:8080
 
-### Puerto 5000 u 8000 ocupado
+### Puerto 5000 u 8080 ocupado
 ```powershell
 # Encontrar proceso usando puerto 5000
 netstat -ano | findstr :5000
@@ -325,3 +325,4 @@ Proyecto de Ingeniería en Ciencia de Datos - 2024
 ---
 
 **¡Listo para usar! 🚀**
+

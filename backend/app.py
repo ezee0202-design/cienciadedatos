@@ -15,6 +15,8 @@ import numpy as np
 import os
 import base64
 from pathlib import Path
+import sys
+import subprocess
 
 # Inicializar Flask
 app = Flask(__name__)
@@ -72,6 +74,120 @@ regression_futuro_model = None
 regression_futuro_scaler = None
 regression_futuro_features = None
 regression_futuro_analysis_results = None
+
+def check_and_generate_models():
+    """
+    Verifica que todos los archivos .pkl necesarios existan.
+    Si alguno falta, ejecuta los scripts de generación correspondientes.
+    Esta función se ejecuta ANTES de iniciar el servidor Flask.
+    """
+    print("\n" + "="*80)
+    print("🔍 VERIFICANDO MODELOS NECESARIOS")
+    print("="*80)
+    
+    ROOT_DIR = BACKEND_DIR.parent
+    models_to_check = [
+        {
+            'name': 'Modelo de Satisfacción (Random Forest)',
+            'files': [MODEL_PATH, FEATURES_PATH, RESULTS_PATH],
+            'script': ROOT_DIR / 'generate_models.py',
+            'required': True
+        },
+        {
+            'name': 'Modelo de Seniority/Bien Pagado',
+            'files': [SENIORITY_MODEL_PATH, SENIORITY_FEATURES_PATH, SENIORITY_RESULTS_PATH],
+            'script': ROOT_DIR / 'generate_seniority_model.py',
+            'required': False
+        },
+        {
+            'name': 'Modelo XGBoost (Búsqueda de Trabajo)',
+            'files': [XGBOOST_MODEL_PATH, XGBOOST_FEATURES_PATH, XGBOOST_RESULTS_PATH],
+            'script': ROOT_DIR / 'generate_xgboost_model.py',
+            'required': False
+        },
+        {
+            'name': 'Modelo de Regresión de Sueldo (USD)',
+            'files': [REGRESSION_MODEL_PATH, REGRESSION_SCALER_PATH, REGRESSION_FEATURES_PATH, REGRESSION_RESULTS_PATH],
+            'script': ROOT_DIR / 'generate_regression_model.py',
+            'required': False
+        },
+        {
+            'name': 'Modelo de Regresión de Sueldo Futuro (ARS)',
+            'files': [REGRESSION_FUTURO_MODEL_PATH, REGRESSION_FUTURO_SCALER_PATH, REGRESSION_FUTURO_FEATURES_PATH, REGRESSION_FUTURO_RESULTS_PATH],
+            'script': ROOT_DIR / 'generate_regression_futuro.py',
+            'required': False
+        }
+    ]
+    
+    missing_models = []
+    
+    for model_info in models_to_check:
+        model_name = model_info['name']
+        files = model_info['files']
+        script = model_info['script']
+        required = model_info['required']
+        
+        # Verificar si todos los archivos existen
+        files_missing = [f for f in files if not f.exists()]
+        
+        if files_missing:
+            print(f"\n⚠️  {model_name}: FALTAN ARCHIVOS")
+            for f in files_missing:
+                print(f"   - {f.name}")
+            
+            if script.exists():
+                print(f"   🔄 Ejecutando: {script.name}")
+                try:
+                    # Ejecutar el script de generación
+                    result = subprocess.run(
+                        [sys.executable, str(script)],
+                        capture_output=True,
+                        text=True,
+                        cwd=str(ROOT_DIR),
+                        timeout=300  # 5 minutos timeout
+                    )
+                    
+                    if result.returncode == 0:
+                        print(f"   ✅ {model_name} generado exitosamente")
+                        
+                        # Verificar nuevamente que se crearon los archivos
+                        still_missing = [f for f in files if not f.exists()]
+                        if still_missing:
+                            print(f"   ⚠️  Advertencia: Algunos archivos siguen sin existir:")
+                            for f in still_missing:
+                                print(f"      - {f.name}")
+                            if required:
+                                missing_models.append(model_name)
+                    else:
+                        print(f"   ❌ Error al generar {model_name}")
+                        print(f"   Error: {result.stderr[:500]}")
+                        if required:
+                            missing_models.append(model_name)
+                        
+                except subprocess.TimeoutExpired:
+                    print(f"   ❌ Timeout al generar {model_name} (>5 min)")
+                    if required:
+                        missing_models.append(model_name)
+                except Exception as e:
+                    print(f"   ❌ Error inesperado: {e}")
+                    if required:
+                        missing_models.append(model_name)
+            else:
+                print(f"   ❌ Script de generación no encontrado: {script.name}")
+                if required:
+                    missing_models.append(model_name)
+        else:
+            print(f"\n✅ {model_name}: Todos los archivos presentes")
+    
+    print("\n" + "="*80)
+    
+    if missing_models:
+        print(f"❌ FALTAN MODELOS CRÍTICOS: {', '.join(missing_models)}")
+        print("❌ No se puede iniciar el servidor sin estos modelos")
+        return False
+    else:
+        print("✅ TODOS LOS MODELOS ESTÁN DISPONIBLES")
+        return True
 
 def load_model():
     """Cargar los modelos entrenados"""
@@ -1049,16 +1165,31 @@ if __name__ == '__main__':
     print("INICIANDO SERVIDOR BACKEND")
     print("=" * 80)
     
-    # Cargar modelo
-    if load_model():
-        print("\n✓ Modelo cargado exitosamente")
-        print("✓ Iniciando servidor Flask...")
-        print("\n📍 Servidor disponible en: http://localhost:5000")
-        print("📍 Frontend disponible en: http://localhost:8000")
-        print("\n💡 Para detener: Presiona Ctrl+C")
-        print("=" * 80 + "\n")
-        
-        app.run(debug=True, port=5000, host='0.0.0.0')
-    else:
-        print("\n❌ No se pudo cargar el modelo")
-        print("❌ Asegúrate de haber ejecutado el notebook de análisis primero")
+    # Verificar y generar modelos si es necesario
+    if not check_and_generate_models():
+        print("\n❌ No se puede iniciar el servidor sin los modelos necesarios")
+        print("💡 Revisa los errores arriba y asegúrate de que database.csv esté disponible")
+        sys.exit(1)
+    
+    # Cargar modelos en memoria
+    try:
+        if load_model():
+            print("\n✓ Modelos cargados exitosamente en memoria")
+            print("✓ Iniciando servidor Flask...")
+            print("\n📍 Servidor disponible en: http://localhost:5000")
+            print("📍 Frontend disponible en: http://localhost:8080")
+            print("\n💡 Para detener: Presiona Ctrl+C")
+            print("=" * 80 + "\n")
+            
+            # Iniciar servidor Flask
+            app.run(debug=True, port=5000, host='0.0.0.0', use_reloader=False)
+        else:
+            print("\n❌ No se pudo cargar los modelos en memoria")
+            print("❌ Los archivos .pkl existen pero hay un error al cargarlos")
+            sys.exit(1)
+    except Exception as e:
+        print(f"\n❌ Error al iniciar el servidor Flask: {e}")
+        import traceback
+        traceback.print_exc()
+        sys.exit(1)
+

@@ -47,7 +47,7 @@ FRONTEND WEB
   ✅ JavaScript ES6+ interactivo
   ✅ 5 secciones activas
   ✅ Interfaz moderna
-  ✅ Puerto 8000 disponible
+  ✅ Puerto 8080 disponible
 
 DOCUMENTACIÓN
   ✅ README.md
@@ -109,12 +109,12 @@ Líneas de Código:
 ════════════════════════════════════════════════════════════════════════════════
 
 APLICACIÓN PRINCIPAL
-  • http://localhost:8000                    (Interfaz principal)
-  • http://localhost:8000/index.html         (Mismo)
+  • http://localhost:8080                    (Interfaz principal)
+  • http://localhost:8080/index.html         (Mismo)
 
 MONITOREO & INFORMACIÓN
-  • http://localhost:8000/monitor.html       (Monitor en vivo)
-  • http://localhost:8000/resumen.html       (Resumen del proyecto)
+  • http://localhost:8080/monitor.html       (Monitor en vivo)
+  • http://localhost:8080/resumen.html       (Resumen del proyecto)
 
 API BACKEND
   • http://localhost:5000/                   (Health check)
@@ -148,12 +148,12 @@ OPCIÓN 2 - MANUAL:
   │ cd frontend                                  │
   │ python server.py                             │
   │                                              │
-  │ Verás: "Servidor iniciado en port 8000"     │
+  │ Verás: "Servidor iniciado en port 8080"     │
   └──────────────────────────────────────────────┘
 
   Navegador:
   ┌──────────────────────────────────────────────┐
-  │ http://localhost:8000                        │
+  │ http://localhost:8080                        │
   └──────────────────────────────────────────────┘
 
 
@@ -196,7 +196,7 @@ Esto verifica:
   • Datos del análisis
 
 MONITOREO EN VIVO:
-  http://localhost:8000/monitor.html
+  http://localhost:8080/monitor.html
 
 Muestra:
   • Estado de Backend
@@ -254,9 +254,9 @@ SOLUCIÓN:
   netstat -ano | Select-String "5000"
   taskkill /PID <PID> /F
 
-PROBLEMA: Puerto 8000 en uso
+PROBLEMA: Puerto 8080 en uso
 SOLUCIÓN:
-  netstat -ano | Select-String "8000"
+  netstat -ano | Select-String "8080"
   taskkill /PID <PID> /F
 
 PROBLEMA: Error de CORS
@@ -315,7 +315,7 @@ Desempeño:
 2. Abre 2 terminales
 3. Ejecuta backend: cd backend && python app.py
 4. Ejecuta frontend: cd frontend && python server.py
-5. Abre navegador: http://localhost:8000
+5. Abre navegador: http://localhost:8080
 6. ¡Disfruta!
 
 
@@ -338,3 +338,5 @@ Si necesitas ayuda, consulta la documentación o ejecuta:
   python diagnostico_graficas.py
 
 ════════════════════════════════════════════════════════════════════════════════
+
+

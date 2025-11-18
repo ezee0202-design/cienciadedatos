@@ -1,15 +1,15 @@
 {
   "model_metrics": {
-    "r2_score": 0.29468575218468884,
-    "rmse": 1216.8808121933882,
-    "mae": 831.3086403338257,
-    "mape": 53.60469189881725
+    "r2_score": 0.29468575218468873,
+    "rmse": 1216.8808121933885,
+    "mae": 831.3086403338256,
+    "mape": 53.60469189881724
   },
   "model_comparison": {
     "Ridge": {
-      "r2_test": 0.29468575218468884,
-      "rmse": 1216.8808121933882,
-      "mae": 831.3086403338257
+      "r2_test": 0.29468575218468873,
+      "rmse": 1216.8808121933885,
+      "mae": 831.3086403338256
     }
   },
   "dataset_info": {
@@ -27,51 +27,51 @@
   "coefficients": [
     {
       "feature": "ratio_exp_edad",
-      "coefficient": 878.5142786058559
+      "coefficient": 878.5142786058583
     },
     {
       "feature": "anos_de_experiencia",
-      "coefficient": -633.9402690862246
+      "coefficient": -633.9402690862254
     },
     {
       "feature": "tengo_edad",
-      "coefficient": 516.3825804516318
+      "coefficient": 516.3825804516255
     },
     {
       "feature": "edad_squared",
-      "coefficient": -427.23938754183433
+      "coefficient": -427.239387541827
     },
     {
       "feature": "modalidad_de_trabajo",
-      "coefficient": -219.161144388288
+      "coefficient": -219.16114438828706
     },
     {
       "feature": "seniority",
-      "coefficient": 204.63884377840424
+      "coefficient": 204.6388437784036
     },
     {
       "feature": "es_senior",
-      "coefficient": 164.88510948361642
+      "coefficient": 164.8851094836219
     },
     {
       "feature": "es_junior",
-      "coefficient": -164.88510948331918
+      "coefficient": -164.88510948331285
     },
     {
       "feature": "recibis_algun_tipo_de_bono",
-      "coefficient": 164.42124920091564
+      "coefficient": 164.42124920091558
     },
     {
       "feature": "cuantas_personas_tenes_a_cargo",
-      "coefficient": 159.94300696275195
+      "coefficient": 159.94300696275204
     },
     {
       "feature": "que_tanto_estas_usando_copilotchatgpt_u_otras_herramientas_de_ia_para_tu_trabajo",
-      "coefficient": 126.46556718981013
+      "coefficient": 126.46556718981014
     },
     {
       "feature": "dedicacion",
-      "coefficient": -123.17203351990754
+      "coefficient": -123.17203351990761
     },
     {
       "feature": "estudios_estado",
@@ -79,31 +79,31 @@
     },
     {
       "feature": "donde_estas_trabajando",
-      "coefficient": -80.28847681183589
+      "coefficient": -80.28847681183578
     },
     {
       "feature": "genero",
-      "coefficient": -71.41262757548263
+      "coefficient": -71.41262757548247
     },
     {
       "feature": "antiguedad_en_la_empresa_actual",
-      "coefficient": -59.05874264647533
+      "coefficient": -59.05874264647536
     },
     {
       "feature": "ratio_antiguedad_exp",
-      "coefficient": -57.42606457143811
+      "coefficient": -57.426064571438275
     },
     {
       "feature": "ratio_puesto_exp",
-      "coefficient": -47.66079154540706
+      "coefficient": -47.66079154540691
     },
     {
       "feature": "exp_squared",
-      "coefficient": 42.11096651857595
+      "coefficient": 42.11096651857399
     },
     {
       "feature": "trabajo_de",
-      "coefficient": -35.50531768986435
+      "coefficient": -35.50531768986447
     }
   ]
 }

@@ -4,8 +4,8 @@
 
 ### Servidores Activos
 - ✅ **Backend Flask**: http://localhost:5000
-- ✅ **Frontend HTTP**: http://localhost:8000
-- ✅ **Monitor**: http://localhost:8000/monitor.html
+- ✅ **Frontend HTTP**: http://localhost:8080
+- ✅ **Monitor**: http://localhost:8080/monitor.html
 
 ### Gráficas
 - ✅ distributions.png (300 KB)
@@ -27,12 +27,12 @@
 
 ### URL Principal
 ```
-http://localhost:8000
+http://localhost:8080
 ```
 
 ### URL de Monitoreo
 ```
-http://localhost:8000/monitor.html
+http://localhost:8080/monitor.html
 ```
 
 ### API Backend
@@ -65,7 +65,7 @@ python server.py
 
 **Luego abrir navegador en:**
 ```
-http://localhost:8000
+http://localhost:8080
 ```
 
 ---
@@ -107,7 +107,7 @@ python diagnostico_graficas.py
 
 ### Monitoreo en Vivo
 ```
-http://localhost:8000/monitor.html
+http://localhost:8080/monitor.html
 ```
 
 ---
@@ -126,7 +126,7 @@ http://localhost:8000/monitor.html
 
 ## 🎯 PRÓXIMOS PASOS
 
-1. Abre: http://localhost:8000
+1. Abre: http://localhost:8080
 2. Explora las 5 secciones
 3. Prueba el predictor
 4. Descarga las gráficas si lo necesitas
@@ -134,3 +134,4 @@ http://localhost:8000/monitor.html
 ---
 
 **Status: ✅ COMPLETAMENTE OPERATIVO**
+

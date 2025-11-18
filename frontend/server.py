@@ -1,6 +1,6 @@
 """
 Servidor HTTP simple para servir los archivos del frontend
-Se ejecuta en puerto 8000
+Se ejecuta en puerto 8080
 """
 
 import http.server
@@ -22,7 +22,7 @@ class MyHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         self.send_header('Access-Control-Allow-Headers', 'Content-Type')
         super().end_headers()
 
-def find_available_port(start_port=8000, max_attempts=10):
+def find_available_port(start_port=8080, max_attempts=10):
     """Encontrar puerto disponible comenzando desde start_port"""
     for port in range(start_port, start_port + max_attempts):
         try:
@@ -38,7 +38,7 @@ def run_server():
     print("=" * 80)
     
     # Encontrar puerto disponible
-    port = find_available_port(8000)
+    port = find_available_port(8080)
     handler = MyHTTPRequestHandler
     
     with socketserver.TCPServer(("", port), handler) as httpd:
@@ -54,3 +54,4 @@ def run_server():
 
 if __name__ == '__main__':
     run_server()
+

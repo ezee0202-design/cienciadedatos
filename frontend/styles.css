@@ -47,7 +47,29 @@
 .model-selection-container {
     max-width: 1200px;
     width: 90%;
+    max-height: 90vh;
     padding: 2rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Estilo personalizado para la barra de scroll */
+.model-selection-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.model-selection-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.model-selection-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.model-selection-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .selection-header {
@@ -81,9 +103,22 @@
 
 .model-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
+}
+
+@media (max-width: 1400px) {
+    .model-cards {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .model-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 }
 
 .model-card {

@@ -86,14 +86,14 @@ if all_ok and graphics_ok:
     print("\nPRÓXIMOS PASOS:")
     print("1. Terminal 1: cd backend && python app.py")
     print("2. Terminal 2: cd frontend && python server.py")
-    print("3. Navegador: http://localhost:8000")
+    print("3. Navegador: http://localhost:8080")
     print("\nVerificación:")
-    print("  • Dashboard: http://localhost:8000 (Sección 1)")
-    print("  • EDA Gráficas: http://localhost:8000 (Sección 2)")
-    print("  • Modelo: http://localhost:8000 (Sección 3)")
-    print("  • Predictor: http://localhost:8000 (Sección 4)")
-    print("  • Galería: http://localhost:8000 (Sección 5)")
-    print("  • Monitor: http://localhost:8000/monitor.html")
+    print("  • Dashboard: http://localhost:8080 (Sección 1)")
+    print("  • EDA Gráficas: http://localhost:8080 (Sección 2)")
+    print("  • Modelo: http://localhost:8080 (Sección 3)")
+    print("  • Predictor: http://localhost:8080 (Sección 4)")
+    print("  • Galería: http://localhost:8080 (Sección 5)")
+    print("  • Monitor: http://localhost:8080/monitor.html")
 else:
     print("⚠️  PROBLEMAS DETECTADOS")
     print("="*80)
@@ -103,3 +103,4 @@ else:
         print("\nFaltan gráficas. Ejecuta el Notebook para regenerarlas.")
 
 print("\n" + "="*80 + "\n")
+

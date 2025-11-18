@@ -29,12 +29,12 @@ TERMINAL 2:
 │ cd "e:\TPO - CIENCIA DE DATOS\APP 2\frontend"              │
 │ python server.py                                            │
 │                                                             │
-│ Verás: Servidor iniciado en: http://localhost:8000         │
+│ Verás: Servidor iniciado en: http://localhost:8080         │
 └─────────────────────────────────────────────────────────────┘
 
 NAVEGADOR:
 ┌─────────────────────────────────────────────────────────────┐
-│ http://localhost:8000                                       │
+│ http://localhost:8080                                       │
 └─────────────────────────────────────────────────────────────┘
 
 ¡LISTO! Ya está funcionando.
@@ -99,3 +99,4 @@ Te dirá exactamente qué falta.
 ════════════════════════════════════════════════════════════════════════════════
 
 ¡LISTO! Ya tienes todo funcionando 🎉
+
