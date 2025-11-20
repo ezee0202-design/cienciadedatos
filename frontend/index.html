@@ -411,7 +411,6 @@
                             <select id="pred-dedicacion" class="form-input">
                                 <option value="Full-Time" selected>Full-Time</option>
                                 <option value="Part-Time">Part-Time</option>
-                                <option value="Freelance">Freelance</option>
                             </select>
                         </div>
 
@@ -419,13 +418,10 @@
                         <div class="form-group model-field" data-models="xgboost" style="display: none;">
                             <label for="pred-estudios">Estado de Estudios</label>
                             <select id="pred-estudios" class="form-input">
-                                <option value="Terciario en curso">Terciario en curso</option>
-                                <option value="Terciario completo">Terciario completo</option>
-                                <option value="Universitario en curso">Universitario en curso</option>
-                                <option value="Universitario completo" selected>Universitario completo</option>
-                                <option value="Posgrado en curso">Posgrado en curso</option>
-                                <option value="Posgrado completo">Posgrado completo</option>
-                                <option value="Secundario">Secundario</option>
+                                <option value="menor_a_universitario">Secundario o Terciario</option>
+                                <option value="universitario incompleto_encurso" selected>Universitario en curso</option>
+                                <option value="universitario completo">Universitario completo</option>
+                                <option value="mayor_a_universitario">Posgrado</option>
                             </select>
                         </div>
 
@@ -445,14 +441,12 @@
                         </div>
 
                         <div class="form-group model-field" data-models="seniority" style="display: none;">
-                            <label for="pred-donde-trabajando">¿Dónde estás trabajando?</label>
+                            <label for="pred-donde-trabajando">¿Dónde estás trabajando? (Argentina)</label>
                             <select id="pred-donde-trabajando" class="form-input">
-                                <option value="Argentina">Argentina</option>
-                                <option value="Uruguay">Uruguay</option>
-                                <option value="Chile">Chile</option>
-                                <option value="México">México</option>
-                                <option value="Colombia">Colombia</option>
-                                <option value="Otro">Otro</option>
+                                <option value="Capital">Capital</option>
+                                <option value="Buenos Aires" selected>Buenos Aires</option>
+                                <option value="Centro">Centro</option>
+                                <option value="Resto del país">Resto del país</option>
                             </select>
                         </div>
 
@@ -499,10 +493,8 @@
                             <label for="pred-seniority">Seniority</label>
                             <select id="pred-seniority" class="form-input">
                                 <option value="Junior">Junior</option>
-                                <option value="Semi-Senior">Semi-Senior</option>
-                                <option value="Senior" selected>Senior</option>
-                                <option value="Lead">Lead</option>
-                                <option value="Principal">Principal</option>
+                                <option value="Semi-Senior" selected>Semi-Senior</option>
+                                <option value="Senior">Senior</option>
                             </select>
                         </div>
 
@@ -630,7 +622,6 @@
                                     <option value="Junior">Junior</option>
                                     <option value="Semi-Senior" selected>Semi-Senior</option>
                                     <option value="Senior">Senior</option>
-                                    <option value="Lead">Lead</option>
                                 </select>
                             </div>
 
@@ -639,19 +630,16 @@
                                 <select id="reg-dedicacion" class="form-input">
                                     <option value="Full-Time" selected>Full-Time</option>
                                     <option value="Part-Time">Part-Time</option>
-                                    <option value="Freelance">Freelance</option>
                                 </select>
                             </div>
 
                             <div class="form-group">
-                                <label for="reg-pais">Dónde estás trabajando</label>
+                                <label for="reg-pais">¿Dónde estás trabajando? (Argentina)</label>
                                 <select id="reg-pais" class="form-input">
-                                    <option value="Argentina" selected>Argentina</option>
-                                    <option value="Uruguay">Uruguay</option>
-                                    <option value="Chile">Chile</option>
-                                    <option value="Colombia">Colombia</option>
-                                    <option value="México">México</option>
-                                    <option value="Otro">Otro</option>
+                                    <option value="Capital">Capital</option>
+                                    <option value="Buenos Aires" selected>Buenos Aires</option>
+                                    <option value="Centro">Centro</option>
+                                    <option value="Resto del país">Resto del país</option>
                                 </select>
                             </div>
 
@@ -680,12 +668,10 @@
                             <div class="form-group">
                                 <label for="reg-estudios">Nivel de Estudios</label>
                                 <select id="reg-estudios" class="form-input">
-                                    <option value="Secundario">Secundario</option>
-                                    <option value="Terciario en curso">Terciario en curso</option>
-                                    <option value="Terciario completo">Terciario completo</option>
-                                    <option value="Universitario en curso" selected>Universitario en curso</option>
-                                    <option value="Universitario completo">Universitario completo</option>
-                                    <option value="Posgrado">Posgrado</option>
+                                    <option value="menor_a_universitario">Secundario o Terciario</option>
+                                    <option value="universitario incompleto_encurso" selected>Universitario en curso</option>
+                                    <option value="universitario completo">Universitario completo</option>
+                                    <option value="mayor_a_universitario">Posgrado</option>
                                 </select>
                             </div>
 

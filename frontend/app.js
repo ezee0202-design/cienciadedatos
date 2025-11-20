@@ -353,10 +353,10 @@ async function handlePrediction() {
                 'trabajo_de': document.getElementById('pred-trabajo').value,
                 'seniority': document.getElementById('pred-seniority')?.value || 'Semi-Senior',
                 'dedicacion': document.getElementById('pred-dedicacion').value,
-                'donde_trabajando': document.getElementById('pred-donde-trabajando')?.value || 'Argentina',
+                'donde_trabajando': document.getElementById('pred-donde-trabajando')?.value || 'Buenos Aires',
                 'modalidad': document.getElementById('pred-modalidad')?.value || 'Remoto',
                 'tamano_org': document.getElementById('pred-org').value,
-                'estudios': document.getElementById('pred-estudios')?.value || 'Universitario en curso',
+                'estudios': document.getElementById('pred-estudios')?.value || 'universitario incompleto_encurso',
                 'genero': document.getElementById('pred-genero')?.value || 'Masculino',
                 'uso_ia': '3', // Valor por defecto
                 'recibe_bono': document.getElementById('pred-bono')?.value || 'No'
@@ -570,10 +570,10 @@ function clearRegressionPrediction() {
     document.getElementById('reg-trabajo').value = 'Developer';
     document.getElementById('reg-seniority').value = 'Semi-Senior';
     document.getElementById('reg-dedicacion').value = 'Full-Time';
-    document.getElementById('reg-pais').value = 'Argentina';
+    document.getElementById('reg-pais').value = 'Buenos Aires';
     document.getElementById('reg-modalidad').value = 'Remoto';
     document.getElementById('reg-org').value = '11-50';
-    document.getElementById('reg-estudios').value = 'Universitario en curso';
+    document.getElementById('reg-estudios').value = 'universitario incompleto_encurso';
     document.getElementById('reg-genero').value = 'Masculino';
     document.getElementById('reg-bono').value = 'No';
 }

@@ -701,10 +701,10 @@ def predict_salary():
             'trabajo_de': data.get('trabajo_de', 'Developer'),
             'seniority': data.get('seniority', 'Semi-Senior'),
             'dedicacion': data.get('dedicacion', 'Full-Time'),
-            'donde_estas_trabajando': data.get('donde_trabajando', 'Argentina'),
+            'donde_estas_trabajando': data.get('donde_trabajando', 'Buenos Aires'),
             'modalidad_de_trabajo': data.get('modalidad', 'Remoto'),
             'cantidad_de_personas_en_tu_organizacion': data.get('tamano_org', '11-50'),
-            'estudios_estado': data.get('estudios', 'Universitario en curso'),
+            'estudios_estado': data.get('estudios', 'universitario incompleto_encurso'),
             'genero': data.get('genero', 'Masculino'),
             'que_tanto_estas_usando_copilotchatgpt_u_otras_herramientas_de_ia_para_tu_trabajo': data.get('uso_ia', '3')
         }
@@ -830,10 +830,10 @@ def predict_salary_futuro():
             'trabajo_de': data.get('trabajo_de', 'Developer'),
             'seniority': data.get('seniority', 'Semi-Senior'),
             'dedicacion': data.get('dedicacion', 'Full-Time'),
-            'donde_estas_trabajando': data.get('donde_trabajando', 'Argentina'),
+            'donde_estas_trabajando': data.get('donde_trabajando', 'Buenos Aires'),
             'modalidad_de_trabajo': data.get('modalidad', 'Remoto'),
             'cantidad_de_personas_en_tu_organizacion': data.get('tamano_org', '11-50'),
-            'estudios_estado': data.get('estudios', 'Universitario en curso'),
+            'estudios_estado': data.get('estudios', 'universitario incompleto_encurso'),
             'genero': data.get('genero', 'Masculino'),
             'que_tanto_estas_usando_copilotchatgpt_u_otras_herramientas_de_ia_para_tu_trabajo': data.get('uso_ia', '3')
         }
