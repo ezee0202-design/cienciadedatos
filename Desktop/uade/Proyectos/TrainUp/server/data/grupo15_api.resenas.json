@@ -1,0 +1,87 @@
+[{
+  "_id": {
+    "$oid": "667a9d3e1f2c3d4e5f6a7f01"
+  },
+  "cliente": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7c01"
+  },
+  "servicio": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d01"
+  },
+  "reserva": {
+    "$oid": "667a9c8f1f2c3d4e5f6a7e01"
+  },
+  "entrenador": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b01"
+  },
+  "calificacion": 5,
+  "comentario": "¡Excelente clase! Carlos es un genio, muy atento a la técnica y te motiva a darlo todo. El grupo también muy buena onda. Súper recomendable.",
+  "respuesta": "¡Muchas gracias Javier! Un placer tenerte en el grupo, tu energía contagia. ¡A seguir con todo!",
+  "fecha": {
+    "$date": "2025-06-10T10:15:00.000Z"
+  },
+  "createdAt": {
+    "$date": "2025-06-10T10:15:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-10T10:15:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9d3e1f2c3d4e5f6a7f02"
+  },
+  "cliente": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7c02"
+  },
+  "servicio": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d02"
+  },
+  "reserva": {
+    "$oid": "667a9c8f1f2c3d4e5f6a7e02"
+  },
+  "entrenador": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b02"
+  },
+  "calificacion": 4,
+  "comentario": "La clase de yoga con Ana fue muy linda y relajante. Ideal para terminar el día. Me gustaría que hubiera opciones de horarios por la mañana.",
+  "respuesta": null,
+  "fecha": {
+    "$date": "2025-06-12T20:30:00.000Z"
+  },
+  "createdAt": {
+    "$date": "2025-06-12T20:30:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-12T20:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "685b482ac9f34c73cc587bb0"
+  },
+  "cliente": {
+    "$oid": "685b4239c9f34c73cc587769"
+  },
+  "servicio": {
+    "$oid": "685b4391c9f34c73cc58778d"
+  },
+  "reserva": {
+    "$oid": "685b4477c9f34c73cc587830"
+  },
+  "entrenador": {
+    "$oid": "685b4264c9f34c73cc58776c"
+  },
+  "calificacion": 5,
+  "comentario": "Excelente profesor!",
+  "fecha": {
+    "$date": "2025-06-25T00:51:54.702Z"
+  },
+  "createdAt": {
+    "$date": "2025-06-25T00:51:54.703Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-25T00:51:54.703Z"
+  },
+  "__v": 0
+}]

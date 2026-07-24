@@ -1,0 +1,151 @@
+[{
+  "_id": {
+    "$oid": "667a9da81f2c3d4e5f6a8a01"
+  },
+  "participantes": [
+    {
+      "$oid": "667a9a0b1f2c3d4e5f6a7c04"
+    },
+    {
+      "$oid": "667a9a0b1f2c3d4e5f6a7b04"
+    }
+  ],
+  "mensajes": [
+    {
+      "_id": {
+        "$oid": "667a9da81f2c3d4e5f6a8b01"
+      },
+      "remitente": {
+        "$oid": "667a9a0b1f2c3d4e5f6a7c04"
+      },
+      "contenido": "Hola Lucía! Ví tu servicio de running team. Yo nunca corrí 21k, estoy para empezar?",
+      "fechaEnvio": {
+        "$date": "2025-07-22T18:35:00.000Z"
+      },
+      "leido": true
+    },
+    {
+      "_id": {
+        "$oid": "667a9da81f2c3d4e5f6a8b02"
+      },
+      "remitente": {
+        "$oid": "667a9a0b1f2c3d4e5f6a7b04"
+      },
+      "contenido": "Hola Valentina! Claro que sí, el grupo es para nivel intermedio pero todos empezamos de cero. Si ya corrés 10k con comodidad, te vas a adaptar perfecto. ¡Sumate cuando quieras!",
+      "fechaEnvio": {
+        "$date": "2025-07-22T18:40:00.000Z"
+      },
+      "leido": false
+    }
+  ],
+  "fechaUltimaActividad": {
+    "$date": "2025-07-22T18:40:00.000Z"
+  },
+  "createdAt": {
+    "$date": "2025-07-22T18:35:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-22T18:40:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9da81f2c3d4e5f6a8a02"
+  },
+  "participantes": [
+    {
+      "$oid": "667a9a0b1f2c3d4e5f6a7c01"
+    },
+    {
+      "$oid": "667a9a0b1f2c3d4e5f6a7b02"
+    }
+  ],
+  "mensajes": [
+    {
+      "_id": {
+        "$oid": "667a9da81f2c3d4e5f6a8b03"
+      },
+      "remitente": {
+        "$oid": "667a9a0b1f2c3d4e5f6a7c01"
+      },
+      "contenido": "Hola Ana, te quería consultar si podía cancelar la reserva que tengo para el próximo martes. Me surgió un imprevisto.",
+      "fechaEnvio": {
+        "$date": "2025-05-15T11:58:00.000Z"
+      },
+      "leido": true
+    },
+    {
+      "_id": {
+        "$oid": "667a9da81f2c3d4e5f6a8b04"
+      },
+      "remitente": {
+        "$oid": "667a9a0b1f2c3d4e5f6a7b02"
+      },
+      "contenido": "Hola Javier, no hay problema. Ya la marqué como cancelada. Espero que nos veamos en la próxima clase!",
+      "fechaEnvio": {
+        "$date": "2025-05-15T12:01:00.000Z"
+      },
+      "leido": true
+    }
+  ],
+  "fechaUltimaActividad": {
+    "$date": "2025-05-15T12:01:00.000Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-15T11:58:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-15T12:01:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "685b45adc9f34c73cc58796f"
+  },
+  "participantes": [
+    {
+      "$oid": "685b4239c9f34c73cc587769"
+    },
+    {
+      "$oid": "685b4264c9f34c73cc58776c"
+    }
+  ],
+  "fechaUltimaActividad": {
+    "$date": "2025-06-25T00:47:10.648Z"
+  },
+  "mensajes": [
+    {
+      "remitente": {
+        "$oid": "685b4239c9f34c73cc587769"
+      },
+      "contenido": "Hola Luis!",
+      "fechaEnvio": {
+        "$date": "2025-06-25T00:41:25.788Z"
+      },
+      "leido": false,
+      "_id": {
+        "$oid": "685b45b5c9f34c73cc587975"
+      }
+    },
+    {
+      "remitente": {
+        "$oid": "685b4264c9f34c73cc58776c"
+      },
+      "contenido": "Hola Raúl, cómo estás? Te confirmé tu reserva, nos vemos pronto!",
+      "fechaEnvio": {
+        "$date": "2025-06-25T00:47:10.648Z"
+      },
+      "leido": false,
+      "_id": {
+        "$oid": "685b470ec9f34c73cc587ac2"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-06-25T00:41:17.380Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-25T00:47:10.649Z"
+  },
+  "__v": 2
+}]

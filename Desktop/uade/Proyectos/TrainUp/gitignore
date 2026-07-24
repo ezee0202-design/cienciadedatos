@@ -1,0 +1,32 @@
+# ── Dependencias ──────────────────────────────────────────────────────────────
+node_modules/
+
+# ── Variables de entorno ───────────────────────────────────────────────────────
+.env
+server/.env
+server/client/.env
+
+# ── Uploads de usuarios (runtime, no código fuente) ───────────────────────────
+server/uploads/[0-9]*
+server/uploads/chat/
+
+# ── Build del frontend ─────────────────────────────────────────────────────────
+server/client/build/
+server/client/dist/
+
+# ── Sistema operativo ──────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE ────────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+
+# ── Logs ───────────────────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+
+# ── Caché ──────────────────────────────────────────────────────────────────────
+.npm
+.cache/

@@ -1,0 +1,140 @@
+.solicitud-card-container {
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  width: 500px; /* Ancho ajustado para la imagen de referencia */
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.solicitud-service-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 10px 0; /* Margen inferior para separar del resto */
+}
+
+.solicitud-details-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.solicitud-datetime-info {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Espacio entre icono y texto */
+  font-size: 14px;
+  color: #555;
+}
+
+.solicitud-icon {
+  font-size: 16px; 
+  color: #888; 
+}
+
+
+.ml-5 { /* Clase para el margen a la izquierda del segundo icono */
+  margin-left: 10px;
+}
+
+.solicitud-status-badge {
+  padding: 5px 12px;
+  border-radius: 20px; /* Borde muy redondeado para el badge */
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+  text-transform: capitalize; /* Para asegurar que el texto se vea bien */
+}
+
+.solicitud-status-badge.pendiente {
+  background-color: #64b5f6; 
+}
+
+.solicitud-status-badge.aceptado {
+  background-color: #4caf50; 
+}
+
+.solicitud-status-badge.rechazado {
+  background-color: #f44336; 
+}
+
+.solicitud-user-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px; /* Margen inferior antes de los botones */
+}
+
+.solicitud-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 12px;
+}
+
+.left-actions {
+  display: flex;
+  align-items: flex-start;
+}
+
+.right-actions {
+  display: flex;
+  gap: 8px;
+}
+
+
+.solicitud-button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.accept-button {
+  background-color: #4caf50; 
+  color: white;
+}
+
+.accept-button:hover {
+  background-color: #43a047;
+}
+
+.reject-button {
+  background-color: #f44336; 
+  color: white;
+}
+
+.reject-button:hover {
+  background-color: #e53935;
+}
+
+.solicitud-status-badge.finalizado {
+  background-color: #9e9e9e; 
+}
+
+.solicitud-button.view-button {
+  background-color: #d0ecff; 
+  color: #005f87;
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 8px;
+  align-self: flex-start; /* lo empuja a la izquierda */
+  transition: background-color 0.2s ease;
+}
+
+.solicitud-button.view-button:hover {
+  background-color: #bae3ff;
+}
+

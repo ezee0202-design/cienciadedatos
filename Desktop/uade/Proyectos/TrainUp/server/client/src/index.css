@@ -1,0 +1,66 @@
+body {
+    font-family: sans-serif;
+    background-color: #ffffff; 
+    color: #191919;
+}
+
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.app-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+}
+
+/* Barra de navegación del cliente */
+.nav-indicador-cliente {
+    left: 0;
+}
+
+a[data-index="0"].active ~ .nav-indicador-cliente {
+    left: 0;
+}
+
+a[data-index="1"].active ~ .nav-indicador-cliente {
+    left: 33.333%;
+}
+
+a[data-index="2"].active ~ .nav-indicador-cliente {
+    left: 66.666%;
+}
+
+/* Barra de navegación del entrenador */
+.nav-indicador-entrenador {
+    left: 0;
+}
+
+a[data-index="0"].active ~ .nav-indicador-entrenador {
+    left: 0;
+}
+
+a[data-index="1"].active ~ .nav-indicador-entrenador {
+    left: 20%;
+}
+
+a[data-index="2"].active ~ .nav-indicador-entrenador {
+    left: 40%;
+}
+
+a[data-index="3"].active ~ .nav-indicador-entrenador {
+    left: 60%;
+}
+
+a[data-index="4"].active ~ .nav-indicador-entrenador {
+    left: 80%;
+}

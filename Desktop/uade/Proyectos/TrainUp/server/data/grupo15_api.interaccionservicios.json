@@ -1,0 +1,635 @@
+[{
+  "_id": {
+    "$oid": "68586bf4ff622c3f847a0d5b"
+  },
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "tipo": "visualizacion",
+  "fecha": {
+    "$date": "2025-06-22T20:47:48.813Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68587f1bff622c3f847a1180"
+  },
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "tipo": "visualizacion",
+  "fecha": {
+    "$date": "2025-06-22T22:09:31.547Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68587f8bff622c3f847a11eb"
+  },
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "tipo": "visualizacion",
+  "fecha": {
+    "$date": "2025-06-22T22:11:23.306Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68587fa4ff622c3f847a11f5"
+  },
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "tipo": "compra",
+  "fecha": {
+    "$date": "2025-06-22T22:11:48.306Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68589e6e41910239e19e91ef"
+  },
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "tipo": "visualizacion",
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-23T00:23:10.147Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68589e6e41910239e19e91ee"
+  },
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "tipo": "visualizacion",
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-23T00:23:10.144Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6858a1b741910239e19e91f0"
+  },
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "tipo": "visualizacion",
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-23T00:37:11.305Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6858a1c241910239e19e91f1"
+  },
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "tipo": "visualizacion",
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-23T00:37:22.281Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6858bb6041910239e19e91f2"
+  },
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "tipo": "visualizacion",
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-23T02:26:40.560Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6858bbf041910239e19e91f3"
+  },
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "tipo": "visualizacion",
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-23T02:29:04.815Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6858bbf241910239e19e91f4"
+  },
+  "servicio": {
+    "$oid": "6848c665b5e8f1205ca91d7e"
+  },
+  "tipo": "visualizacion",
+  "entrenador": null,
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-23T02:29:06.887Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6858bbf541910239e19e91f5"
+  },
+  "entrenador": null,
+  "servicio": {
+    "$oid": "6848c710b5e8f1205ca91d83"
+  },
+  "tipo": "visualizacion",
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-23T02:29:09.601Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6858c46d41910239e19e91f6"
+  },
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "tipo": "visualizacion",
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-23T03:05:17.882Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6858c4f241910239e19e91f7"
+  },
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "tipo": "visualizacion",
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-23T03:07:30.199Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6858cc6d41910239e19e91f8"
+  },
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "tipo": "visualizacion",
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-23T03:39:25.976Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6858cf4641910239e19e91f9"
+  },
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "tipo": "visualizacion",
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-23T03:51:34.453Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6858cf4941910239e19e91fa"
+  },
+  "entrenador": null,
+  "servicio": {
+    "$oid": "6848c665b5e8f1205ca91d7e"
+  },
+  "tipo": "visualizacion",
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-23T03:51:37.658Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6858cf4b41910239e19e91fb"
+  },
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "tipo": "visualizacion",
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-23T03:51:39.985Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6858cf5041910239e19e91fc"
+  },
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "tipo": "visualizacion",
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-23T03:51:44.450Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6858cf7641910239e19e91fd"
+  },
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "tipo": "visualizacion",
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-23T03:52:22.618Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6858d39f41910239e19e91fe"
+  },
+  "entrenador": null,
+  "servicio": {
+    "$oid": "6848c710b5e8f1205ca91d85"
+  },
+  "tipo": "visualizacion",
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-23T04:10:07.910Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6858d3a241910239e19e91ff"
+  },
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "tipo": "visualizacion",
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-23T04:10:10.961Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6859eb1641910239e19e9200"
+  },
+  "servicio": {
+    "$oid": "6848c710b5e8f1205ca91d83"
+  },
+  "tipo": "visualizacion",
+  "entrenador": null,
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-24T00:02:30.623Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6859eb1841910239e19e9201"
+  },
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "tipo": "visualizacion",
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-24T00:02:32.671Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6859eb1c41910239e19e9202"
+  },
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "tipo": "visualizacion",
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-24T00:02:36.100Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6859eb1e41910239e19e9203"
+  },
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "tipo": "visualizacion",
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-24T00:02:38.972Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6859eb2141910239e19e9204"
+  },
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "tipo": "visualizacion",
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-24T00:02:41.056Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6859ebd741910239e19e9205"
+  },
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "tipo": "visualizacion",
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-24T00:05:43.130Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6859ec2a41910239e19e9206"
+  },
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "tipo": "visualizacion",
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-24T00:07:06.490Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6859ec3f41910239e19e9207"
+  },
+  "entrenador": {
+    "$oid": "6850a7104ee444414a7aa890"
+  },
+  "servicio": {
+    "$oid": "6850c0724ee444414a7aabcd"
+  },
+  "tipo": "visualizacion",
+  "__v": 0,
+  "fecha": {
+    "$date": "2025-06-24T00:07:27.195Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9e1e1f2c3d4e5f6a9c01"
+  },
+  "servicio": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d01"
+  },
+  "entrenador": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b01"
+  },
+  "tipo": "visualizacion",
+  "fecha": {
+    "$date": "2025-05-30T10:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9e1e1f2c3d4e5f6a9c02"
+  },
+  "servicio": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d01"
+  },
+  "entrenador": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b01"
+  },
+  "tipo": "visualizacion",
+  "fecha": {
+    "$date": "2025-05-31T11:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9e1e1f2c3d4e5f6a9c03"
+  },
+  "servicio": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d01"
+  },
+  "entrenador": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b01"
+  },
+  "tipo": "compra",
+  "fecha": {
+    "$date": "2025-06-01T10:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9e1e1f2c3d4e5f6a9c04"
+  },
+  "servicio": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d02"
+  },
+  "entrenador": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b02"
+  },
+  "tipo": "visualizacion",
+  "fecha": {
+    "$date": "2025-06-01T15:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9e1e1f2c3d4e5f6a9c05"
+  },
+  "servicio": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d02"
+  },
+  "entrenador": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b02"
+  },
+  "tipo": "compra",
+  "fecha": {
+    "$date": "2025-06-02T11:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9e1e1f2c3d4e5f6a9c06"
+  },
+  "servicio": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d03"
+  },
+  "entrenador": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b03"
+  },
+  "tipo": "visualizacion",
+  "fecha": {
+    "$date": "2025-07-19T18:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9e1e1f2c3d4e5f6a9c07"
+  },
+  "servicio": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d03"
+  },
+  "entrenador": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b03"
+  },
+  "tipo": "compra",
+  "fecha": {
+    "$date": "2025-07-20T14:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9e1e1f2c3d4e5f6a9c08"
+  },
+  "servicio": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d04"
+  },
+  "entrenador": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b04"
+  },
+  "tipo": "visualizacion",
+  "fecha": {
+    "$date": "2025-07-22T18:25:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9e1e1f2c3d4e5f6a9c09"
+  },
+  "servicio": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d04"
+  },
+  "entrenador": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b04"
+  },
+  "tipo": "compra",
+  "fecha": {
+    "$date": "2025-07-22T18:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9e1e1f2c3d4e5f6a9c10"
+  },
+  "servicio": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d01"
+  },
+  "entrenador": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b01"
+  },
+  "tipo": "compra",
+  "fecha": {
+    "$date": "2025-07-24T20:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9e1e1f2c3d4e5f6a9c11"
+  },
+  "servicio": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d02"
+  },
+  "entrenador": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b02"
+  },
+  "tipo": "compra",
+  "fecha": {
+    "$date": "2025-05-15T12:00:00.000Z"
+  }
+}]

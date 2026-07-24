@@ -1,0 +1,115 @@
+.perfil-contenedor {
+  border: 1px solid #000000;
+  border-radius: 15px;
+  padding: 0 25px;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: sans-serif;
+  background-color: white;
+  padding-bottom: 30px;
+}
+
+.perfil-contenedor h2 {
+  margin-bottom: 0;
+}
+
+.perfil-subtitulo {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #000;
+}
+
+.perfil-editar-btn {
+  appearance: none;
+  background: black !important;
+  color: white !important;
+  display: inline-block;
+  padding: 8px 25px !important;
+  border: none !important;
+  border-radius: 15px !important;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+/* centrado y separación del botón / link (abajo por defecto) */
+.perfil-submit-container {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+/* 🚀 botón arriba cuando tiene clase 'top' */
+.perfil-submit-container.top {
+  text-align: left;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* campos */
+.perfil-campo {
+  margin-bottom: 20px;
+}
+
+.perfil-campo label {
+  display: block;
+  font-weight: bold;
+  margin-left: 6px;
+  margin-bottom: 10px;
+}
+
+.perfil-campo input,
+.perfil-campo textarea {
+  box-sizing: border-box;
+  border-radius: 15px !important;
+  border: 1px solid #000000 !important;
+  padding: 10px !important;
+  width: 100%;
+}
+
+/* imagen + subida */
+.upload-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.upload-controls-right {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.custom-file-button {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.custom-file-button:hover {
+  background-color: #e0e0e0;
+}
+
+.file-name-display {
+  font-size: 0.9em;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.perfil-foto-perfil {
+  border-radius: 15px;
+  object-fit: cover;
+  width: 142px;
+  height: 142px;
+}

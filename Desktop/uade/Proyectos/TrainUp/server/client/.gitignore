@@ -1,0 +1,48 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Historiales de shell/consola (suelen estar en el home, pero a veces se arrastran si el repo está ahí)
+.bash_history
+.lesshst
+.node_repl_history
+.viminfo
+
+# Claves ADB (NUNCA deben estar en Git)
+adbkey
+adbkey.pub
+
+# Archivos de configuración de Git (normalmente globales, no por repo, pero si aparecen aquí, ignóralos)
+.gitconfig
+
+# Archivos de caché/metadatos/configuración de IDEs y herramientas
+versions.json
+.log
+dialog_settings.xml
+11.tree
+history.version
+properties.index
+properties.version
+org.eclipse.core.resources
+com.datastax.devcenter.preferences
+config/ # Si 'config' es un directorio de configuración local

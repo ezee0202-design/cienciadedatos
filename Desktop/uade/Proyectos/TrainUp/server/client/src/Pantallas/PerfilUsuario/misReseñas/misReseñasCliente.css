@@ -1,0 +1,98 @@
+/* misReseñasCliente.css */
+
+.mis-reseñas-container {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    font-family: sans-serif;
+    border-radius: 15px;
+}
+
+.reseña-card {
+    background-color: #ffffff;
+    border: 1px solid black;
+    border-radius: 15px;  
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box; 
+    padding: 25px;
+}
+
+.reseña-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.reseña-servicio-nombre {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    display: block;
+}
+
+.reseña-entrenador-nombre {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 4px;
+    display: block;
+}
+
+.reseña-header-fecha {
+    font-size: 0.85rem;
+    color: #999;
+    white-space: nowrap;
+    margin-left: 15px;
+}
+
+.reseña-body {
+    margin-bottom: 15px;
+}
+
+.star-display {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.star-filled {
+    color: #ffd700;
+}
+
+.star-empty {
+    color: #e0e0e0;
+}
+
+.reseña-comentario {
+    font-size: 1rem;
+    color: #555;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.reseña-respuesta {
+    background-color: #f7f7f7;
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 0.95rem;
+}
+
+.reseña-respuesta strong {
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.reseña-respuesta p {
+    color: #666;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Estilo para el título del servicio cuando es un link */
+a.reseña-servicio-nombre {
+    text-decoration: none; 
+    color: #67a9ff; 
+}

@@ -1,0 +1,131 @@
+/* misServiciosCliente.css */
+
+.mis-servicios-container {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    font-family: sans-serif;
+    border-radius: 15px;
+}
+
+.service-card {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    border-radius: 15px;  
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box; 
+    padding: 25px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 0px 0px;
+    margin: 0px;
+}
+
+.card-header h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    margin-right: 12px;
+}
+
+.category-tag {
+    background-color: #999999;
+    color: #ffffff;
+    padding: 6px 15px;
+    border-radius: 15px;
+}
+
+.card-body {
+    margin-top: 10px;
+    padding: 0;
+}
+
+.card-body p {
+    margin: 6px 0px;
+}
+
+.card-body .status-text {
+    font-weight: 600;
+    text-transform: capitalize;
+    font-style: italic;
+}
+
+.card-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    min-width: 180px;
+}
+
+/* Botones generales */
+.action-btn {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.action-btn.primary {
+    background-color: #2600FF;
+    color: white;
+}
+
+.action-btn.primary:hover {
+    background-color: #1e00cc;
+}
+
+.action-btn.secondary {
+    background-color: #67A9FF;
+    color: #ffffff;
+}
+
+.action-btn.secondary:hover {
+    background-color: #5287cc;
+}
+
+/* Link del título servicio */
+.service-title-link {
+    font-size: 1.1rem;
+    margin-right: 12px;
+    font-weight: 600;
+    color: #333;
+    display: block;
+}
+
+/* Estilo para el título del servicio cuando es un link */
+a.service-title-link {
+    text-decoration: none; 
+    color: #67a9ff; 
+}
+
+/* Botón “Ver servicio” - como el ejemplo que me diste */
+.action-btn.view-button {
+  width: auto;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  background-color: #d0ecff; 
+  color: #005f87;
+  border-radius: 6px;
+  margin-top: -8px;  /* lo sube un poco más */
+  cursor: pointer;
+  align-self: flex-start; /* lo alinea a la izquierda dentro del flex */
+  transition: background-color 0.2s ease;
+  border: none;
+}
+
+.action-btn.view-button:hover {
+  background-color: #bae3ff;
+}

@@ -1,0 +1,123 @@
+/* contenedor principal */
+.perfil-contenedor {
+  border: 1px solid #000000;
+  border-radius: 15px;
+  padding: 0 25px;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: sans-serif;
+  background-color: white;
+}
+
+/* título */
+.perfil-contenedor h2 {
+  margin-bottom: 0;
+}
+
+/* subtítulo */
+.perfil-subtitulo {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #000;
+}
+
+/* botón */
+.perfil-editar-btn {
+  appearance: none;
+  background: black;
+  color: white;
+  display: inline-block;
+  padding: 8px 25px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+/* espacio y centrado del botón al final */
+.perfil-submit-container {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+/* campos */
+.perfil-campo {
+  margin-bottom: 20px;
+}
+
+.perfil-campo label {
+  display: block;
+  font-weight: bold;
+  margin-left: 6px;
+  margin-bottom: 10px;
+}
+
+.perfil-contenedor input,
+.perfil-contenedor textarea {
+  box-sizing: border-box;
+  border-radius: 15px;
+  border: 1px solid #000000;
+  padding: 10px;
+  width: 100%;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.perfil-contenedor textarea {
+  height: 80px;
+  resize: vertical;
+}
+
+/* imagen y subida */
+.upload-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.upload-controls-right {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.custom-file-button {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.custom-file-button:hover {
+  background-color: #e0e0e0;
+}
+
+.file-name-display {
+  font-size: 0.9em;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.perfil-foto-perfil {
+  border-radius: 15px;
+  object-fit: cover;
+  width: 142px;
+  height: 142px;
+}
+
+.perfil-submit-container.top {
+  text-align: left;
+  padding-top: 0.5rem;  /* opcional, aire mínimo arriba */
+  margin-bottom: 1rem;  /* hueco antes del siguiente campo */
+}

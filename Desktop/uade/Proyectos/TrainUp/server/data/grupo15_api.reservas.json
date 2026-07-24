@@ -1,0 +1,273 @@
+[{
+  "_id": {
+    "$oid": "667a9c8f1f2c3d4e5f6a7e01"
+  },
+  "servicioId": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d01"
+  },
+  "clienteId": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7c01"
+  },
+  "entrenadorId": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b01"
+  },
+  "fechaPreferida": {
+    "$date": "2025-06-10T09:00:00.000Z"
+  },
+  "duracionMinutos": 60,
+  "zona": "Palermo",
+  "precioTotal": 8000,
+  "horarioDeseado": "09:00",
+  "estado": "finalizada",
+  "pago": {
+    "nombreTarjeta": "Javier Perez",
+    "tokenPago": "tok_1P7gYl2eZvKYlo2CUbabc123",
+    "fechaVencimiento": "12/28"
+  },
+  "creadoEn": {
+    "$date": "2025-06-01T10:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9c8f1f2c3d4e5f6a7e02"
+  },
+  "servicioId": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d02"
+  },
+  "clienteId": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7c02"
+  },
+  "entrenadorId": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b02"
+  },
+  "fechaPreferida": {
+    "$date": "2025-06-12T19:00:00.000Z"
+  },
+  "duracionMinutos": 75,
+  "zona": "Villa Crespo",
+  "precioTotal": 6500,
+  "horarioDeseado": "19:00",
+  "estado": "finalizada",
+  "pago": {
+    "nombreTarjeta": "Sofia Lopez",
+    "tokenPago": "tok_1P7gYl2eZvKYlo2CUbdef456",
+    "fechaVencimiento": "08/27"
+  },
+  "creadoEn": {
+    "$date": "2025-06-02T11:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9c8f1f2c3d4e5f6a7e03"
+  },
+  "servicioId": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d03"
+  },
+  "clienteId": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7c03"
+  },
+  "entrenadorId": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b03"
+  },
+  "fechaPreferida": {
+    "$date": "2025-08-05T15:00:00.000Z"
+  },
+  "duracionMinutos": 45,
+  "zona": "Recoleta",
+  "precioTotal": 12000,
+  "horarioDeseado": "15:00",
+  "estado": "confirmada",
+  "pago": {
+    "nombreTarjeta": "Martin Diaz",
+    "tokenPago": "tok_1P7gYl2eZvKYlo2CUbghi789",
+    "fechaVencimiento": "02/29"
+  },
+  "creadoEn": {
+    "$date": "2025-07-20T14:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9c8f1f2c3d4e5f6a7e04"
+  },
+  "servicioId": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d04"
+  },
+  "clienteId": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7c04"
+  },
+  "entrenadorId": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b04"
+  },
+  "fechaPreferida": {
+    "$date": "2025-08-10T09:00:00.000Z"
+  },
+  "duracionMinutos": 90,
+  "zona": "Belgrano",
+  "precioTotal": 9000,
+  "horarioDeseado": "09:00",
+  "estado": "confirmada",
+  "pago": {
+    "nombreTarjeta": "Valentina Ruiz",
+    "tokenPago": "tok_1P7gYl2eZvKYlo2CUbjkl012",
+    "fechaVencimiento": "11/26"
+  },
+  "creadoEn": {
+    "$date": "2025-07-22T18:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9c8f1f2c3d4e5f6a7e05"
+  },
+  "servicioId": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d01"
+  },
+  "clienteId": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7c05"
+  },
+  "entrenadorId": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b01"
+  },
+  "fechaPreferida": {
+    "$date": "2025-08-15T18:00:00.000Z"
+  },
+  "duracionMinutos": 60,
+  "zona": "Palermo",
+  "precioTotal": 8000,
+  "horarioDeseado": "18:00",
+  "estado": "pendiente",
+  "pago": {
+    "nombreTarjeta": "Diego Castro",
+    "tokenPago": "tok_1P7gYl2eZvKYlo2CUbmno345",
+    "fechaVencimiento": "05/30"
+  },
+  "creadoEn": {
+    "$date": "2025-07-24T20:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9c8f1f2c3d4e5f6a7e06"
+  },
+  "servicioId": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d02"
+  },
+  "clienteId": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7c01"
+  },
+  "entrenadorId": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b02"
+  },
+  "fechaPreferida": {
+    "$date": "2025-05-20T19:00:00.000Z"
+  },
+  "duracionMinutos": 75,
+  "zona": "Villa Crespo",
+  "precioTotal": 6500,
+  "horarioDeseado": "19:00",
+  "estado": "cancelada",
+  "pago": {
+    "nombreTarjeta": "Javier Perez",
+    "tokenPago": "tok_1P7gYl2eZvKYlo2CUbpqr678",
+    "fechaVencimiento": "12/28"
+  },
+  "creadoEn": {
+    "$date": "2025-05-15T12:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "685b4477c9f34c73cc587830"
+  },
+  "servicioId": {
+    "$oid": "685b4391c9f34c73cc58778d"
+  },
+  "clienteId": {
+    "$oid": "685b4239c9f34c73cc587769"
+  },
+  "entrenadorId": {
+    "$oid": "685b4264c9f34c73cc58776c"
+  },
+  "fechaPreferida": {
+    "$date": "2025-06-20T00:00:00.000Z"
+  },
+  "duracionMinutos": 90,
+  "zona": "Belgrano",
+  "precioTotal": 12000,
+  "horarioDeseado": "12:00",
+  "estado": "finalizada",
+  "pago": {
+    "nombreTarjeta": "Raul Gonzalez",
+    "tokenPago": "pi_3RdhJpEDzq7nFodf1IjBU9Le",
+    "fechaVencimiento": "12/26"
+  },
+  "creadoEn": {
+    "$date": "2025-06-25T00:36:07.417Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685b448dc9f34c73cc587832"
+  },
+  "servicioId": {
+    "$oid": "685b4391c9f34c73cc58778d"
+  },
+  "clienteId": {
+    "$oid": "685b4239c9f34c73cc587769"
+  },
+  "entrenadorId": {
+    "$oid": "685b4264c9f34c73cc58776c"
+  },
+  "fechaPreferida": {
+    "$date": "2025-06-22T00:00:00.000Z"
+  },
+  "duracionMinutos": 90,
+  "zona": "Belgrano",
+  "precioTotal": 12000,
+  "horarioDeseado": "12:00",
+  "estado": "finalizada",
+  "pago": {
+    "nombreTarjeta": "Raul",
+    "tokenPago": "pi_3RdhKBEDzq7nFodf1F0O8bYn",
+    "fechaVencimiento": "12/26"
+  },
+  "creadoEn": {
+    "$date": "2025-06-25T00:36:29.225Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685b45fdc9f34c73cc5879ca"
+  },
+  "servicioId": {
+    "$oid": "685b4391c9f34c73cc58778d"
+  },
+  "clienteId": {
+    "$oid": "685b4239c9f34c73cc587769"
+  },
+  "entrenadorId": {
+    "$oid": "685b4264c9f34c73cc58776c"
+  },
+  "fechaPreferida": {
+    "$date": "2025-08-08T00:00:00.000Z"
+  },
+  "duracionMinutos": 90,
+  "zona": "Belgrano",
+  "precioTotal": 12000,
+  "horarioDeseado": "16:30",
+  "estado": "confirmada",
+  "pago": {
+    "nombreTarjeta": "Raul",
+    "tokenPago": "pi_3RdhQ9EDzq7nFodf1ioTeorM",
+    "fechaVencimiento": "12/25"
+  },
+  "creadoEn": {
+    "$date": "2025-06-25T00:42:37.540Z"
+  },
+  "__v": 0
+}]

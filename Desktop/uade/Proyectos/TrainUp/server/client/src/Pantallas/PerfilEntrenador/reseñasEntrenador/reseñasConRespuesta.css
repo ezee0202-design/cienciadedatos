@@ -1,0 +1,75 @@
+.resena {
+  border: 1px solid #ddd;
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  background-color: #fafafa;
+  font-family: Arial, sans-serif;
+}
+
+.resena-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.resena-cliente {
+  font-weight: 700;
+  color: #333;
+}
+
+.resena-calificacion {
+  color: #ffb400; /* color dorado para estrellas */
+  font-size: 1.2rem;
+}
+
+.resena-fecha {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.resena-comentario {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: #444;
+}
+
+.resena-respuesta {
+  background-color: #e6f7ff;
+  padding: 8px;
+  border-left: 3px solid #1890ff;
+  border-radius: 3px;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+}
+
+/* Link estilo botón para la categoría del servicio */
+.resena-servicio-link {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #67a9ff;
+  text-decoration: none;
+  display: block; /* para que quede en línea propia, arriba a la izquierda */
+  margin-bottom: 8px;
+  padding: 0; /* sacamos padding para que no se vea tipo botón */
+  background: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.resena-servicio-link:hover {
+  text-decoration: underline;
+  color: #3390ff;
+}
+
+/* Estilo para cuando el servicio no está disponible */
+.resena-servicio-no-disponible {
+  font-weight: 600;
+  color: #888;
+  margin-bottom: 8px;
+  display: block;
+}
+

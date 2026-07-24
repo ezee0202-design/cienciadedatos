@@ -1,0 +1,151 @@
+.login-screen-containerLGN {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.login-cardLGN {
+  background-color: #64b5f6; /* Azul de la imagen */
+  border-radius: 15px;
+  padding: 30px;
+  width: 400px; /* Ancho fijo para el formulario */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.login-titleLGN {
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  margin: 0 0 10px 0;
+}
+
+.login-subtitleLGN {
+  font-size: 15px;
+  color: white; 
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.login-formLGN {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea los labels a la izquierda */
+  width: 100%;
+}
+
+.form-labelLGN {
+  font-size: 15px;
+  color: white; 
+  margin-bottom: 8px;
+  margin-top: 15px; /* Espacio superior para separar inputs */
+}
+
+.form-inputLGN {
+  width: 100%;
+  padding: 0.5rem 1rem;        /* padding más compacto */
+  border: none;
+  border-radius: 9999px;      /* muy redondeado, igual que registro */
+  font-size: 0.875rem;        /* un poco más chico */
+  color: #333;
+  background-color: white; 
+  outline: none;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+.form-inputLGN::placeholder {
+  color: #aaa;
+}
+
+.form-checkbox-rowLGN {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.checkbox-inputLGN {
+  width: 18px;
+  height: 18px;
+  accent-color: #3300ff; 
+  cursor: pointer;
+}
+
+.checkbox-labelLGN {
+  font-size: 14px;
+  color: white; 
+  cursor: pointer;
+}
+
+.forgot-password-linkLGN {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-top: 10px;      
+  margin-bottom: 10px;  
+}
+
+.login-buttonLGN {
+  width: 100%;
+  padding: 14px 20px;
+  background-color: #3300ff; 
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 20px;
+}
+
+.login-buttonLGN:hover {
+  background-color: #1a00cc; 
+}
+
+.password-containerLGN {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-containerLGN .form-inputLGN {
+  padding-right: 2.5rem; /* espacio para el botón */
+}
+
+.password-toggleLGN {
+  position: absolute;
+  top: 42%;
+  right: 12px;
+  transform: translateY(-60%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+}
+
+.password-toggleLGN svg {
+  stroke: #6b7280;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.password-toggleLGN:hover svg {
+  stroke: #111827;
+}

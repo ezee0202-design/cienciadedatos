@@ -1,0 +1,119 @@
+/* evaluarServicio.css */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    font-family: sans-serif;
+}
+
+.modal-content {
+    background-color: #67A9FF;
+    padding: 25px 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.modal-content h2 {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 22px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 6px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ffffff;
+    border-radius: 15px;
+    font-size: 16px;
+    box-sizing: border-box; 
+    font-family: inherit;
+    background-color: #ffffff;
+    resize: vertical; 
+}
+
+.form-group textarea::placeholder {
+    color: #e0e0e0;
+}
+
+.star-rating {
+    display: flex;
+    justify-content: center; 
+    border-radius: 25px;
+}
+
+.star {
+    cursor: pointer;
+    font-size: 32px;
+    color: #c7dfff;
+    transition: color 0.2s;
+}
+
+.star.filled {
+    color: #ffd700; 
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center; 
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.modal-actions .button {
+    font-size: 0.9rem !important;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    min-width: 150px;
+    background-color: #2600FF;
+    color: white;
+}
+
+.modal-actions .button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: #ffe1e1;
+    background-color: #d93025;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 15px;
+    text-align: center;
+}

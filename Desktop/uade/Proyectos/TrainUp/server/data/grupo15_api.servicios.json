@@ -1,0 +1,151 @@
+[{
+  "_id": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d01"
+  },
+  "categoria": "Funcional",
+  "zona": "Palermo",
+  "modalidad": "Presencial",
+  "idioma": "Español",
+  "diasDisponibles": "Lunes, Miércoles y Viernes",
+  "duracion": 60,
+  "rangoHorario": "08:00 - 12:00",
+  "precio": 8000,
+  "descripcion": "Entrenamiento funcional de alta intensidad en grupo reducido. Mejora tu fuerza, agilidad y resistencia en un ambiente motivador al aire libre.",
+  "publicado": true,
+  "entrenador": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b01"
+  },
+  "createdAt": {
+    "$date": "2024-01-11T10:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-11T10:00:00.000Z"
+  },
+  "imagenServicio": "/uploads/servicioFuncional.jpg"
+},
+{
+  "_id": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d02"
+  },
+  "categoria": "Yoga",
+  "zona": "Villa Crespo",
+  "modalidad": "Virtual",
+  "idioma": "Español",
+  "diasDisponibles": "Martes y Jueves",
+  "duracion": 75,
+  "rangoHorario": "19:00 - 20:15",
+  "precio": 6500,
+  "descripcion": "Clases de Yoga Vinyasa online para todos los niveles. Conecta con tu respiración y encuentra tu centro desde la comodidad de tu casa.",
+  "publicado": true,
+  "entrenador": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b02"
+  },
+  "createdAt": {
+    "$date": "2024-02-16T11:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-02-16T11:00:00.000Z"
+  },
+  "imagenServicio": "/uploads/servicioYoga2.avif"
+},
+{
+  "_id": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d03"
+  },
+  "categoria": "Nutricion",
+  "zona": "Recoleta",
+  "modalidad": "Híbrido",
+  "idioma": "Español",
+  "diasDisponibles": "Lunes a Viernes",
+  "duracion": 45,
+  "rangoHorario": "09:00 - 18:00",
+  "precio": 12000,
+  "descripcion": "Asesoramiento nutricional personalizado. Primera consulta presencial y seguimientos virtuales para ajustar tu plan y resolver dudas.",
+  "publicado": true,
+  "entrenador": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b03"
+  },
+  "createdAt": {
+    "$date": "2024-03-02T09:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-02T09:00:00.000Z"
+  },
+  "imagenServicio": "/uploads/servicioNutricionista.png"
+},
+{
+  "_id": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d04"
+  },
+  "categoria": "Running",
+  "zona": "Belgrano",
+  "modalidad": "Presencial",
+  "idioma": "Inglés",
+  "diasDisponibles": "Sábados y Domingos",
+  "duracion": 90,
+  "rangoHorario": "09:00 - 11:00",
+  "precio": 9000,
+  "descripcion": "Running team for intermediate runners looking to improve their 10k and 21k times. Training sessions focus on technique and speed.",
+  "publicado": true,
+  "entrenador": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b04"
+  },
+  "createdAt": {
+    "$date": "2024-04-06T14:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-06T14:00:00.000Z"
+  },
+  "imagenServicio": "/uploads/servicioRunning.webp"
+},
+{
+  "_id": {
+    "$oid": "667a9b3e1f2c3d4e5f6a7d05"
+  },
+  "categoria": "Gimnasio",
+  "zona": "Caballito",
+  "modalidad": "Presencial",
+  "idioma": "Español",
+  "diasDisponibles": "Martes y Jueves",
+  "duracion": 60,
+  "rangoHorario": "18:00 - 21:00",
+  "precio": 10000,
+  "descripcion": "Rutina de hipertrofia y fuerza en gimnasio. Te guío en cada ejercicio para maximizar resultados y prevenir lesiones.",
+  "publicado": true,
+  "entrenador": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b01"
+  },
+  "createdAt": {
+    "$date": "2024-05-10T12:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-10T12:00:00.000Z"
+  },
+  "imagenServicio": "/uploads/servicioGimnasio.jpeg"
+},
+{
+  "_id": {
+    "$oid": "685b4391c9f34c73cc58778d"
+  },
+  "categoria": "Yoga",
+  "zona": "Belgrano",
+  "modalidad": "Presencial",
+  "idioma": "Español",
+  "diasDisponibles": "Lunes, Miércoles y Viernes",
+  "duracion": 90,
+  "rangoHorario": "10:00 - 18:00",
+  "precio": 12000,
+  "descripcion": "Clase de Hatha y Vinyasa Yoga personalizada para cada cliente.",
+  "publicado": true,
+  "entrenador": {
+    "$oid": "685b4264c9f34c73cc58776c"
+  },
+  "createdAt": {
+    "$date": "2025-06-25T00:32:17.739Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-25T00:39:43.555Z"
+  },
+  "__v": 0,
+  "imagenServicio": "/uploads/servicioYoga1.avif"
+}]

@@ -1,0 +1,109 @@
+.encabezado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eef3fb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  height: 60px;
+  padding: 0 10px; /* espacio a los extremos */
+}
+
+.logo-contenedor {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  flex-shrink: 0; /* no achicar */
+}
+
+.logoEncabezado {
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  flex-shrink: 0; /* no achicar */
+}
+
+.nombre-app {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  user-select: none; /* para que no seleccione texto al hacer click */
+}
+
+.buscar-contenedor {
+  flex: 1; /* que ocupe todo el espacio posible */
+  max-width: 400px;
+  margin: 0 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.buscar-input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  max-width: 400px;
+}
+
+.usuario-logueado {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #333;
+  flex-shrink: 0; /* no achicar */
+  padding-right: 20px; /* espacio de 10px del borde derecho */
+}
+
+.foto-perfil {
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.boton-cerrar-sesion {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.boton-cerrar-sesion:hover {
+  background-color: #0000cc;
+}
+
+.botones-auth {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+.boton-auth {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.boton-auth:hover {
+  background-color: #0000cc;
+}

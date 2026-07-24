@@ -1,0 +1,21 @@
+.asistencia-simple {
+  max-width: 700px;
+  margin: 20px auto;
+  font-family: sans-serif;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.asistencia-simple table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.asistencia-simple th,
+.asistencia-simple td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}

@@ -1,0 +1,71 @@
+.form-container {
+  background-color: #0000ff;
+  border-radius: 10px;
+  padding: 2rem;
+  width: fit-content;
+  max-width: 800px;
+  margin: 2rem auto;
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.form-servicio {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2rem;
+}
+
+/* Usá clases específicas para este formulario */
+.input-nuevo-servicio {
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+}
+
+.file-upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-nuevo-servicio {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  background-color: #0077ff;
+  background-image: linear-gradient(to right, #0077ff, #00c6ff);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 119, 255, 0.3);
+  align-self: center;
+  margin-top: 1rem;
+  display: block;
+}
+
+.btn-nuevo-servicio:hover {
+  background-image: linear-gradient(to right, #005eea, #00b4e6);
+  transform: scale(1.03);
+}
+
+.btn-nuevo-servicio:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 6px rgba(0, 119, 255, 0.5);
+}

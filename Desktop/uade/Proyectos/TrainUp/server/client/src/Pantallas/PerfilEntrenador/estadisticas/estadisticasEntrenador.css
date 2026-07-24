@@ -1,0 +1,57 @@
+.estadisticas-container {
+  width: 100%;
+  max-width: 1024px; /* Ancho máximo para que quepan bien las tarjetas */
+  margin: 20px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.stats-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.stat-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-title {
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.stat-icon {
+  font-size: 1rem;
+  color: #666;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 8px 0;
+  color: #222;
+}
+
+.stat-subtitle {
+  font-size: 0.85rem;
+  color: #777;
+}

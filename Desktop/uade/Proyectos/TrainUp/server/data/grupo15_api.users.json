@@ -1,0 +1,270 @@
+[{
+  "_id": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b01"
+  },
+  "email": "carlos.gomez@fitapp.com",
+  "contraseña": "$2b$10$verysecurepasswordhash1",
+  "nombreCompleto": "Carlos Gómez",
+  "FechaNacimiento": {
+    "$date": "1990-05-15T00:00:00.000Z"
+  },
+  "role": "entrenador",
+  "certificaciones": [
+    "Entrenador Personal certificado (ACE)",
+    "Especialista en Nutrición Deportiva"
+  ],
+  "descripcion": "Apasionado por el entrenamiento funcional y el crossfit. Mi objetivo es ayudarte a superar tus límites de forma segura y efectiva.",
+  "fotoPerfilUrl": "https://i.pravatar.cc/150?u=carlos",
+  "createdAt": {
+    "$date": "2024-01-10T10:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-10T10:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b02"
+  },
+  "email": "ana.martinez@fitapp.com",
+  "contraseña": "$2b$10$verysecurepasswordhash2",
+  "nombreCompleto": "Ana Martínez",
+  "FechaNacimiento": {
+    "$date": "1992-08-20T00:00:00.000Z"
+  },
+  "role": "entrenador",
+  "certificaciones": [
+    "Instructora de Yoga RYT 500",
+    "Certificación en Pilates Mat"
+  ],
+  "descripcion": "Enfocada en el bienestar integral a través del yoga y la meditación. Creo en la conexión mente-cuerpo para una vida plena.",
+  "fotoPerfilUrl": "https://i.pravatar.cc/150?u=ana",
+  "createdAt": {
+    "$date": "2024-02-15T11:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-02-15T11:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b03"
+  },
+  "email": "roberto.sanchez@fitapp.com",
+  "contraseña": "$2b$10$verysecurepasswordhash3",
+  "nombreCompleto": "Roberto Sánchez",
+  "FechaNacimiento": {
+    "$date": "1988-11-30T00:00:00.000Z"
+  },
+  "role": "entrenador",
+  "certificaciones": [
+    "Licenciado en Nutrición (UBA)",
+    "Experto en dietas veganas y vegetarianas"
+  ],
+  "descripcion": "Te ayudo a alcanzar tus objetivos de salud y rendimiento a través de un plan nutricional 100% personalizado y basado en ciencia.",
+  "fotoPerfilUrl": "https://i.pravatar.cc/150?u=roberto",
+  "createdAt": {
+    "$date": "2024-03-01T09:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-01T09:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7b04"
+  },
+  "email": "lucia.fernandez@fitapp.com",
+  "contraseña": "$2b$10$verysecurepasswordhash4",
+  "nombreCompleto": "Lucía Fernández",
+  "FechaNacimiento": {
+    "$date": "1995-02-18T00:00:00.000Z"
+  },
+  "role": "entrenador",
+  "certificaciones": [
+    "Running Coach (RRCA)",
+    "Especialista en maratón"
+  ],
+  "descripcion": "Corredora de toda la vida. Te preparo para tus primeras carreras de 5k hasta maratones, mejorando tu técnica y resistencia.",
+  "fotoPerfilUrl": "https://i.pravatar.cc/150?u=lucia",
+  "createdAt": {
+    "$date": "2024-04-05T14:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-05T14:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7c01"
+  },
+  "email": "javier.perez@mail.com",
+  "contraseña": "$2b$10$verysecurepasswordhash5",
+  "nombreCompleto": "Javier Pérez",
+  "FechaNacimiento": {
+    "$date": "1998-03-12T00:00:00.000Z"
+  },
+  "role": "cliente",
+  "numeroCelular": "1155667788",
+  "alturaCm": 180,
+  "pesoKg": 78,
+  "createdAt": {
+    "$date": "2024-05-20T18:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-20T18:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7c02"
+  },
+  "email": "sofia.lopez@mail.com",
+  "contraseña": "$2b$10$verysecurepasswordhash6",
+  "nombreCompleto": "Sofía López",
+  "FechaNacimiento": {
+    "$date": "1994-07-25T00:00:00.000Z"
+  },
+  "role": "cliente",
+  "numeroCelular": "1122334455",
+  "alturaCm": 165,
+  "pesoKg": 62,
+  "createdAt": {
+    "$date": "2024-06-01T12:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-01T12:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7c03"
+  },
+  "email": "martin.diaz@mail.com",
+  "contraseña": "$2b$10$verysecurepasswordhash7",
+  "nombreCompleto": "Martín Díaz",
+  "FechaNacimiento": {
+    "$date": "2000-01-30T00:00:00.000Z"
+  },
+  "role": "cliente",
+  "numeroCelular": "1133445566",
+  "alturaCm": 175,
+  "pesoKg": 85,
+  "createdAt": {
+    "$date": "2024-06-15T16:20:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-15T16:20:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7c04"
+  },
+  "email": "valentina.ruiz@mail.com",
+  "contraseña": "$2b$10$verysecurepasswordhash8",
+  "nombreCompleto": "Valentina Ruiz",
+  "FechaNacimiento": {
+    "$date": "1991-12-05T00:00:00.000Z"
+  },
+  "role": "cliente",
+  "numeroCelular": "1144556677",
+  "alturaCm": 170,
+  "pesoKg": 64,
+  "createdAt": {
+    "$date": "2024-07-01T11:45:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-01T11:45:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7c05"
+  },
+  "email": "diego.castro@mail.com",
+  "contraseña": "$2b$10$verysecurepasswordhash9",
+  "nombreCompleto": "Diego Castro",
+  "FechaNacimiento": {
+    "$date": "1985-09-10T00:00:00.000Z"
+  },
+  "role": "cliente",
+  "numeroCelular": "1166778899",
+  "alturaCm": 185,
+  "pesoKg": 92,
+  "createdAt": {
+    "$date": "2024-07-10T09:10:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-10T09:10:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "667a9a0b1f2c3d4e5f6a7c06"
+  },
+  "email": "camila.moreno@mail.com",
+  "contraseña": "$2b$10$verysecurepasswordhash10",
+  "nombreCompleto": "Camila Moreno",
+  "FechaNacimiento": {
+    "$date": "1999-06-22T00:00:00.000Z"
+  },
+  "role": "cliente",
+  "numeroCelular": "1177889900",
+  "alturaCm": 168,
+  "pesoKg": 58,
+  "createdAt": {
+    "$date": "2024-07-22T19:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-22T19:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "685b4239c9f34c73cc587769"
+  },
+  "email": "cliente@hola.com",
+  "contraseña": "$2b$12$LCsS/YVTSSQgvFhb80OxNutNDEra5pUQDeaSuTxXhQVwhheJomtqm",
+  "nombreCompleto": "Raúl Gonzalez",
+  "FechaNacimiento": {
+    "$date": "1983-06-22T00:00:00.000Z"
+  },
+  "role": "cliente",
+  "certificaciones": [],
+  "createdAt": {
+    "$date": "2025-06-25T00:26:33.852Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-25T01:08:48.540Z"
+  },
+  "__v": 0,
+  "alturaCm": 176,
+  "numeroCelular": "1212341234",
+  "pesoKg": 75,
+  "fotoPerfilUrl": "/uploads/1750813728536-1750293154460-carlos perez.jpg"
+},
+{
+  "_id": {
+    "$oid": "685b4264c9f34c73cc58776c"
+  },
+  "email": "profe@hola.com",
+  "contraseña": "$2b$12$sSwclW03EtAQVa21wuXBNOkR1KPGD3v1cIjW7ZzRSFRxjK8e64kX.",
+  "nombreCompleto": "Luis Rodriguez",
+  "FechaNacimiento": {
+    "$date": "1989-01-15T00:00:00.000Z"
+  },
+  "role": "entrenador",
+  "certificaciones": [
+    "Instructor de Yoga"
+  ],
+  "createdAt": {
+    "$date": "2025-06-25T00:27:16.111Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-25T01:07:16.349Z"
+  },
+  "__v": 0,
+  "descripcion": "Instructor de Yoga apasionado por el bienestar.",
+  "fotoPerfilUrl": "/uploads/1750813636332-luis.jpg"
+}]

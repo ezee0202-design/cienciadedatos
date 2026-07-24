@@ -1,0 +1,181 @@
+/* ───────── Contenedor principal ─────────────────────────────── */
+.form-containerRegistroRGS {
+  width: 100%;
+  max-width: 28rem;
+  background-color: #60a5fa;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  color: #ffffff;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.20),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* ───────── Título y subtítulo ───────────────────────────────── */
+.form-titleRGS {
+  margin-bottom: 0.25rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.form-subtitleRGS {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.25;
+}
+
+/* ───────── Formulario ──────────────────────────────────────── */
+.formRGS {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;          /* un poco más de aire entre grupos */
+}
+
+.form-groupRGS {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;        /* centra cada grupo */
+}
+
+.form-labelRGS {
+  font-size: 0.875rem;
+}
+
+/* ───────── Inputs ──────────────────────────────────────────── */
+.form-inputRGS {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 9999px;
+  color: #1f2937;
+  font-size: 0.875rem;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.form-inputRGS::placeholder {
+  color: #9ca3af;        /* placeholder gris clarito */
+}
+
+.form-inputRGS:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+/* ───────── Password: ícono para mostrar/ocultar ────────────── */
+.password-containerRGS {
+  position: relative;
+}
+
+.password-toggleRGS {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.password-toggleRGS:hover {
+  color: #374151;
+}
+
+/* ───────── Reglas de validación visual ─────────────────────── */
+.password-validationRGS {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+}
+
+.validation-itemRGS {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.validation-itemRGS:last-child {
+  margin-bottom: 0;
+}
+
+.validation-iconRGS.valid {
+  color: #10b981;
+}
+
+.validation-iconRGS.invalid {
+  color: #ef4444;
+}
+
+.valid-textRGS  { color: #10b981; }
+.invalid-textRGS{ color: #ef4444; }
+
+/* Contenedor del checkbox */
+.checkbox-containerRGS {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+
+/* Label del checkbox */
+.checkbox-labelRGS {
+  font-size: 1rem; /* Aumentás el tamaño del texto */
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* Si está deshabilitado */
+.checkbox-labelRGS.disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.checkbox-large {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* ───────── Botón de envío ──────────────────────────────────── */
+.submit-containerRegistroRGS {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+
+.submit-buttonRegistroRGS {
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #336bff;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.25s ease, filter 0.25s ease;
+}
+
+.submit-buttonRegistroRGS:hover:not(:disabled) {
+  background-color: #2357ff;
+  filter: brightness(1.05);
+}
+
+.submit-buttonRegistroRGS:disabled {
+  background-color: #6b7280;
+  cursor: not-allowed;
+}

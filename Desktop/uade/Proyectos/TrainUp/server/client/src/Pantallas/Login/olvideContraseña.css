@@ -1,0 +1,118 @@
+.reset-password-screen-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.reset-password-card {
+  background-color: #64b5f6;
+  border-radius: 15px;
+  padding: 30px;
+  width: 400px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.reset-password-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  margin: 0 0 10px 0;
+}
+
+.reset-password-subtitle {
+  font-size: 15px;
+  color: white;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.reset-password-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.form-label {
+  font-size: 15px;
+  color: white;
+  margin-bottom: 8px;
+  margin-top: 15px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  color: #333;
+  background-color: white;
+  outline: none;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+.form-input::placeholder {
+  color: #aaa;
+}
+
+.send-email-button {
+  width: 100%;
+  padding: 14px 20px;
+  background-color: #3300ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 10px;
+}
+
+.send-email-button:hover:not(:disabled) {
+  background-color: #1a00cc;
+}
+
+.send-email-button:disabled {
+  background-color: #6b7280;
+  cursor: not-allowed;
+}
+
+.go-back-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.message {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.message.success {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.message.error {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+
